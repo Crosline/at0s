@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class CrosshairManager : MonoBehaviour {
     public string m_InteractTag = "InteractObject";
     public GameObject player;
     private GameObject holder;
+    private bool sitting;
 
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
@@ -53,6 +55,16 @@ public class CrosshairManager : MonoBehaviour {
 
         }
 
+        if (Input.GetKeyDown(KeyCode.T) && sitting)
+        {
+            Stand();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && sitting)
+        {
+            ExitPC();
+        }
+
         if (Input.GetButtonUp("Interact") && holder != null && newer == null)
         {
             DeInteract(holder);
@@ -63,16 +75,18 @@ public class CrosshairManager : MonoBehaviour {
             MergeObjects(holder, newer);
         }
 
-        if (Input.GetButton("Interact") && newer != null && holder == null) {
-            InteractWithUSB(newer.transform);
+        if (Input.GetButtonDown("Interact") && newer != null && holder == null) {
+            if(newer.name.Contains("USB")) InteractWithUSB(newer.transform);
+            if (newer.name.Contains("Chair")) SitChair();
+            if (newer.name.Contains("PC") && sitting) EnterPC();
             Debug.Log(newer.name);
         }
 
         if(Input.GetButton("Interact") && holder != null)
         {
+
             InteractWithUSB(holder.transform);
         }
-        
 
 
         if (old == newer && outline != null) {
@@ -118,6 +132,77 @@ public class CrosshairManager : MonoBehaviour {
         holder = null;
         obj.layer = 6; //6 is interactable
         obj.GetComponent<BoxCollider>().isTrigger = false;
+    }
+
+    void SitChair()
+    {
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
+        StartCoroutine(Sit());
+    }
+
+    void Stand()
+    {
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true;
+        sitting = false;
+    }
+
+    IEnumerator Sit()
+    {
+        Vector3 chairPos = new Vector3(12f, 2, -4);
+        while (true)
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, chairPos, 4f * Time.deltaTime);
+            if(player.transform.position == chairPos)
+            {
+                break;
+            }
+            yield return null;
+        }
+        sitting = true;
+    }
+
+    void EnterPC()
+    {
+
+        //player.SetActive(false);
+        StartCoroutine(SettingCamera());
+    }
+
+    void ExitPC()
+    {
+        StartCoroutine(ExitingPCCamera());
+    }
+
+    IEnumerator SettingCamera()
+    {
+        camTransform.localEulerAngles = new Vector3(10, 0, 0);
+        player.transform.localEulerAngles = new Vector3(0, 90, 0);
+        playerCam.GetComponent<MouseLook>().enabled = false;
+        while (true)
+        {
+            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 30f, 40f * Time.deltaTime);
+            if (camTransform.GetComponent<Camera>().fieldOfView == 30f)
+            {
+                break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator ExitingPCCamera()
+    {
+        playerCam.GetComponent<MouseLook>().enabled = true;
+        while (true)
+        {
+            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
+            if (camTransform.GetComponent<Camera>().fieldOfView == 60f)
+            {
+                break;
+            }
+            yield return null;
+        }
     }
 
 }

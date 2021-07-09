@@ -2,29 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour
-{
-    public float mouseSensitivity = 1000f;
+public class MouseLook : MonoBehaviour {
+
+    [Header("Settings")]
+    public bool lockCursor;
+    public float mouseSensitivity = 10f;
+    public float rotationSmoothTime = 8f;
     public Transform playerBody;
 
-    float xRotation = 0f;
+    public bool pitchLock = false;
+    public bool isPitchClamp;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
+
+    public Vector2 pitchMinMax = new Vector2(-40, 85);
+
+    private float yaw;
+    private float pitch;
+
+    private Vector3 currentRotation;
+
+
+
+    void Start() {
+        if (lockCursor) {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
-    void Update()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+    void LateUpdate() {
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+        yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 
+        if (!pitchLock) {
+            pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+            if (isPitchClamp) {
+                pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+            }
+        }
 
+        Vector3 p = new Vector3(pitch, yaw, 0);
+
+        currentRotation = Vector3.Lerp(currentRotation, p, rotationSmoothTime * Time.deltaTime);
+
+        transform.localEulerAngles = currentRotation;
+
+        playerBody.Rotate(transform.forward);
     }
 }

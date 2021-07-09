@@ -46,7 +46,7 @@ public class CrosshairManager : MonoBehaviour {
 
         }
 
-        if (Input.GetButton("Interact")) {
+        if (Input.GetButton("Interact") && newer != null) {
             Debug.Log(newer.name);
         }
 

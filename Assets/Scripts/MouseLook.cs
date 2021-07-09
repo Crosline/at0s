@@ -48,6 +48,8 @@ public class MouseLook : MonoBehaviour {
 
         transform.localEulerAngles = currentRotation;
 
-        playerBody.Rotate(transform.forward);
+        Vector3 e = transform.eulerAngles;
+        e.x = playerBody.eulerAngles.x;
+        playerBody.eulerAngles = e;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,9 +53,14 @@ public class CrosshairManager : MonoBehaviour {
 
         }
 
-        if (Input.GetButtonUp("Interact") && holder != null)
+        if (Input.GetButtonUp("Interact") && holder != null && newer == null)
         {
             DeInteract(holder);
+        }
+
+        if (Input.GetButtonUp("Interact") && holder != null && newer != null)
+        {
+            MergeObjects(holder, newer);
         }
 
         if (Input.GetButton("Interact") && newer != null && holder == null) {
@@ -78,6 +84,21 @@ public class CrosshairManager : MonoBehaviour {
         old = newer;
     }
 
+    void MergeObjects(GameObject inserting, GameObject receiving)
+    {
+        inserting.transform.SetParent(null);
+        inserting.layer = 6; //6 is interactable
+        if(inserting.name.Contains("USB") && receiving.name.Contains("PC"))
+        {
+            inserting.transform.SetParent(receiving.transform);
+            inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
+            inserting.transform.localEulerAngles = Vector3.zero;
+            inserting.GetComponent<Animator>().enabled = true;
+            inserting.GetComponent<Animator>().Play("insert", -1, 0f);
+        }
+        holder = null;
+    }
+
     public void InteractWithUSB(Transform usb)
     {
         holder = usb.gameObject;
@@ -85,15 +106,18 @@ public class CrosshairManager : MonoBehaviour {
         //usb.transform.localPosition = Vector3.zero;
         usb.transform.SetParent(hand);
         usb.gameObject.layer = 7; //7 is holding
+        usb.GetComponent<BoxCollider>().isTrigger = true;
     }
 
     public void DeInteract(GameObject obj)
     {
         Debug.Log("deinteracted");
         obj.GetComponent<Rigidbody>().isKinematic = false;
+        if(obj.GetComponent<Animator>()) obj.GetComponent<Animator>().enabled = false;
         obj.transform.SetParent(null);
         holder = null;
         obj.layer = 6; //6 is interactable
+        obj.GetComponent<BoxCollider>().isTrigger = false;
     }
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2192,7 +2192,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34270
+  m_Name: pb_Mesh70862
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2522,7 +2522,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109996821}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1109996825
 Camera:
   m_ObjectHideFlags: 0
@@ -2671,18 +2671,18 @@ GameObject:
   - component: {fileID: 1135399876}
   - component: {fileID: 1135399875}
   - component: {fileID: 1135399874}
-  - component: {fileID: 1135399873}
   - component: {fileID: 1135399878}
   - component: {fileID: 1135399879}
+  - component: {fileID: 1135399873}
   m_Layer: 6
-  m_Name: InteractableTestObject
+  m_Name: PCTestObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1135399873
-MeshCollider:
+--- !u!65 &1135399873
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2691,10 +2691,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1375395323}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}
 --- !u!33 &1135399874
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -3014,7 +3013,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34246
+  m_Name: pb_Mesh70838
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3243,9 +3242,10 @@ GameObject:
   - component: {fileID: 1484751328}
   - component: {fileID: 1484751327}
   - component: {fileID: 1484751326}
-  - component: {fileID: 1484751325}
   - component: {fileID: 1484751330}
   - component: {fileID: 1484751331}
+  - component: {fileID: 1484751325}
+  - component: {fileID: 1484751332}
   m_Layer: 6
   m_Name: USBTestObject
   m_TagString: Untagged
@@ -3253,8 +3253,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1484751325
-MeshCollider:
+--- !u!65 &1484751325
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3263,10 +3263,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 650751965}
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.05, z: 0.25}
+  m_Center: {x: 0.05, y: 0.025, z: -0.125}
 --- !u!33 &1484751326
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -3539,7 +3538,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484751324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.39169, y: 2.415, z: -8.742036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3580,6 +3579,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1484751332
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484751324}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 904758ed5eba7dd459391f291f6c9f14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1614283166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,7 +3791,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34180
+  m_Name: pb_Mesh70762
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3937,7 +3955,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34196
+  m_Name: pb_Mesh70778
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

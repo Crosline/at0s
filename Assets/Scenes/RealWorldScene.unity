@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,8 @@ GameObject:
   - component: {fileID: 329440130}
   - component: {fileID: 329440129}
   - component: {fileID: 329440133}
-  m_Layer: 0
+  - component: {fileID: 329440134}
+  m_Layer: 6
   m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,6 +236,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41d13ab01dfc154d82766c07baeb713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &329440134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329440128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineWidth: 7.65
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &384728850
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +594,7 @@ GameObject:
   - component: {fileID: 827127487}
   - component: {fileID: 827127486}
   - component: {fileID: 827127485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +689,7 @@ GameObject:
   - component: {fileID: 948299329}
   - component: {fileID: 948299328}
   - component: {fileID: 948299327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +877,7 @@ GameObject:
   - component: {fileID: 1366611559}
   - component: {fileID: 1366611558}
   - component: {fileID: 1366611557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,9 +1003,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f575fdbe8fa48489bb1ee4d0b8575d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crosshair: {fileID: 1766213922}
-  originalCrosshair: {fileID: 21300000, guid: 28dfb7f6b47f4724db2cbf517ab00d89, type: 3}
-  handCrosshair: {fileID: 21300000, guid: 4da412abc5362494dbe4de54e12b9337, type: 3}
+  m_InteractTag: InteractObject
+  layerMaskInteract:
+    serializedVersion: 2
+    m_Bits: 64
+  playerCam: {fileID: 1964657701}
+  rayLength: 5
+  crosshairImage: {fileID: 1766213922}
+  crosshairs:
+  - {fileID: 21300000, guid: 28dfb7f6b47f4724db2cbf517ab00d89, type: 3}
+  - {fileID: 21300000, guid: 4da412abc5362494dbe4de54e12b9337, type: 3}
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1614283166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1213,7 @@ GameObject:
   - component: {fileID: 1943511352}
   - component: {fileID: 1943511351}
   - component: {fileID: 1943511350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

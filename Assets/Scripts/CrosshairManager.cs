@@ -12,6 +12,7 @@ public class CrosshairManager : MonoBehaviour {
 
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
+    [SerializeField] private LayerMask layerMaskHolding;
 
     [Header("Settings")]
     [SerializeField] private Camera playerCam;
@@ -83,7 +84,7 @@ public class CrosshairManager : MonoBehaviour {
         usb.GetComponent<Rigidbody>().isKinematic = true;
         //usb.transform.localPosition = Vector3.zero;
         usb.transform.SetParent(hand);
-        usb.gameObject.layer = 0;
+        usb.gameObject.layer = 7; //7 is holding
     }
 
     public void DeInteract(GameObject obj)

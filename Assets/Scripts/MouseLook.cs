@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour {
 
     [Header("Settings")]
-    public bool lockCursor;
+    public bool lockCursor = true;
     public float mouseSensitivity = 10f;
 
     public Transform playerBody;

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CrosshairManager : MonoBehaviour {
 
     public string m_InteractTag = "InteractObject";
+    public GameObject player;
+    private GameObject holder;
 
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
@@ -27,6 +29,9 @@ public class CrosshairManager : MonoBehaviour {
     [SerializeField]
     private Color outlineColor = new Color(0, 0, 0, 1);
 
+    [SerializeField]
+    private Transform hand;
+
     private Outline outline;
 
     void Start() {
@@ -46,9 +51,21 @@ public class CrosshairManager : MonoBehaviour {
 
         }
 
-        if (Input.GetButton("Interact") && newer != null) {
+        if (Input.GetButtonUp("Interact") && holder != null)
+        {
+            DeInteract(holder);
+        }
+
+        if (Input.GetButton("Interact") && newer != null && holder == null) {
+            InteractWithUSB(newer.transform);
             Debug.Log(newer.name);
         }
+
+        if(Input.GetButton("Interact") && holder != null)
+        {
+            InteractWithUSB(holder.transform);
+        }
+        
 
 
         if (old == newer && outline != null) {
@@ -58,8 +75,24 @@ public class CrosshairManager : MonoBehaviour {
         }
 
         old = newer;
+    }
 
+    public void InteractWithUSB(Transform usb)
+    {
+        holder = usb.gameObject;
+        usb.GetComponent<Rigidbody>().isKinematic = true;
+        //usb.transform.localPosition = Vector3.zero;
+        usb.transform.SetParent(hand);
+        usb.gameObject.layer = 0;
+    }
 
+    public void DeInteract(GameObject obj)
+    {
+        Debug.Log("deinteracted");
+        obj.GetComponent<Rigidbody>().isKinematic = false;
+        obj.transform.SetParent(null);
+        holder = null;
+        obj.layer = 6; //6 is interactable
     }
 
 }

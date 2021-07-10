@@ -29,7 +29,6 @@ public class PlayerMovement2D : MonoBehaviour {
     void Update() {
 
         horizontalMove = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontalMove);
 
         /* if (Mathf.Abs(horizontalMove) > 0.12f) {
              frictionCollider.sharedMaterial = frictionOff;
@@ -39,6 +38,14 @@ public class PlayerMovement2D : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump")) {
             jump = true;
+        }
+
+        if (Input.GetButtonDown("Crouch")) {
+            crouch = true;
+        }
+
+        if (Input.GetButtonUp("Crouch")) {
+            crouch = false;
         }
 
 
@@ -62,6 +69,16 @@ public class PlayerMovement2D : MonoBehaviour {
            // StartCoroutine(Die());
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.collider.CompareTag("Application")) {
+            if (collision.collider.transform.position.y < transform.position.y) {
+                if (collision.collider.gameObject.TryGetComponent<CameraShake>(out CameraShake shake)) {
+                    StartCoroutine(shake.Shake());
+                }
+            }
+        }
     }
 
 

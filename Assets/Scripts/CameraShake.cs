@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
 
-	public Transform camTransform;
 
 	public float shakeDuration = 1f;
 	public float shake;
@@ -11,22 +10,36 @@ public class CameraShake : MonoBehaviour {
 	public float shakeAmount = 0.7f;
 	public float decreaseFactor = 1.0f;
 
+	private Vector3 startPos;
+
+	private bool isShaking = false;
+
+	public bool runOnlyOne = false;
+
 	void Awake() {
+		startPos = transform.position;
 		shake = shakeDuration;
-		if (camTransform == null)
-			camTransform = GetComponent<Transform>();
 	}
 	
-	public void ShakeCam(float shakeDuration = 1f, float shakeAmount = 0.7f, float decreaseFactor = 1.0f){
+	public void ShakeCam(float shakeDuration = 1f, float shakeAmount = 0.7f, float decreaseFactor = 1.0f) {
+		this.shakeDuration = shakeDuration;
+		this.shakeAmount = shakeAmount;
+		this.decreaseFactor = decreaseFactor;
 		StartCoroutine(Shake());
 	}
 
 
 	public IEnumerator Shake() {
+
+		if (isShaking)
+			yield break;
+
+		isShaking = true;
+
 		while (true) {
 			if (shake > 0) {
-				camTransform.localPosition = camTransform.localPosition + Random.insideUnitSphere * shakeAmount;
-
+				transform.position = startPos + Random.insideUnitSphere * shakeAmount;
+				transform.position = new Vector3(transform.position.x, transform.position.y, startPos.z);
 				shake -= Time.deltaTime * decreaseFactor;
 			} else {
 				shake = shakeDuration;
@@ -35,5 +48,10 @@ public class CameraShake : MonoBehaviour {
 			yield return new WaitForFixedUpdate();
 		}
 
+		if (runOnlyOne) {
+			this.enabled = false;
+		}
+		yield return new WaitForSeconds(1f);
+		isShaking = false;
 	}
 }

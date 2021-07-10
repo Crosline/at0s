@@ -3,14 +3,23 @@ using UnityEngine.Events;
 
 #pragma warning disable 0649
 public class CharacterController2D : MonoBehaviour {
+	[Header("Movement Settings")]
+	[SerializeField] private float runSpeed = 40f;
 	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
-	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
+
+	[Header("Configuration")]
 	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
 
+	[Header("Utilities")]
+
+	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
+	public bool canMove = true;
+
 	[SerializeField] private float jumpCooldown = 0.1f;
+
 	private float jumpCD = 0f;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -19,7 +28,6 @@ public class CharacterController2D : MonoBehaviour {
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	public bool canMove = true;
 
 	[Header("Events")]
 	[Space]
@@ -43,6 +51,10 @@ public class CharacterController2D : MonoBehaviour {
 	}
 	private void Start() {
 		jumpCD = jumpCooldown;
+
+		if (animator == null) {
+			animator = GetComponent<Animator>();
+		}
 	}
 
 	private void FixedUpdate() {
@@ -67,6 +79,7 @@ public class CharacterController2D : MonoBehaviour {
 		if (!canMove)
 			return;
 
+		move *= runSpeed;
 
 		animator.SetBool("crouch", m_wasCrouching);
 		animator.SetBool("jump", jump);

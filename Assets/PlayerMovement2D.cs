@@ -11,14 +11,16 @@ public class PlayerMovement2D : MonoBehaviour {
     [SerializeField] private PhysicsMaterial2D frictionOn;
     [SerializeField] private PhysicsMaterial2D frictionOff;*/
 
-    public float runSpeed = 40f;
-
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
 
     // Start is called before the first frame update
     void Start() {
+        if(controller == null) {
+            controller = GetComponent<CharacterController2D>();
+        }
+
         controller.Move(0, true, false);
         controller.Move(0, false, false);
     }
@@ -26,7 +28,7 @@ public class PlayerMovement2D : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal");
         Debug.Log(horizontalMove);
 
         /* if (Mathf.Abs(horizontalMove) > 0.12f) {

@@ -36,6 +36,8 @@ public class CrosshairManager : MonoBehaviour {
     [Header("PC Screen References and Settings")]
     [SerializeField] private GameObject OSScreen;
     [SerializeField] private GameObject playerChar;
+    [SerializeField] private Transform chair;
+    private Vector3 chairPos;
     //Every time usb sticks to pc, playerChar teleport to the playerInitialPos
     public Vector3 playerInitialPos;
     [SerializeField] private Animator drawer;
@@ -55,6 +57,7 @@ public class CrosshairManager : MonoBehaviour {
 
     void Start() {
         camTransform = playerCam.transform;
+        chairPos = chair.position;
     }
     void Update() {
 
@@ -198,7 +201,7 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     IEnumerator Sit() {
-        Vector3 chairPos = new Vector3(12f, 2, -4);
+        chairPos = new Vector3(chairPos.x, 2, chairPos.z);
         while (true) {
             player.transform.position = Vector3.MoveTowards(player.transform.position, chairPos, 4f * Time.deltaTime);
             if (player.transform.position == chairPos) {
@@ -264,7 +267,7 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     IEnumerator Standing() {
-        Vector3 standPos = new Vector3(11.5f, 2, -2.75f);
+        Vector3 standPos = new Vector3(chairPos.x - 0.5f, 2, chairPos.z +1.75f);
         while (true) {
             player.transform.position = Vector3.MoveTowards(player.transform.position, standPos, 4f * Time.deltaTime);
             if (player.transform.position == standPos) {

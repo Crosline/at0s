@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3850,13 +3850,18 @@ MonoBehaviour:
   layerMaskHolding:
     serializedVersion: 2
     m_Bits: 128
+  layerMaskComputerScreen:
+    serializedVersion: 2
+    m_Bits: 64
   playerCam: {fileID: 1964657701}
   rayLength: 5
   crosshairImage: {fileID: 1766213922}
-  pcCrosshairImage: {fileID: 0}
   crosshairs:
   - {fileID: 21300000, guid: 28dfb7f6b47f4724db2cbf517ab00d89, type: 3}
   - {fileID: 21300000, guid: 4da412abc5362494dbe4de54e12b9337, type: 3}
+  inPcCrosshairs:
+  - {fileID: 2800000, guid: cddf1e9f228f4634793fe8dadc7fdae6, type: 3}
+  - {fileID: 2800000, guid: 1a488240a4faa884d8c5864b7ddbded4, type: 3}
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   hand: {fileID: 240841196}
 --- !u!1 &1484751324

@@ -10,6 +10,8 @@ public class FolderController : MonoBehaviour {
 
     public Vector3 posOffset;
 
+    public Sprite closedFolder;
+
     private bool isOnTop = true;
 
     private bool canRender = true;
@@ -55,6 +57,7 @@ public class FolderController : MonoBehaviour {
                 if (player.TryGetComponent<Animator>(out Animator anim)) {
                     player.GetComponent<CharacterController2D>().canMove = false;
                     player.GetComponent<BoxCollider2D>().enabled = false;
+                    collider2D.enabled = false;
                     player.GetComponent<Rigidbody2D>().isKinematic = true;
                     player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                     anim.SetBool("EnterFolder", true);
@@ -68,6 +71,7 @@ public class FolderController : MonoBehaviour {
 
     IEnumerator EnterFolder() {
         player.position = transform.position + posOffset;
+        player.GetComponent<Animator>().Play("Slide");
 
         while (player.position.y > transform.position.y - 0.5f) {
 
@@ -81,6 +85,14 @@ public class FolderController : MonoBehaviour {
         }
 
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        if (this.name.Contains("kapak")) {
+            spriteRenderer.sprite = closedFolder;
+            if (transform.parent.gameObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer sr)) {
+                sr.enabled = false;
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

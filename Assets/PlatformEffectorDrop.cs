@@ -8,12 +8,15 @@ public class PlatformEffectorDrop : MonoBehaviour
 
     private PlatformEffector2D effector;
 
+    public CharacterController2D character;
+
     private void Start() {
         effector = GetComponent<PlatformEffector2D>();
     }
 
     void Update()
     {
+        if (!character.canMove) return;
         if (Input.GetButtonDown("Jump")) {
             effector.rotationalOffset = 0;
         }

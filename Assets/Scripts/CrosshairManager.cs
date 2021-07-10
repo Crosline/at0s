@@ -38,8 +38,9 @@ public class CrosshairManager : MonoBehaviour {
     [SerializeField] private GameObject playerChar;
     //Every time usb sticks to pc, playerChar teleport to the playerInitialPos
     public Vector3 playerInitialPos;
+    [SerializeField] private Animator drawer;
+    private bool drawerOpen = false;
 
-    
     [SerializeField]
     private Color outlineColor = new Color(0, 0, 0, 1);
 
@@ -92,6 +93,7 @@ public class CrosshairManager : MonoBehaviour {
         if (Input.GetButtonDown("Interact") && newer != null && holder == null) {
             if(newer.name.Contains("USB")) InteractWithUSB(newer.transform);
             if (newer.name.Contains("Chair")) SitChair();
+            if (newer.name.Contains("Drawer") || newer.name.Contains("Handler")) OpenDrawer();
             if (newer.name.Contains("PC") && sitting) EnterPC();
             Debug.Log(newer.name);
         }
@@ -277,6 +279,24 @@ public class CrosshairManager : MonoBehaviour {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true;
         sitting = false;
+    }
+
+    void OpenDrawer()
+    {
+        if (drawerOpen)
+        {
+            CloserDrawer(); 
+            return;
+        }
+        drawerOpen = true;
+        drawer.enabled = true;
+        drawer.Play("open", -1, 0f);
+    }
+
+    void CloserDrawer()
+    {
+        drawer.Play("close", -1, 0f);
+        drawerOpen = false;
     }
 
 }

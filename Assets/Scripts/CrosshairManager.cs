@@ -32,6 +32,14 @@ public class CrosshairManager : MonoBehaviour {
      * 1 for interact crosshair
      */
 
+
+    [Header("PC Screen References and Settings")]
+    [SerializeField] private GameObject OSScreen;
+    [SerializeField] private GameObject playerChar;
+    //Every time usb sticks to pc, playerChar teleport to the playerInitialPos
+    public Vector3 playerInitialPos;
+
+
     [SerializeField]
     private Color outlineColor = new Color(0, 0, 0, 1);
 
@@ -136,11 +144,14 @@ public class CrosshairManager : MonoBehaviour {
             inserting.GetComponent<Animator>().enabled = true;
             inserting.GetComponent<Animator>().Play("insert", -1, 0f);
         }
+        playerChar.SetActive(true);
+        playerChar.transform.localPosition = playerInitialPos;
         holder = null;
     }
 
     public void InteractWithUSB(Transform usb)
     {
+        playerChar.SetActive(false);
         holder = usb.gameObject;
         usb.GetComponent<Rigidbody>().isKinematic = true;
         //usb.transform.localPosition = Vector3.zero;
@@ -169,6 +180,12 @@ public class CrosshairManager : MonoBehaviour {
 
     void Stand()
     {
+        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        crosshairImage.enabled = true;
+
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<CharacterController>().enabled = true;
         sitting = false;
@@ -191,8 +208,6 @@ public class CrosshairManager : MonoBehaviour {
 
     void EnterPC()
     {
-
-        //player.SetActive(false);
         StartCoroutine(SettingCamera());
     }
 
@@ -223,6 +238,7 @@ public class CrosshairManager : MonoBehaviour {
             }
             yield return null;
         }
+        OSScreen.SetActive(true);
     }
 
     IEnumerator ExitingPCCamera() {

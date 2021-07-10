@@ -5886,6 +5886,7 @@ GameObject:
   - component: {fileID: 1135399878}
   - component: {fileID: 1135399879}
   - component: {fileID: 1135399873}
+  - component: {fileID: 1135399880}
   m_Layer: 6
   m_Name: PCTestObject
   m_TagString: Untagged
@@ -6219,6 +6220,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1135399880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135399872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1164112c17bfc8642ab76b998fbdab82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: bada6b4cec3cb8e47b66c6a6bbefbf83, type: 2}
 --- !u!43 &1274685678
 Mesh:
   m_ObjectHideFlags: 0

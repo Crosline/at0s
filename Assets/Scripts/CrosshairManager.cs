@@ -75,6 +75,11 @@ public class CrosshairManager : MonoBehaviour {
 
         }
 
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            TestGlitch();
+        }
+
         if (Input.GetKeyDown(KeyCode.Q) && sitting && !isPcOn) {
             Stand();
         }
@@ -285,6 +290,11 @@ public class CrosshairManager : MonoBehaviour {
     void CloserDrawer() {
         drawer.Play("close", -1, 0f);
         drawerOpen = false;
+    }
+
+    void TestGlitch()
+    {
+        GlitchController.Instance.ToggleGlitch();
     }
 
 }

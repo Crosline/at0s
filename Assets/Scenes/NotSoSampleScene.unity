@@ -128,17 +128,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
   m_PrefabInstance: {fileID: 8701799678145733462}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1546669308 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9117027128698615839, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-  m_PrefabInstance: {fileID: 8701799678145733462}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa3b1ac2577d83d4289c157e1973b353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1626882774
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,17 +245,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1656143059 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1957037844014054951, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-  m_PrefabInstance: {fileID: 8701799678145733462}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa3b1ac2577d83d4289c157e1973b353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1951917256
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,26 +318,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1626882777}
     m_Modifications:
-    - target: {fileID: 1957037844014054951, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: at
-      value: 
-      objectReference: {fileID: 1546669308}
-    - target: {fileID: 1957037844014054951, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: isUp
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564110492785038383, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7340558693233182573, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7534417559258096695, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -408,9 +366,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: OS Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 9117027128698615839, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: at
-      value: 
-      objectReference: {fileID: 1656143059}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}

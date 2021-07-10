@@ -10994,7 +10994,7 @@ Transform:
   - {fileID: 1063440299}
   - {fileID: 1975330720}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2085069786
 SpriteRenderer:
@@ -11172,7 +11172,7 @@ Transform:
   m_Children:
   - {fileID: 6104693431028097893}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5367088190603424231
 SpriteRenderer:
@@ -11299,7 +11299,7 @@ Transform:
   m_Children:
   - {fileID: 6657871156235465776}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1845349360101009623
 GameObject:
@@ -11401,7 +11401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2561271658048905075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11417,7 +11417,7 @@ RectTransform:
   - {fileID: 399748088}
   - {fileID: 1197518931}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11516,7 +11516,7 @@ Transform:
   m_Children:
   - {fileID: 3038434486852696032}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1730408852557441600
 BoxCollider2D:
@@ -11676,7 +11676,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3379098918597556867
 SpriteRenderer:
@@ -11973,7 +11973,7 @@ Transform:
   - {fileID: 8956578056801541665}
   - {fileID: 457566151}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5473872620811373811
 GameObject:
@@ -12179,7 +12179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 13
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5564110492785038383
 BoxCollider2D:
@@ -12219,8 +12219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3b1ac2577d83d4289c157e1973b353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBool: 0
+  isUp: 1
   ms: {fileID: 7590646473207090346}
+  at: {fileID: 9117027128698615839}
 --- !u!1 &6591743489768623910
 GameObject:
   m_ObjectHideFlags: 0
@@ -12501,7 +12502,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 14
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7340558693233182573
 BoxCollider2D:
@@ -12516,7 +12517,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.044952393, y: 4.315427}
+  m_Offset: {x: -0.501565, y: 3.987688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12527,7 +12528,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.711231, y: 1.5394316}
+  m_Size: {x: 23.526426, y: 0.8839531}
   m_EdgeRadius: 0
 --- !u!114 &9117027128698615839
 MonoBehaviour:
@@ -12541,8 +12542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3b1ac2577d83d4289c157e1973b353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBool: 1
+  isUp: 0
   ms: {fileID: 7590646473207090346}
+  at: {fileID: 1957037844014054951}
 --- !u!1 &7705531610698448873
 GameObject:
   m_ObjectHideFlags: 0
@@ -12825,7 +12827,7 @@ Transform:
   m_Children:
   - {fileID: 2730816407455306494}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2609955332728011558
 SpriteRenderer:
@@ -12955,7 +12957,7 @@ Transform:
   m_Children:
   - {fileID: 2985407635056541795}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &821725007532096680
 SpriteRenderer:
@@ -13091,7 +13093,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8701799678288979484
 SpriteRenderer:
@@ -13374,7 +13376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8701799678810140048
 Transform:
   m_ObjectHideFlags: 0
@@ -13388,6 +13390,8 @@ Transform:
   m_Children:
   - {fileID: 8701799679727430499}
   - {fileID: 8701799680114897058}
+  - {fileID: 3833657437439362149}
+  - {fileID: 4161651700258074164}
   - {fileID: 8701799679618241588}
   - {fileID: 9094125121192742475}
   - {fileID: 1656418584482927319}
@@ -13395,12 +13399,10 @@ Transform:
   - {fileID: 8660806700733346805}
   - {fileID: 2085069782}
   - {fileID: 8701799678288979473}
+  - {fileID: 8077735503945390264}
   - {fileID: 8260288509242238620}
   - {fileID: 4759770024764549323}
   - {fileID: 2561271658048905075}
-  - {fileID: 8077735503945390264}
-  - {fileID: 3833657437439362149}
-  - {fileID: 4161651700258074164}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13435,6 +13437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80afd9aadcde9e4eba76acdeb728993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenSize: 13
   moveSpeed: 13
 --- !u!1 &8701799679618241545
 GameObject:
@@ -13468,7 +13471,7 @@ Transform:
   m_Children:
   - {fileID: 1193226776}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8701799679618241591
 SpriteRenderer:
@@ -13587,7 +13590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8701799679727430499
 Transform:
   m_ObjectHideFlags: 0

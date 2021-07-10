@@ -17,7 +17,7 @@ public class CameraShake : MonoBehaviour {
 			camTransform = GetComponent<Transform>();
 	}
 	
-	public void ShakeCam(float shakeDuration = this.shakeDuration, float shakeAmount = this.shakeAmount, float decreaseFactor = this.decreaseFactor){
+	public void ShakeCam(float shakeDuration = 1f, float shakeAmount = 0.7f, float decreaseFactor = 1.0f){
 		StartCoroutine(Shake());
 	}
 

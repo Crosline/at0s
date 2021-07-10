@@ -129,7 +129,7 @@ public class CharacterController2D : MonoBehaviour {
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Clamp(m_Rigidbody2D.velocity.y, -50f, 5f));
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Clamp(m_Rigidbody2D.velocity.y, -50f, 3f));
 		} else if (jumpCD > 0) {
 			jumpCD -= Time.deltaTime;
 		}

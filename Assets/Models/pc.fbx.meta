@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 3b5a72df03b4a1841bdb4bc7d7eac5e7
+guid: f492549cde9174a4e8e8fff1c50ff5c9
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaseMaterial
+    second: {fileID: 2100000, guid: 5c1a2cc9a79ac424393c3f003c47083f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -24,6 +29,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: ComputerScreen
     second: {fileID: 2100000, guid: 317e975c5315ea04288413bd26b9f834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KeyboardMaterial
+    second: {fileID: 2100000, guid: fdf0091bf2cf6f64d9680513110fc2f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MouseMaterial
+    second: {fileID: 2100000, guid: 1d3e7a420eb7ff34e8e6c7951f4d5d12, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

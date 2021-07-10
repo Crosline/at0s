@@ -128,6 +128,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
   m_PrefabInstance: {fileID: 8701799678145733462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165701942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+  m_PrefabInstance: {fileID: 8701799678145733462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1165701943
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165701942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1626882774
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +206,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.41
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -258,15 +282,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.57233495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4704734
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1232052
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_LocalRotation.w
@@ -299,6 +323,14 @@ PrefabInstance:
     - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_Name
       value: OS Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701799679727430497, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_JumpForce
+      value: 340
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701799679727430501, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}

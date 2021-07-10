@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701799678471091526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.825, y: -1.97, z: 8.876795}
+  m_LocalPosition: {x: -7.825, y: -1.74, z: 8.876795}
   m_LocalScale: {x: 1.510373, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
@@ -684,6 +684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8701799678810140048}
+  - component: {fileID: 1165701943}
   m_Layer: 0
   m_Name: OS Screen
   m_TagString: Untagged
@@ -702,9 +703,9 @@ Transform:
   m_LocalPosition: {x: 0.57233495, y: 0.4704734, z: 1.1232052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8701799679618241588}
   - {fileID: 8701799679727430499}
   - {fileID: 8701799680114897058}
+  - {fileID: 8701799679618241588}
   - {fileID: 8701799678471091527}
   - {fileID: 8701799679129196247}
   - {fileID: 8701799678831050945}
@@ -716,6 +717,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1165701943
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701799678810140051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8701799678831050944
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701799678831050944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.825, y: 2.03, z: 8.876795}
+  m_LocalPosition: {x: -7.825, y: 2.44, z: 8.876795}
   m_LocalScale: {x: 1.510373, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
@@ -872,7 +892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701799679129196246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.825, y: 0.029999971, z: 8.876795}
+  m_LocalPosition: {x: -7.825, y: 0.41, z: 8.876795}
   m_LocalScale: {x: 1.510373, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
@@ -1001,11 +1021,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701799679618241545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.825, y: -3.97, z: 8.876795}
+  m_LocalPosition: {x: -7.825, y: -3.82, z: 8.876795}
   m_LocalScale: {x: 1.510373, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8701799679618241591
 SpriteRenderer:
@@ -1267,7 +1287,7 @@ Transform:
   m_Children:
   - {fileID: 1992683335}
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8701799679727430498
 SpriteRenderer:
@@ -1340,7 +1360,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8701799679727430500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1379,16 +1399,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5512a246ab851c499dac35a2ef2ed8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  runSpeed: 40
+  m_JumpForce: 340
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
-  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1
   m_GroundCheck: {fileID: 1992683335}
-  jumpCooldown: 0.1
+  m_AirControl: 1
   canMove: 1
+  jumpCooldown: 0.1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1409,7 +1430,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8701799679727430497}
-  runSpeed: 40
 --- !u!95 &652777590
 Animator:
   serializedVersion: 3
@@ -1459,7 +1479,7 @@ Transform:
   m_LocalScale: {x: 19.954485, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701799678810140048}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8701799680114897056
 SpriteRenderer:

@@ -50,6 +50,11 @@ public class CameraShake : MonoBehaviour {
 
 		if (runOnlyOne) {
 			this.enabled = false;
+
+
+			if (TryGetComponent<Animator>(out Animator animator)) {
+				animator.enabled = true;
+			}
 		}
 		yield return new WaitForSeconds(1f);
 		isShaking = false;

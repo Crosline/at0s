@@ -39,7 +39,7 @@ public class CrosshairManager : MonoBehaviour {
     //Every time usb sticks to pc, playerChar teleport to the playerInitialPos
     public Vector3 playerInitialPos;
 
-
+    
     [SerializeField]
     private Color outlineColor = new Color(0, 0, 0, 1);
 
@@ -50,6 +50,7 @@ public class CrosshairManager : MonoBehaviour {
 
     private bool isPcOn = false;
     private bool isCursor = false;
+    private bool isStandable = false;
 
     void Start() {
         camTransform = playerCam.transform;
@@ -68,7 +69,7 @@ public class CrosshairManager : MonoBehaviour {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && sitting)
+        if (Input.GetKeyDown(KeyCode.Q) && sitting && !isPcOn)
         {
             Stand();
         }
@@ -180,15 +181,13 @@ public class CrosshairManager : MonoBehaviour {
 
     void Stand()
     {
+        playerChar.GetComponent<PlayerMovement2D>().enabled = false;
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         crosshairImage.enabled = true;
-
-        player.GetComponent<PlayerMovement>().enabled = true;
-        player.GetComponent<CharacterController>().enabled = true;
-        sitting = false;
+        StartCoroutine(Standing());
     }
 
     IEnumerator Sit()
@@ -239,9 +238,11 @@ public class CrosshairManager : MonoBehaviour {
             yield return null;
         }
         OSScreen.SetActive(true);
+        playerChar.GetComponent<PlayerMovement2D>().enabled = true;
     }
 
     IEnumerator ExitingPCCamera() {
+        playerChar.GetComponent<PlayerMovement2D>().enabled = false;
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one/2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -259,6 +260,23 @@ public class CrosshairManager : MonoBehaviour {
             }
             yield return null;
         }
+    }
+
+    IEnumerator Standing()
+    {
+        Vector3 standPos = new Vector3(11.5f, 2, -2.75f);
+        while (true)
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, standPos, 4f * Time.deltaTime);
+            if (player.transform.position == standPos)
+            {
+                break;
+            }
+            yield return null;
+        }
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true;
+        sitting = false;
     }
 
 }

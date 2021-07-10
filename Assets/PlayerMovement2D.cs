@@ -45,7 +45,14 @@ public class PlayerMovement2D : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+
+        if (transform.localPosition.x > 10.5f) {
+            transform.localPosition = new Vector3(-10f, transform.localPosition.y, transform.localPosition.z);
+        } else if (transform.localPosition.x < -10.5f) {
+            transform.localPosition = new Vector3(10f, transform.localPosition.y, transform.localPosition.z);
+        }
+
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
 

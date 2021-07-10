@@ -16,6 +16,7 @@ public class CrosshairManager : MonoBehaviour {
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private LayerMask layerMaskHolding;
+    [SerializeField] private LayerMask layerMaskComputerScreen;
 
     [Header("Settings")]
     [SerializeField] private Camera playerCam;
@@ -25,6 +26,7 @@ public class CrosshairManager : MonoBehaviour {
     [Header("Crosshair Reference")]
     [SerializeField] private Image crosshairImage;
     [SerializeField] private Sprite[] crosshairs;
+    [SerializeField] private Texture2D[] inPcCrosshairs;
     /*
      * 0 for normal
      * 1 for interact crosshair
@@ -37,6 +39,9 @@ public class CrosshairManager : MonoBehaviour {
     private Transform hand;
 
     private Outline outline;
+
+    private bool isPcOn = false;
+    private bool isCursor = false;
 
     void Start() {
         camTransform = playerCam.transform;
@@ -96,6 +101,26 @@ public class CrosshairManager : MonoBehaviour {
         }
 
         old = newer;
+
+
+
+        if (isPcOn) {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, rayLength, layerMaskComputerScreen)) {
+                if (!isCursor) {
+                    Cursor.SetCursor(inPcCrosshairs[1], Vector2.zero, CursorMode.Auto);
+                    isCursor = true;
+                }
+            } else {
+                if (isCursor) {
+                    Cursor.SetCursor(inPcCrosshairs[0], Vector2.one * 16, CursorMode.Auto);
+                    isCursor = false;
+                }
+            }
+
+        }
+
     }
 
     void MergeObjects(GameObject inserting, GameObject receiving)
@@ -177,6 +202,15 @@ public class CrosshairManager : MonoBehaviour {
 
     IEnumerator SettingCamera()
     {
+        Cursor.SetCursor(inPcCrosshairs[1], Vector2.zero, CursorMode.Auto);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+
+        crosshairImage.enabled = false;
+
+
+        isPcOn = true;
         camTransform.localEulerAngles = new Vector3(10, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
         playerCam.GetComponent<MouseLook>().enabled = false;
@@ -191,8 +225,14 @@ public class CrosshairManager : MonoBehaviour {
         }
     }
 
-    IEnumerator ExitingPCCamera()
-    {
+    IEnumerator ExitingPCCamera() {
+        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one/2f, CursorMode.Auto);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        crosshairImage.enabled = true;
+
+        isPcOn = false;
         playerCam.GetComponent<MouseLook>().enabled = true;
         while (true)
         {

@@ -11,7 +11,7 @@ public class Language : MonoBehaviour {
     [SerializeField] private TMP_Text text;
     void Awake() {
         text = GetComponent<TMP_Text>();
-        UpdateLanguage(GameSettings.Instance.language);
+        //UpdateLanguage(GameSettings.Instance.language);
     }
 
     // Update is called once per frame

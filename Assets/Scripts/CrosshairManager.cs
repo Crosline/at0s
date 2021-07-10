@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +16,7 @@ public class CrosshairManager : MonoBehaviour {
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private LayerMask layerMaskHolding;
     [SerializeField] private LayerMask layerMaskComputerScreen;
+    [SerializeField] private LayerMask layerMaskExclude;
 
     [Header("Settings")]
     [SerializeField] private Camera playerCam;
@@ -62,44 +62,44 @@ public class CrosshairManager : MonoBehaviour {
         GameObject newer = null;
 
         RaycastHit hit;
-        if (Physics.Raycast(camTransform.position, camTransform.TransformDirection(Vector3.forward), out hit, rayLength, layerMaskInteract)) {
-            newer = hit.collider.gameObject;
-            crosshairImage.sprite = crosshairs[1];
-            outline = newer.GetComponent<Outline>();
-            outline.OutlineColor = outlineColor;
+
+        //int mask = 1 << layerMaskExclude | layerMaskInteract.value;
+
+        if (Physics.Raycast(camTransform.position, camTransform.TransformDirection(Vector3.forward), out hit, rayLength, layerMaskExclude)) {
+            if (layerMaskInteract == (layerMaskInteract | 1 << hit.collider.gameObject.layer)) {
+                newer = hit.collider.gameObject;
+                crosshairImage.sprite = crosshairs[1];
+                outline = newer.GetComponent<Outline>();
+                outline.OutlineColor = outlineColor;
+            }
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && sitting && !isPcOn)
-        {
+        if (Input.GetKeyDown(KeyCode.Q) && sitting && !isPcOn) {
             Stand();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && sitting)
-        {
+        if (Input.GetKeyDown(KeyCode.Q) && sitting) {
             ExitPC();
         }
 
-        if (Input.GetButtonUp("Interact") && holder != null && newer == null)
-        {
+        if (Input.GetButtonUp("Interact") && holder != null && newer == null) {
             DeInteract(holder);
         }
 
-        if (Input.GetButtonUp("Interact") && holder != null && newer != null)
-        {
+        if (Input.GetButtonUp("Interact") && holder != null && newer != null) {
             MergeObjects(holder, newer);
         }
 
         if (Input.GetButtonDown("Interact") && newer != null && holder == null) {
-            if(newer.name.Contains("USB")) InteractWithUSB(newer.transform);
+            if (newer.name.Contains("USB")) InteractWithUSB(newer.transform);
             if (newer.name.Contains("Chair")) SitChair();
             if (newer.name.Contains("Drawer") || newer.name.Contains("Handler")) OpenDrawer();
             if (newer.name.Contains("PC") && sitting) EnterPC();
             Debug.Log(newer.name);
         }
 
-        if(Input.GetButton("Interact") && holder != null)
-        {
+        if (Input.GetButton("Interact") && holder != null) {
 
             InteractWithUSB(holder.transform);
         }
@@ -135,12 +135,10 @@ public class CrosshairManager : MonoBehaviour {
 
     }
 
-    void MergeObjects(GameObject inserting, GameObject receiving)
-    {
+    void MergeObjects(GameObject inserting, GameObject receiving) {
         inserting.transform.SetParent(null);
         inserting.layer = 6; //6 is interactable
-        if(inserting.name.Contains("USB") && receiving.name.Contains("PC"))
-        {
+        if (inserting.name.Contains("USB") && receiving.name.Contains("PC")) {
             inserting.transform.SetParent(receiving.transform);
             inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
             inserting.transform.localEulerAngles = Vector3.zero;
@@ -152,8 +150,7 @@ public class CrosshairManager : MonoBehaviour {
         holder = null;
     }
 
-    public void InteractWithUSB(Transform usb)
-    {
+    public void InteractWithUSB(Transform usb) {
         playerChar.SetActive(false);
         holder = usb.gameObject;
         usb.GetComponent<Rigidbody>().isKinematic = true;
@@ -163,26 +160,23 @@ public class CrosshairManager : MonoBehaviour {
         usb.GetComponent<BoxCollider>().isTrigger = true;
     }
 
-    public void DeInteract(GameObject obj)
-    {
+    public void DeInteract(GameObject obj) {
         Debug.Log("deinteracted");
         obj.GetComponent<Rigidbody>().isKinematic = false;
-        if(obj.GetComponent<Animator>()) obj.GetComponent<Animator>().enabled = false;
+        if (obj.GetComponent<Animator>()) obj.GetComponent<Animator>().enabled = false;
         obj.transform.SetParent(null);
         holder = null;
         obj.layer = 6; //6 is interactable
         obj.GetComponent<BoxCollider>().isTrigger = false;
     }
 
-    void SitChair()
-    {
+    void SitChair() {
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
         StartCoroutine(Sit());
     }
 
-    void Stand()
-    {
+    void Stand() {
         playerChar.GetComponent<PlayerMovement2D>().enabled = false;
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
@@ -192,14 +186,11 @@ public class CrosshairManager : MonoBehaviour {
         StartCoroutine(Standing());
     }
 
-    IEnumerator Sit()
-    {
+    IEnumerator Sit() {
         Vector3 chairPos = new Vector3(12f, 2, -4);
-        while (true)
-        {
+        while (true) {
             player.transform.position = Vector3.MoveTowards(player.transform.position, chairPos, 4f * Time.deltaTime);
-            if(player.transform.position == chairPos)
-            {
+            if (player.transform.position == chairPos) {
                 break;
             }
             yield return null;
@@ -207,13 +198,11 @@ public class CrosshairManager : MonoBehaviour {
         sitting = true;
     }
 
-    void EnterPC()
-    {
+    void EnterPC() {
         StartCoroutine(SettingCamera());
     }
 
-    void ExitPC()
-    {
+    void ExitPC() {
         StartCoroutine(ExitingPCCamera());
     }
 
@@ -230,11 +219,9 @@ public class CrosshairManager : MonoBehaviour {
         camTransform.localEulerAngles = new Vector3(10, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
         playerCam.GetComponent<MouseLook>().enabled = false;
-        while (true)
-        {
+        while (true) {
             camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 30f, 40f * Time.deltaTime);
-            if (camTransform.GetComponent<Camera>().fieldOfView == 30f)
-            {
+            if (camTransform.GetComponent<Camera>().fieldOfView == 30f) {
                 break;
             }
             yield return null;
@@ -245,7 +232,7 @@ public class CrosshairManager : MonoBehaviour {
 
     IEnumerator ExitingPCCamera() {
         playerChar.GetComponent<PlayerMovement2D>().enabled = false;
-        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one/2f, CursorMode.Auto);
+        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -253,25 +240,20 @@ public class CrosshairManager : MonoBehaviour {
 
         isPcOn = false;
         playerCam.GetComponent<MouseLook>().enabled = true;
-        while (true)
-        {
+        while (true) {
             camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
-            if (camTransform.GetComponent<Camera>().fieldOfView == 60f)
-            {
+            if (camTransform.GetComponent<Camera>().fieldOfView == 60f) {
                 break;
             }
             yield return null;
         }
     }
 
-    IEnumerator Standing()
-    {
+    IEnumerator Standing() {
         Vector3 standPos = new Vector3(11.5f, 2, -2.75f);
-        while (true)
-        {
+        while (true) {
             player.transform.position = Vector3.MoveTowards(player.transform.position, standPos, 4f * Time.deltaTime);
-            if (player.transform.position == standPos)
-            {
+            if (player.transform.position == standPos) {
                 break;
             }
             yield return null;
@@ -281,11 +263,9 @@ public class CrosshairManager : MonoBehaviour {
         sitting = false;
     }
 
-    void OpenDrawer()
-    {
-        if (drawerOpen)
-        {
-            CloserDrawer(); 
+    void OpenDrawer() {
+        if (drawerOpen) {
+            CloserDrawer();
             return;
         }
         drawerOpen = true;
@@ -293,8 +273,7 @@ public class CrosshairManager : MonoBehaviour {
         drawer.Play("open", -1, 0f);
     }
 
-    void CloserDrawer()
-    {
+    void CloserDrawer() {
         drawer.Play("close", -1, 0f);
         drawerOpen = false;
     }

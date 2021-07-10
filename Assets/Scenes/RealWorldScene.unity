@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 0}
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
   outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
@@ -1082,7 +1082,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1899082691}
 --- !u!33 &156937296
@@ -2571,7 +2571,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39632
+  m_Name: pb_Mesh41640
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5026,8 +5026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 0}
-  outlineWidth: 2
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -5169,7 +5169,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39656
+  m_Name: pb_Mesh41664
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5433,7 +5433,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39694
+  m_Name: pb_Mesh41702
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6199,8 +6199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 0}
-  outlineWidth: 2
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -6226,7 +6226,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-53674
+  m_Name: pb_Mesh41554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6711,8 +6711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 0}
-  outlineWidth: 2
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -6738,7 +6738,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39616
+  m_Name: pb_Mesh41622
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6950,6 +6950,9 @@ MonoBehaviour:
   layerMaskComputerScreen:
     serializedVersion: 2
     m_Bits: 64
+  layerMaskExclude:
+    serializedVersion: 2
+    m_Bits: 65
   playerCam: {fileID: 1964657701}
   rayLength: 5
   crosshairImage: {fileID: 1766213922}
@@ -7274,7 +7277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484751324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.37499988, y: 0.16199994, z: -0.5150361}
+  m_LocalPosition: {x: 0.37499988, y: 0.127, z: -0.5150361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 113626485}
@@ -7293,8 +7296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 0}
-  outlineWidth: 2
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -7584,8 +7587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 0}
-  outlineWidth: 2
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -7874,7 +7877,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39520
+  m_Name: pb_Mesh41492
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8038,7 +8041,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-50570
+  m_Name: pb_Mesh41516
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8202,7 +8205,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39544
+  m_Name: pb_Mesh41536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

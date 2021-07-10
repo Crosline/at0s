@@ -4,6 +4,8 @@
 
     _OutlineColor("Outline Color", Color) = (1, 1, 1, 1)
     _OutlineWidth("Outline Width", Range(0, 10)) = 2
+    _Emission("Emission", float) = 0
+   [HDR] _EmissionColor("Color", Color) = (0,0,0)
   }
 
   SubShader {
@@ -42,11 +44,13 @@
       struct v2f {
         float4 position : SV_POSITION;
         fixed4 color : COLOR;
+        fixed4 emission : EMISSION;
         UNITY_VERTEX_OUTPUT_STEREO
       };
 
       uniform fixed4 _OutlineColor;
       uniform float _OutlineWidth;
+
 
       v2f vert(appdata input) {
         v2f output;
@@ -60,6 +64,7 @@
 
         output.position = UnityViewToClipPos(viewPosition + viewNormal * -viewPosition.z * _OutlineWidth / 1000.0);
         output.color = _OutlineColor;
+        output.emission =_OutlineColor;
 
         return output;
       }

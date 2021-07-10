@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2900,6 +2900,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
   m_PrefabInstance: {fileID: 696214502}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &696214504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701799679727430503, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+  m_PrefabInstance: {fileID: 696214502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &696214505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+  m_PrefabInstance: {fileID: 696214502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1109996821
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,6 +4042,9 @@ MonoBehaviour:
   inPcCrosshairs:
   - {fileID: 2800000, guid: cddf1e9f228f4634793fe8dadc7fdae6, type: 3}
   - {fileID: 2800000, guid: 1a488240a4faa884d8c5864b7ddbded4, type: 3}
+  OSScreen: {fileID: 696214505}
+  playerChar: {fileID: 696214504}
+  playerInitialPos: {x: -0.72, y: -4.69, z: 8.144348}
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   hand: {fileID: 240841196}
 --- !u!1 &1484751324

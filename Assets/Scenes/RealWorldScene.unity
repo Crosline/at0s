@@ -137,6 +137,10 @@ GameObject:
   - component: {fileID: 42635421}
   - component: {fileID: 42635420}
   - component: {fileID: 42635425}
+  - component: {fileID: 42635429}
+  - component: {fileID: 42635428}
+  - component: {fileID: 42635427}
+  - component: {fileID: 42635426}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -448,8 +452,60 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 33.25, y: 0, z: 25.75}
-  m_Center: {x: 2.625, y: 0, z: -2.875}
+  m_Size: {x: 34.2, y: 6.2166147, z: 27.599998}
+  m_Center: {x: 2.625, y: -3.1083074, z: -2.875}
+--- !u!65 &42635426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42635419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.5722885, y: 21.380205, z: 40.823166}
+  m_Center: {x: -17.9, y: 4.5, z: -2.7600002}
+--- !u!65 &42635427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42635419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.5722885, y: 21.380205, z: 40.823166}
+  m_Center: {x: 23.646145, y: 4.5, z: -2.7600002}
+--- !u!65 &42635428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42635419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.6, y: 26.545498, z: 16.174797}
+  m_Center: {x: 2.625, y: 3.9418755, z: -23.807396}
+--- !u!65 &42635429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42635419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.6, y: 19.661673, z: 17.64024}
+  m_Center: {x: 2.625, y: 4.5, z: 19.02012}
 --- !u!850595691 &100223627
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2030,7 +2086,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20408
+  m_Name: pb_Mesh31448
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2356,7 +2412,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20432
+  m_Name: pb_Mesh31472
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2620,7 +2676,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13632
+  m_Name: pb_Mesh31510
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2832,6 +2888,10 @@ PrefabInstance:
     - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_Name
       value: OS Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
@@ -3751,7 +3811,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20392
+  m_Name: pb_Mesh31432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4883,7 +4943,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20314
+  m_Name: pb_Mesh31348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5047,7 +5107,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20330
+  m_Name: pb_Mesh31364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

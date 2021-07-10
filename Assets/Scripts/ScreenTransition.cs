@@ -6,12 +6,15 @@ public class ScreenTransition : MonoBehaviour {
 
     private Image image;
     public bool isFaded = false;
+    public bool startOnAwake = false;
     [SerializeField]
     float transitionSpeed = 10f;
 
     private void Awake() {
         if (image == null)
             image = GetComponent<Image>();
+        if (startOnAwake)
+            StartCoroutine(Fade(isFaded));
     }
 
     public IEnumerator Fade(bool fade) {
@@ -21,7 +24,7 @@ public class ScreenTransition : MonoBehaviour {
                 image.color = new Color(0, 0, 0, i);
                 yield return new WaitForFixedUpdate();
             }
-            image.color = new Color(0,0,0,1);
+            image.color = new Color(0, 0, 0, 1);
         } else {
             for (float i = 100; i < 0; i -= transitionSpeed / 100) {
                 image.color = new Color(0, 0, 0, i);

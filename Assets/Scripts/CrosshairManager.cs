@@ -136,18 +136,24 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     void MergeObjects(GameObject inserting, GameObject receiving) {
-        inserting.transform.SetParent(null);
-        inserting.layer = 6; //6 is interactable
+
         if (inserting.name.Contains("USB") && receiving.name.Contains("PC")) {
+            inserting.transform.SetParent(null);
+            inserting.layer = 6; //6 is interactable
+
             inserting.transform.SetParent(receiving.transform);
             inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
             inserting.transform.localEulerAngles = Vector3.zero;
             inserting.GetComponent<Animator>().enabled = true;
             inserting.GetComponent<Animator>().Play("insert", -1, 0f);
+
+            playerChar.SetActive(true);
+            playerChar.transform.localPosition = playerInitialPos;
+            holder = null;
+        } else {
+            DeInteract(inserting);
         }
-        playerChar.SetActive(true);
-        playerChar.transform.localPosition = playerInitialPos;
-        holder = null;
+
     }
 
     public void InteractWithUSB(Transform usb) {

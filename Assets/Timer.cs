@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour {
 
-    public float timeOffset = 0f;
+    public int timeOffset = 0;
 
     private TextMesh textMesh;
 
@@ -20,12 +20,18 @@ public class Timer : MonoBehaviour {
         while (true) {
 
             UpdateText();
-            yield return new WaitForSecondsRealtime(60f);
+            yield return new WaitForSecondsRealtime(10f);
         }
     }
 
 
     private void UpdateText() {
-        textMesh.text = System.DateTime.Now.ToString("HH:mm");
+        textMesh.text = (System.DateTime.Now.AddHours(timeOffset)).ToString("HH:mm");
+    }
+
+    public void SetTimeOffset(int offset) {
+        timeOffset = offset;
+
+        UpdateText();
     }
 }

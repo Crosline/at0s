@@ -105,9 +105,10 @@ public class CrosshairManager : MonoBehaviour {
 
 
         if (isPcOn) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.Log("pc is on");
 
-            if (Physics.Raycast(ray, out hit, rayLength, layerMaskComputerScreen)) {
+            if (Physics.Raycast(playerCam.ScreenPointToRay(Input.mousePosition), out hit, rayLength, layerMaskComputerScreen)) {
+                Debug.Log(hit.collider.name);
                 if (!isCursor) {
                     Cursor.SetCursor(inPcCrosshairs[1], Vector2.zero, CursorMode.Auto);
                     isCursor = true;
@@ -200,9 +201,8 @@ public class CrosshairManager : MonoBehaviour {
         StartCoroutine(ExitingPCCamera());
     }
 
-    IEnumerator SettingCamera()
-    {
-        Cursor.SetCursor(inPcCrosshairs[1], Vector2.zero, CursorMode.Auto);
+    IEnumerator SettingCamera() {
+        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

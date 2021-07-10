@@ -232,12 +232,12 @@ public class CrosshairManager : MonoBehaviour {
 
         isOnTransition = true;
         isPcOn = true;
-        camTransform.localEulerAngles = new Vector3(10, 0, 0);
+        camTransform.localEulerAngles = new Vector3(0, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
         playerCam.GetComponent<MouseLook>().enabled = false;
         while (true) {
-            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 30f, 40f * Time.deltaTime);
-            if (camTransform.GetComponent<Camera>().fieldOfView == 30f) {
+            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 25f, 40f * Time.deltaTime);
+            if (camTransform.GetComponent<Camera>().fieldOfView == 25f) {
                 break;
             }
             yield return null;

@@ -79,7 +79,7 @@ public class CrosshairManager : MonoBehaviour {
             Stand();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && sitting) {
+        if (Input.GetKeyDown(KeyCode.Q) && sitting && !isOnTransition) {
             ExitPC();
         }
 
@@ -212,15 +212,17 @@ public class CrosshairManager : MonoBehaviour {
         StartCoroutine(ExitingPCCamera());
     }
 
+    private bool isOnTransition = false;
+
     IEnumerator SettingCamera() {
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
+        isCursor = false;
 
         crosshairImage.enabled = false;
 
-
+        isOnTransition = true;
         isPcOn = true;
         camTransform.localEulerAngles = new Vector3(10, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
@@ -234,6 +236,7 @@ public class CrosshairManager : MonoBehaviour {
         }
         OSScreen.SetActive(true);
         playerChar.GetComponent<PlayerMovement2D>().enabled = true;
+        isOnTransition = false;
     }
 
     IEnumerator ExitingPCCamera() {
@@ -241,7 +244,7 @@ public class CrosshairManager : MonoBehaviour {
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        isCursor = true;
         crosshairImage.enabled = true;
 
         isPcOn = false;

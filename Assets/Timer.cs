@@ -29,9 +29,26 @@ public class Timer : MonoBehaviour {
         textMesh.text = (System.DateTime.Now.AddHours(timeOffset)).ToString("HH:mm");
     }
 
-    public void SetTimeOffset(int offset) {
-        timeOffset = offset;
+    public void IncreaseTimeOffset() {
+
+        timeOffset++;
+        if (timeOffset > 3) {
+            timeOffset += 3;
+        } else if (timeOffset > 10) {
+            timeOffset += 10;
+        } else if (timeOffset > 24) {
+            timeOffset = 0;
+
+
+            // FINISH THE UPLOAD HERE BRO
+
+
+
+        } else {
+            timeOffset++;
+        }
 
         UpdateText();
+        //UPDATE FOLDER IF ENABLED
     }
 }

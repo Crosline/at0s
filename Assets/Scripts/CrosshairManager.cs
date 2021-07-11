@@ -44,6 +44,8 @@ public class CrosshairManager : MonoBehaviour {
     [SerializeField] private Animator drawer;
     private bool drawerOpen = false;
 
+    private Camera pxCam;
+
     [SerializeField]
     private Color outlineColor = new Color(0, 0, 0, 1);
 
@@ -59,6 +61,8 @@ public class CrosshairManager : MonoBehaviour {
     void Start() {
         camTransform = playerCam.transform;
         chairPos = chair.position;
+
+        pxCam = playerCam.transform.GetChild(2).GetComponent<Camera>();
     }
 
     GameObject old = null;
@@ -251,13 +255,18 @@ public class CrosshairManager : MonoBehaviour {
 
         isOnTransition = true;
         isPcOn = true;
+
+
+        //playerCam.targetTexture = null;
+
+
         camTransform.localEulerAngles = new Vector3(0, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
         playerCam.GetComponent<MouseLook>().enabled = false;
         outline.enabled = false;
         while (true) {
-            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 23.5f, 40f * Time.deltaTime);
-            camTransform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 23.5f, 40f * Time.deltaTime);
+            playerCam.fieldOfView = Mathf.MoveTowards(playerCam.fieldOfView, 23.5f, 40f * Time.deltaTime);
+            pxCam.fieldOfView = Mathf.MoveTowards(playerCam.fieldOfView, 23.5f, 40f * Time.deltaTime);
             if (camTransform.GetComponent<Camera>().fieldOfView == 23.5f) {
                 break;
             }
@@ -269,6 +278,8 @@ public class CrosshairManager : MonoBehaviour {
         isOnTransition = false;
     }
 
+    //public RenderTexture outTexture;
+
     IEnumerator ExitingPCCamera() {
         playerChar.GetComponent<PlayerMovement2D>().enabled = false;
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
@@ -278,10 +289,16 @@ public class CrosshairManager : MonoBehaviour {
         crosshairImage.enabled = true;
         outline.enabled = true;
         isPcOn = false;
+
+        /*if (outTexture != null)
+            playerCam.targetTexture = outTexture;*/
+
+
+
         playerCam.GetComponent<MouseLook>().enabled = true;
         while (true) {
-            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
-            camTransform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
+            playerCam.fieldOfView = Mathf.MoveTowards(playerCam.fieldOfView, 60f, 80f * Time.deltaTime);
+            pxCam.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(playerCam.fieldOfView, 60f, 80f * Time.deltaTime);
             if (camTransform.GetComponent<Camera>().fieldOfView == 60f) {
                 break;
             }

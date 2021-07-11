@@ -187,6 +187,8 @@ public class CrosshairManager : MonoBehaviour {
         usb.GetComponent<Rigidbody>().isKinematic = true;
         //usb.transform.localPosition = Vector3.zero;
         usb.transform.SetParent(hand);
+        usb.transform.localPosition = Vector3.zero;
+        //usb.transform.rotation = Quaternion.identity;
         usb.gameObject.layer = 7; //7 is holding
         usb.GetComponent<BoxCollider>().isTrigger = true;
     }

@@ -5725,8 +5725,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8701799679727430499}
   posOffset: {x: -0.02, y: 0.16, z: 0}
-  closedFolder: {fileID: 21300000, guid: 7b07ccd534423e8419503e3277cbfb28, type: 3}
+  closedFolder: {fileID: 21300000, guid: f5dce2f179a2538488b5ad9a7acdd786, type: 3}
   canRender: 1
+  folderExe: {fileID: 1640342520903098179}
 --- !u!61 &1193226779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11448,7 +11449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640342520903098179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6657871156235465776}
@@ -12159,7 +12160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5473872620811373811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.92, y: -1.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8260288509242238620}
@@ -12204,8 +12205,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: f258fefa156bab947a4646d266f1f69e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12232,8 +12233,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.1
   m_Points:
-  - {x: -6, y: 3.5}
-  - {x: -6, y: -5.3}
+  - {x: -6.9899726, y: 5.0211782}
+  - {x: -6.9837036, y: -2.967158}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -12254,8 +12255,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.1
   m_Points:
-  - {x: 6, y: 3.5}
-  - {x: 6, y: -5.3}
+  - {x: 6.106648, y: 5.011791}
+  - {x: 6.0932508, y: -2.9314039}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -12276,8 +12277,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.1
   m_Points:
-  - {x: -6, y: 3.5}
-  - {x: 6, y: 3.5}
+  - {x: -7.0141187, y: 5.0211773}
+  - {x: 6.0965834, y: 5.0211773}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -12298,8 +12299,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.1
   m_Points:
-  - {x: -6, y: -5.3}
-  - {x: 6, y: -5.3}
+  - {x: -6.9837036, y: -2.9314034}
+  - {x: 6.117611, y: -2.9224122}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -12477,6 +12478,7 @@ MonoBehaviour:
   posOffset: {x: -0.02, y: 0.16, z: 0}
   closedFolder: {fileID: 0}
   canRender: 1
+  folderExe: {fileID: 0}
 --- !u!61 &6772230175679510137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12603,6 +12605,7 @@ MonoBehaviour:
   posOffset: {x: -0.02, y: 0.16, z: 0}
   closedFolder: {fileID: 0}
   canRender: 1
+  folderExe: {fileID: 0}
 --- !u!61 &5310034017733206028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12802,6 +12805,7 @@ MonoBehaviour:
   posOffset: {x: -0.02, y: 0.16, z: 0}
   closedFolder: {fileID: 0}
   canRender: 1
+  folderExe: {fileID: 0}
 --- !u!61 &6584369873664344757
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12928,6 +12932,7 @@ MonoBehaviour:
   posOffset: {x: -0.02, y: 0.16, z: 0}
   closedFolder: {fileID: 0}
   canRender: 1
+  folderExe: {fileID: 0}
 --- !u!61 &7782127022713881588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13778,7 +13783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701799679727430503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.72, y: -4.69, z: 10}
+  m_LocalPosition: {x: -0.72, y: -3.38, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1992683335}
@@ -14209,3 +14214,4 @@ MonoBehaviour:
   posOffset: {x: -0.2, y: 0.02, z: 0}
   closedFolder: {fileID: 0}
   canRender: 0
+  folderExe: {fileID: 0}

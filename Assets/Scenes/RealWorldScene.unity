@@ -4523,55 +4523,151 @@ MonoBehaviour:
         oldugunu anlamamistim ama sanirim bu cihazdaki dosyalari yalnizca benim gormemi
         istiyor.
       duration: 13
+      clip: {fileID: 0}
     - sentence: 'Jonathan''in hukumet icin calistigini bilsem de hala orada ne yaptigini
         bilmiyorum. Gunumuzde her seyi yapay zekalar hallettigi icin artik manuel
         teknolojileri bilen cok fazla insan kalmadi. Eski teknolojiye sahip bazi
         cihazlardan bilgi alinmasi gerektiginde ise Jonathan onlari bana yollar,
         ben de bilgileri geri ona yollarim. '
       duration: 14
+      clip: {fileID: 0}
     - sentence: Fakat bu cihaz biraz garip, henuz acmaya dair firsatim olmasa da
         ilk kez boyle bir cihaz goruyorum. Zor da olsa kurulumunu tamamladim fakat
         henuz acmaya firsatim olmamisti. Bakalim bu sefer ne ile ugrasiyoruz.
       duration: 12
+      clip: {fileID: 0}
     - sentence: Hey Anthonio, naber?
       duration: 2
+      clip: {fileID: 0}
     - sentence: Su lanet bilgisayar sinirimi bozuyor, icerisindekiler umarim basimiza
         bela olmaz doktor. Senin lanet antika teknoloji sevdan yuzunden artik yoruldum.
       duration: 8
+      clip: {fileID: 0}
     - sentence: Merak etme, bizim isimiz yalnizca dosyalari elde etmek. Sonrasinda
         sen onlari Jonathan'a yollarsin. Bir sorun olmayacak, merak etme.
       duration: 8
+      clip: {fileID: 0}
     - sentence: Gecen sefer basimiza gelenleri unuttun mu? Zihin okuma, beden kontrolleri..
         Gecmiste yapilan lanet deneyleri ogrendigimiz icin su anda bu lanet gokdelende
         yalniz yasiyoruz.
       duration: 9
+      clip: {fileID: 0}
     - sentence: Ne olursa olsun seni yapay zeka cehennemine atmalarina izin vermeyecegim,
         sen bunu dusunme. Su cihazi acalim ve bakalim ne ile ugrasiyoruz.
       duration: 8
+      clip: {fileID: 0}
   - name: Interact_Cay
     sentences:
     - sentence: Cay icecek vaktim oldugunu sanmiyorum.
       duration: 3
+      clip: {fileID: 0}
   - name: Interact_Yemek
     sentences:
     - sentence: Kendimi ac hissetmiyorum.
       duration: 3
+      clip: {fileID: 0}
   - name: Interact_Arcade
     sentences:
     - sentence: Su makinayi tamir etsem iyi olacak.
       duration: 3
+      clip: {fileID: 0}
+  - name: Interact_Teleportation
+    sentences:
+    - sentence: "Uzun zamand\u0131r \u0131\u015F\u0131nlanma cihaz\u0131n\u0131 kullanm\u0131yorum,
+        \xE7al\u0131\u015Ft\u0131\u011F\u0131ndan bile emin de\u011Filim."
+      duration: 5
+      clip: {fileID: 0}
   - name: Glitch_Error
     sentences:
     - sentence: Bu ekran neden boyle? Hicbir sey okunmuyor.
       duration: 5
+      clip: {fileID: 0}
     - sentence: Bu Glitch hatasi. Ic mekanizmadaki temassizliklar yuzunden goruntu
         bozuk geliyor.
       duration: 6
+      clip: {fileID: 0}
     - sentence: Ne yapicaz?
       duration: 2
+      clip: {fileID: 0}
     - sentence: 'Bazen arcade makinamda da goruntu gidip geliyor, bir kac darbe alinca
         duzeliyor. '
       duration: 4
+      clip: {fileID: 0}
+  - name: Glitch_Fix
+    sentences:
+    - sentence: "Tamam, ama hi\xE7bir \u015Feyi kontrol edemiyorum. [Klavye sesleri]
+        Tu\u015Flar \xE7al\u0131\u015Fm\u0131yor. "
+      duration: 5
+      clip: {fileID: 0}
+    - sentence: "Bir fikrim var, \xE7ekmecedeki diski bilgisayara tak. Beni bilgisayar\u0131n
+        i\xE7ine yerle\u015Ftirirsen i\u015Fimizi bir an \xF6nce bitirebiliriz, ve
+        merak etme, beynindeki \xE7ipe zarar gelmeyecek."
+      duration: 10
+      clip: {fileID: 0}
+  - name: Insert_Disk
+    sentences:
+    - sentence: Tamam... Hey, kendimi kontrol edemiyorum.
+      duration: 5
+      clip: {fileID: 0}
+    - sentence: "Ve ben seni kontrol edebiliyorum. Nas\u0131l olduysa klavyedeki
+        y\xF6n tu\u015Flar\u0131 ile seni kontrol edebiliyorum. Sen mi bir \u015Fey
+        yapt\u0131n?"
+      duration: 8
+      clip: {fileID: 0}
+    - sentence: "Hay\u0131r! Bundan ne kadar rahats\u0131z olsam da bir an \xF6nce
+        \u015Fu dosyalar\u0131 Jonathan'a yollay\u0131p kurtulal\u0131m. "
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: Bu da ne?
+      duration: 2
+      clip: {fileID: 0}
+    - sentence: ' '
+      duration: 20
+      clip: {fileID: 0}
+    - sentence: "Eski kafa oyunlar m\u0131? Buradan kurtulmak m\u0131? Bu her \u015Feyi
+        de\u011Fi\u015Ftirebilir."
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "O zaman h\u0131zl\u0131ca \u015Fu i\u015Fi halledip buradan kurtulal\u0131m
+        doktor."
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Klavyedeki baz\u0131 tu\u015Flar\u0131 da dene, yapabilece\u011Fim
+        baz\u0131 \u015Feyler ke\u015Ffedebiliriz."
+      duration: 6
+      clip: {fileID: 0}
+  - name: Free_Roam
+    sentences:
+    - sentence: "Beni etrafta gezdir, belki i\xE7ine girebilece\u011Fim bir \u015Feyler
+        bulabilirim."
+      duration: 5
+      clip: {fileID: 0}
+  - name: Snake_Intro
+    sentences:
+    - sentence: "Bu neymi\u015F... Y\u0131lan oyunu mu? Haha, \xE7ok basit. Ekrandaki
+        y\xF6n tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol edebiliyorum
+        san\u0131r\u0131m."
+      duration: 10
+      clip: {fileID: 0}
+  - name: Snake_Error
+    sentences:
+    - sentence: "Y\xF6n tu\u015Flar\u0131 y\u0131lan\u0131 do\u011Fru y\xF6ne y\xF6nlendirmiyor! "
+      duration: 6
+      clip: {fileID: 0}
+  - name: Heat_Error
+    sentences:
+    - sentence: "Hey doktor, sence de buras\u0131 \xE7ok s\u0131cak olmad\u0131 m\u0131?"
+      duration: 4
+      clip: {fileID: 0}
+    - sentence: "Ah, bu eski bilgisayarlarda s\u0131k g\xF6r\xFClen bir hata, \u0131s\u0131n\u0131p
+        duruyorlar. Yandaki vantilat\xF6r\xFC a\xE7sam iyi olur."
+      duration: 8
+      clip: {fileID: 0}
+  - name: Heat_Fix
+    sentences:
+    - sentence: "Ger\xE7ekten s\u0131cakm\u0131\u015F, p\xFCf\xFCr p\xFCf\xFCr esiyor."
+      duration: 5
+      clip: {fileID: 0}
 --- !u!114 &254269169
 MonoBehaviour:
   m_ObjectHideFlags: 0

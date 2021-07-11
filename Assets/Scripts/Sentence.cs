@@ -9,4 +9,5 @@ public class Sentence
     public string sentence;
 
     public float duration;
+    public AudioClip clip;
 }

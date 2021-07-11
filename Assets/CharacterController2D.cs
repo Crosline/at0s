@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -45,21 +48,50 @@ public class CharacterController2D : MonoBehaviour {
 	public bool GetGrounded() {
 		return m_Grounded;
 	}
+	public void ResetAll(Vector3 newPos) {
+		canMove = true;
+		animator.Play("Idle");
+
+		m_Rigidbody2D.isKinematic = false;
+		GetComponent<BoxCollider2D>().enabled = true;
+
+		transform.position = newPos;
+
+	}
 
 	public void ConcludeAttack() {
-		Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(m_AttackCheck.position, 0.6f);
+		List<Collider2D> enemiesToDamage = Physics2D.OverlapCircleAll(m_AttackCheck.position, 0.6f).ToList<Collider2D>();
 
-		if (enemiesToDamage.Length != 0 && cameraShake != null) {
-			cameraShake.StopAllCoroutines();
-			cameraShake.Res();
-			StartCoroutine(cameraShake.Shake());
-		}
+		List<Collider2D> temp = new List<Collider2D>();
 
 		foreach (Collider2D collider in enemiesToDamage) {
 			if (collider.TryGetComponent<ActivateAttack>(out ActivateAttack at)) {
 				at.Activate();
 			}
+			if (collider.gameObject.name.Contains("Player")) {
+				temp.Add(collider);
+			}
 		}
+
+		foreach (Collider2D collider in temp) {
+			enemiesToDamage.Remove(collider);
+		}
+
+		if (enemiesToDamage.Count != 0 && cameraShake != null) {
+			cameraShake.StopAllCoroutines();
+			cameraShake.Res();
+			StartCoroutine(cameraShake.Shake());
+
+			if (!m_Grounded) {
+				if (m_Rigidbody2D.velocity.y < -1) {
+					m_Rigidbody2D.velocity = new Vector3(0, 0.5f, 0);
+				} else {
+					m_Rigidbody2D.AddForce(new Vector2(0f, 110));
+				}
+			}
+		}
+
+
 	}
 
 	private void Awake() {

@@ -18,6 +18,11 @@ public class PlayerMovement2D : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+
+        isDying = false;
+        jump = false;
+        crouch = false;
+
         if (controller == null) {
             controller = GetComponent<CharacterController2D>();
         }
@@ -60,6 +65,20 @@ public class PlayerMovement2D : MonoBehaviour {
 
 
     }
+
+    public void ResetAll() {
+
+        Start();
+
+        controller.ResetAll(transform.position);
+    }
+    public void ResetAll(Vector3 newPos) {
+
+        Start();
+
+        controller.ResetAll(newPos);
+    }
+
 
     private IEnumerator RestartMove() {
         yield return new WaitForSeconds(0.83f);

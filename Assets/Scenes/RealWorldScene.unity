@@ -204,7 +204,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1930,8 +1930,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 34.6, y: 19.661673, z: 17.64024}
-  m_Center: {x: 2.625, y: 4.5, z: 19.02012}
+  m_Size: {x: 34.6, y: 19.661673, z: 21.926561}
+  m_Center: {x: 2.625, y: 4.5, z: 16.87696}
 --- !u!1001 &79752693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4714,10 +4714,14 @@ MonoBehaviour:
     - sentence: Su makinayi tamir etsem iyi olacak.
       duration: 3
       clip: {fileID: 0}
-  - name: Interact_Teleportation
+  - name: Interact_PF
     sentences:
-    - sentence: "Uzun zamand\u0131r \u0131\u015F\u0131nlanma cihaz\u0131n\u0131 kullanm\u0131yorum,
-        \xE7al\u0131\u015Ft\u0131\u011F\u0131ndan bile emin de\u011Filim."
+    - sentence: "Vay, Pink Floyd... Rock tanr\u0131lar\u0131... Bizim d\xF6nemler..."
+      duration: 8
+      clip: {fileID: 0}
+  - name: Interact_Plak2
+    sentences:
+    - sentence: "Bu alb\xFCm beni her zaman rahatlat\u0131yor. (\u015Eu anda oynat\u0131lan)"
       duration: 5
       clip: {fileID: 0}
   - name: Glitch_Error
@@ -4787,9 +4791,9 @@ MonoBehaviour:
       clip: {fileID: 0}
   - name: Snake_Intro
     sentences:
-    - sentence: "Bu neymi\u015F... Y\u0131lan oyunu mu? Haha, \xE7ok basit. Ekrandaki
-        y\xF6n tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol edebiliyorum
-        san\u0131r\u0131m."
+    - sentence: "Bu neymi\u015F... Y\u0131lan oyunu mu? Haha, 10 skor mu? \xC7ok
+        basit. Ekrandaki y\xF6n tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol
+        edebiliyorum san\u0131r\u0131m."
       duration: 10
       clip: {fileID: 0}
   - name: Snake_Error
@@ -4810,6 +4814,19 @@ MonoBehaviour:
     sentences:
     - sentence: "Ger\xE7ekten s\u0131cakm\u0131\u015F, p\xFCf\xFCr p\xFCf\xFCr esiyor."
       duration: 5
+      clip: {fileID: 0}
+  - name: EndGame
+    sentences:
+    - sentence: "Bu... Bu bir n\xFCkleer tehdit? Tarihi de, yar\u0131n m\u0131?"
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Ger\xE7ekten Mars'a bir atom bombas\u0131 atmay\u0131 m\u0131 planl\u0131yorlar?
+        Bu oradaki kolonilerin tamamen da\u011F\u0131lmas\u0131 demek!"
+      duration: 9
+      clip: {fileID: 0}
+    - sentence: "Umar\u0131m Jonathan'\u0131n buna bir \xE7\xF6z\xFCm\xFC vard\u0131r.
+        Anthonio, dosyalar\u0131 hemen yolla."
+      duration: 7
       clip: {fileID: 0}
 --- !u!114 &254269169
 MonoBehaviour:
@@ -8463,7 +8480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154968775403848329, guid: ac5ed8a97059bd14dbe4e8d5b63599b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.155667
+      value: -8.655667
       objectReference: {fileID: 0}
     - target: {fileID: 5154968775403848329, guid: ac5ed8a97059bd14dbe4e8d5b63599b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12418,7 +12435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7237427747504054966, guid: 694b2321be222484db7553f334bb4b43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.9328732
+      value: 5.4328732
       objectReference: {fileID: 0}
     - target: {fileID: 7237427747504054966, guid: 694b2321be222484db7553f334bb4b43, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12525,8 +12542,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0520904, y: 0.6191808, z: 2.5892687}
-  m_Center: {x: 4.766117, y: 0.33493012, z: 4.615191}
+  m_Size: {x: 1.0520904, y: 0.61762524, z: 2.5892687}
+  m_Center: {x: 4.766117, y: 0.3341527, z: 4.615191}
 --- !u!65 &1759863556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13189,6 +13206,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08408713, y: 1.8, z: 0.90000004}
   m_Center: {x: -0.48374486, y: 0.07594705, z: -0.000014811754}
+--- !u!65 &1869436752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869436749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 0.08772787, z: 0.90000015}
+  m_Center: {x: -1.2489414e-19, y: 0.93208337, z: -0.0000148349345}
 --- !u!1001 &1886723626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14114,6 +14144,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4461616815621614273, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461616815621614273, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461616815621614273, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4644068071142734546, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_Name
       value: refrigerator
@@ -14123,12 +14165,24 @@ PrefabInstance:
       value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.95
       objectReference: {fileID: 0}
     - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 1.96
       objectReference: {fileID: 0}
     - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_LocalPosition.z

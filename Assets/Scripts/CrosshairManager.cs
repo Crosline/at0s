@@ -126,6 +126,7 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("yemek")) YemekToggle(newer);
             if (newer.name.Contains("cay")) CayToggle(newer);
             if (newer.name.Contains("fan")) FanToggle(newer);
+            if (newer.name.Contains("Gramaphone")) GramaphoneToggle(newer);
             Debug.Log(newer.name);
         }
 
@@ -443,6 +444,19 @@ public class CrosshairManager : MonoBehaviour {
         {
             anim.Play("FanStop");
             fan.GetComponent<Fan>().isOpen = !toggler;
+        }
+    }
+
+    void GramaphoneToggle(GameObject gram)
+    {
+        bool toggler = gram.GetComponent<Gramaphone>().isOpen;
+        if (!toggler)
+        {
+            gram.GetComponent<Gramaphone>().playGramaphone();
+        }
+        else
+        {
+            gram.GetComponent<Gramaphone>().stopGramaphone();
         }
     }
 }

@@ -17,58 +17,68 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GramaphoneBaseMaterial
-    second: {fileID: 2100000, guid: 4c47c4a0efa5ca44fb73951f9bd0834f, type: 2}
+      name: GramaphoneWood
+    second: {fileID: 2100000, guid: e28eff1967c79f049b221ca655b1f408, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GramaphoneCrankMaterial
-    second: {fileID: 2100000, guid: c8d7c9070bc4043488cea5689a1c4f2f, type: 2}
+      name: Handle
+    second: {fileID: 2100000, guid: 95b67b61198270f4b8413fe57d45969b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GramaphoneHornMaterial
-    second: {fileID: 2100000, guid: 0b257bc54ef19384ab08be6050ddceb1, type: 2}
+      name: Horn
+    second: {fileID: 2100000, guid: a594bf399b0a6c245b8380e38b734eb4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GramaphoneNeedleMaterial
-    second: {fileID: 2100000, guid: b732549984b98e043875a7129d6a5d7d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GramaphoneRecord
-    second: {fileID: 2100000, guid: 96e082da484cab14c98fb6fa3832a75d, type: 2}
+      name: Needle
+    second: {fileID: 2100000, guid: a41d74beee3a830499f43e22161728ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PinkFloyd
     second: {fileID: 2100000, guid: 0d294572c6beaf248b0189a94582b72b, type: 2}
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Record
+    second: {fileID: 2100000, guid: 8282187a5ad46944090d5c6d0664f640, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RecordStand
+    second: {fileID: 2100000, guid: a6e20a77e908d4440a9f0a8bc55f683c, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 2K-Metallic_gold_Base Color
-    second: {fileID: 2800000, guid: c947f90f62f0bd54f8d41437995092f4, type: 3}
+    second: {fileID: 2800000, guid: 35d85d9d22625ad4f9a7e3ab78a5adb7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 2K-wood_fine_23-diffuse
-    second: {fileID: 2800000, guid: bcc41815fe3a1954b98968ebf3e3c2e4, type: 3}
+    second: {fileID: 2800000, guid: be08b7d0149773143b009f4d1575d01e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 2K_afromosia_basecolor
+    second: {fileID: 2800000, guid: 42ba244769b822b499b26ed125afd100, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: recordMat
-    second: {fileID: 2800000, guid: 4b40fb4eb04701349b9feca38854118f, type: 3}
+    second: {fileID: 2800000, guid: 85d7840d3dcc2d84ab4fae00a53adbc2, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: recordSayborg
-    second: {fileID: 2800000, guid: 82ce111c9a194234dad065cb99f57742, type: 3}
+    second: {fileID: 2800000, guid: 1247a678c305cdc439c2553caac1823d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: record_pf
-    second: {fileID: 2800000, guid: 35a0378f123ae37469c4413b58e052cf, type: 3}
+    second: {fileID: 2800000, guid: 509467cfa18f9f34fbedac216bd2ac93, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

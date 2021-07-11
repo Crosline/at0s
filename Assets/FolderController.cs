@@ -18,6 +18,8 @@ public class FolderController : MonoBehaviour {
 
     private bool inTrigger = false;
 
+    public GameObject folderExe;
+
     // Start is called before the first frame update
     void Awake() {
         if (collider2D == null) {
@@ -70,6 +72,7 @@ public class FolderController : MonoBehaviour {
     IEnumerator EnterFolder() {
         player.position = transform.position + posOffset;
         player.GetComponent<Animator>().Play("Slide");
+        player.GetComponent<PlayerMovement2D>().StopAllCoroutines();
 
         while (player.position.y > transform.position.y - 0.5f) {
 
@@ -89,6 +92,15 @@ public class FolderController : MonoBehaviour {
             if (transform.parent.gameObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer sr)) {
                 sr.enabled = false;
             }
+
+
+            yield return new WaitForSeconds(0.1f);
+
+            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(6f, 4.5f, 0f));
+
+            folderExe.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            canRender = true;
         }
 
     }
@@ -96,6 +108,7 @@ public class FolderController : MonoBehaviour {
     IEnumerator EnterTrash() {
         player.position = transform.position + posOffset;
         player.GetComponent<Animator>().Play("Slide");
+        player.GetComponent<PlayerMovement2D>().StopAllCoroutines();
 
         while (player.position.x < transform.position.x + 0.5f) {
 

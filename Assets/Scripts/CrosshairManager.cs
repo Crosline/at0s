@@ -57,6 +57,7 @@ public class CrosshairManager : MonoBehaviour {
     private bool isPcOn = false;
     private bool isCursor = false;
     private bool isStandable = false;
+    private bool isFirstTimeBoot = true;
 
     void Start() {
         camTransform = playerCam.transform;
@@ -276,7 +277,10 @@ public class CrosshairManager : MonoBehaviour {
         OSScreen.SetActive(true);
         playerChar.GetComponent<PlayerMovement2D>().enabled = true;
         isOnTransition = false;
-        DialogueTrigger.Instance.TriggerDialogue("Glitch_Error");
+        if (isFirstTimeBoot) {
+            DialogueTrigger.Instance.TriggerDialogue("Glitch_Error");
+            isFirstTimeBoot = false;
+        }
     }
 
     //public RenderTexture outTexture;

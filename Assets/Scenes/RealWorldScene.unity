@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
+  m_IndirectSpecularColor: {r: 0.028771684, g: 0.0205225, b: 0.025373064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4964,6 +4964,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5595960073831144435, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97629607
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595960073831144435, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595960073831144435, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2164396
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595960073831144435, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595960073831144435, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7292182541478364400, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5107,11 +5127,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7473260159719881476, guid: a98af8424e93d8c47b7442c0b8a849fe, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9e32e4199f45e3d4eb2f2ff4483663a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1c6c5effca8f9d74da3a4f7a4ae2babe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5208,6 +5228,7 @@ MonoBehaviour:
   isOpen: 0
   audioSource: {fileID: 278053439}
   gramAnim: {fileID: 278053438}
+  loopClip: {fileID: 8300000, guid: fcde3e7e29bd9a44dbef4a667ca3c625, type: 3}
 --- !u!1 &283272231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fbbfc48693a081b498795737550da199, type: 3}
@@ -10210,7 +10231,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh237942
+  m_Name: pb_Mesh500466
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

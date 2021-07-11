@@ -9,12 +9,23 @@ public class Gramaphone : MonoBehaviour
     public AudioSource audioSource;
     public Animator gramAnim;
 
+    public AudioClip loopClip;
+
+
+    private bool startClipEnd;
+
 
     // Start is called before the first frame update
     void Start()
     {
         isOpen = false;
         gramAnim.speed = 0f;
+    }
+
+    private void Update()
+    {
+        if (audioSource.time >= audioSource.clip.length && !startClipEnd)
+            changeToLoop();
     }
 
     public void playGramaphone()
@@ -32,5 +43,15 @@ public class Gramaphone : MonoBehaviour
         gramAnim.speed = 0f;
     }
 
+    private void changeToLoop()
+    {
+        if (!startClipEnd)
+        {
+            startClipEnd = true;
+            audioSource.clip = loopClip;
+            audioSource.Play();
+            audioSource.loop = true;
+        }
+    }
 
 }

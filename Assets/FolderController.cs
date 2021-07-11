@@ -60,8 +60,6 @@ public class FolderController : MonoBehaviour {
                     collider2D.enabled = false;
                     player.GetComponent<Rigidbody2D>().isKinematic = true;
                     player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    anim.SetBool("EnterFolder", true);
-                    anim.Play("EnterFolder");
                     canRender = false;
                     StartCoroutine(EnterFolder());
                 }
@@ -125,8 +123,6 @@ public class FolderController : MonoBehaviour {
                     collider2D.enabled = false;
                     player.GetComponent<Rigidbody2D>().isKinematic = true;
                     player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    anim.SetBool("EnterFolder", true);
-                    anim.Play("EnterFolder");
                     canRender = false;
                     player.rotation = transform.rotation;
                     player.parent = this.transform;

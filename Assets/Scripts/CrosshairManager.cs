@@ -37,6 +37,7 @@ public class CrosshairManager : MonoBehaviour {
     [SerializeField] private GameObject OSScreen;
     [SerializeField] private GameObject playerChar;
     [SerializeField] private Transform chair;
+    [SerializeField] private Material monitorButton;
     private Vector3 chairPos;
     //Every time usb sticks to pc, playerChar teleport to the playerInitialPos
     public Vector3 playerInitialPos;
@@ -59,9 +60,11 @@ public class CrosshairManager : MonoBehaviour {
         camTransform = playerCam.transform;
         chairPos = chair.position;
     }
+
+    GameObject old = null;
+
     void Update() {
 
-        GameObject old = null;
         GameObject newer = null;
 
         RaycastHit hit;
@@ -104,6 +107,8 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("Chair")) SitChair();
             if (newer.name.Contains("Drawer") || newer.name.Contains("Handler")) OpenDrawer();
             if (newer.name.Contains("PC") && sitting) EnterPC();
+            if (newer.name.Contains("Arcade")) ArcadeFunc(newer);
+            if (newer.name.Contains("Couch")) CouchFunc(newer);
             Debug.Log(newer.name);
         }
 
@@ -113,9 +118,9 @@ public class CrosshairManager : MonoBehaviour {
         }
 
 
-        if (old == newer && outline != null) {
-            outline.OutlineColor = new Color(0, 0, 0, 0);
-            outline = null;
+        if (old != null && old != newer && outline != null) {
+            old.GetComponent<Outline>().OutlineColor = new Color(0, 0, 0, 0);
+            //outline = null;
             crosshairImage.sprite = crosshairs[0];
         }
 
@@ -149,9 +154,11 @@ public class CrosshairManager : MonoBehaviour {
             inserting.transform.SetParent(null);
             inserting.layer = 6; //6 is interactable
 
-            inserting.transform.SetParent(receiving.transform);
-            inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
-            inserting.transform.localEulerAngles = Vector3.zero;
+            // BU KISIMLARI DA ÞÝMDÝLÝK ARÇÝN KAPATTI : insert animasyonu çalýþýyor düzgün
+            //inserting.transform.SetParent(receiving.transform);
+            //inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
+            //inserting.transform.localEulerAngles = Vector3.zero;
+
             inserting.GetComponent<Animator>().enabled = true;
             inserting.GetComponent<Animator>().Play("insert", -1, 0f);
 
@@ -162,6 +169,13 @@ public class CrosshairManager : MonoBehaviour {
             DeInteract(inserting);
         }
 
+    }
+
+    // ARÇÝN EKLÝYORDU BURAYI - Floppy Diski Çýkart
+    public void TakeoutFloppy()
+    {
+        // DiskButton'a týklandýðýnda takeout animasyonunu oynat
+        // Disk'i eline al
     }
 
     public void InteractWithUSB(Transform usb) {
@@ -232,16 +246,18 @@ public class CrosshairManager : MonoBehaviour {
 
         isOnTransition = true;
         isPcOn = true;
-        camTransform.localEulerAngles = new Vector3(10, 0, 0);
+        camTransform.localEulerAngles = new Vector3(0, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
         playerCam.GetComponent<MouseLook>().enabled = false;
+        outline.enabled = false;
         while (true) {
-            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 30f, 40f * Time.deltaTime);
-            if (camTransform.GetComponent<Camera>().fieldOfView == 30f) {
+            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 25f, 40f * Time.deltaTime);
+            if (camTransform.GetComponent<Camera>().fieldOfView == 25f) {
                 break;
             }
             yield return null;
         }
+        monitorButton.EnableKeyword("_EMISSION");
         OSScreen.SetActive(true);
         playerChar.GetComponent<PlayerMovement2D>().enabled = true;
         isOnTransition = false;
@@ -254,7 +270,7 @@ public class CrosshairManager : MonoBehaviour {
         Cursor.visible = false;
         isCursor = true;
         crosshairImage.enabled = true;
-
+        outline.enabled = true;
         isPcOn = false;
         playerCam.GetComponent<MouseLook>().enabled = true;
         while (true) {
@@ -298,6 +314,18 @@ public class CrosshairManager : MonoBehaviour {
     void TestGlitch()
     {
         GlitchController.Instance.ToggleGlitch();
+    }
+
+    void ArcadeFunc(GameObject arcade)
+    {
+        Debug.Log("i think i need to fix this machine");
+        arcade.layer = 0;
+    }
+
+    void CouchFunc(GameObject couch)
+    {
+        Debug.Log("there is no time to rest");
+        couch.layer = 0;
     }
 
 }

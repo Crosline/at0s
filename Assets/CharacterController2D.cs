@@ -12,6 +12,7 @@ public class CharacterController2D : MonoBehaviour {
 	[Header("Configuration")]
 	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+	[SerializeField] private Transform m_AttackCheck;                           // A position marking where to check if the player is grounded.
 
 	[Header("Utilities")]
 
@@ -28,6 +29,7 @@ public class CharacterController2D : MonoBehaviour {
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	private CameraShake cameraShake;
 
 	[Header("Events")]
 	[Space]
@@ -40,16 +42,43 @@ public class CharacterController2D : MonoBehaviour {
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	public bool GetGrounded() {
+		return m_Grounded;
+	}
+
+	public void ConcludeAttack() {
+		Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(m_AttackCheck.position, 0.6f);
+
+		if (enemiesToDamage.Length != 0 && cameraShake != null) {
+			cameraShake.StopAllCoroutines();
+			cameraShake.Res();
+			StartCoroutine(cameraShake.Shake());
+		}
+
+		foreach (Collider2D collider in enemiesToDamage) {
+			if (collider.TryGetComponent<ActivateAttack>(out ActivateAttack at)) {
+				at.Activate();
+			}
+		}
+	}
+
 	private void Awake() {
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-		if (OnLandEvent == null)
+		if (OnLandEvent == null) {
 			OnLandEvent = new UnityEvent();
+		}
 
-		if (OnCrouchEvent == null)
+		if (OnCrouchEvent == null) {
 			OnCrouchEvent = new BoolEvent();
+		}
 	}
 	private void Start() {
+
+		if (transform.parent.TryGetComponent<CameraShake>(out CameraShake cs)) {
+			cameraShake = cs;
+		}
+
 		jumpCD = jumpCooldown;
 
 		if (animator == null) {
@@ -67,8 +96,9 @@ public class CharacterController2D : MonoBehaviour {
 		for (int i = 0; i < colliders.Length; i++) {
 			if (colliders[i].gameObject != gameObject) {
 				m_Grounded = true;
-				if (!wasGrounded)
+				if (!wasGrounded) {
 					OnLandEvent.Invoke();
+				}
 			}
 		}
 	}
@@ -76,8 +106,9 @@ public class CharacterController2D : MonoBehaviour {
 	public Animator animator;
 
 	public void Move(float move, bool crouch, bool jump) {
-		if (!canMove)
+		if (!canMove) {
 			return;
+		}
 
 		move *= runSpeed;
 

@@ -28,6 +28,10 @@ public class CameraShake : MonoBehaviour {
 		StartCoroutine(Shake());
 	}
 
+	public void Res() {
+		isShaking = false;
+	}
+
 
 	public IEnumerator Shake() {
 
@@ -56,6 +60,7 @@ public class CameraShake : MonoBehaviour {
 				animator.enabled = true;
 			}
 		}
+		//transform.position = startPos;
 		yield return new WaitForSeconds(1f);
 		isShaking = false;
 	}

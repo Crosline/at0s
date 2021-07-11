@@ -15,9 +15,10 @@ public class PlayerMovement2D : MonoBehaviour {
     bool jump = false;
     bool crouch = false;
 
+
     // Start is called before the first frame update
     void Start() {
-        if(controller == null) {
+        if (controller == null) {
             controller = GetComponent<CharacterController2D>();
         }
 
@@ -48,7 +49,26 @@ public class PlayerMovement2D : MonoBehaviour {
             crouch = false;
         }
 
+        if (Input.GetButtonDown("Interact") && controller.canMove) {
+            controller.canMove = false;
+            controller.animator.Play("Attack");
+            StartCoroutine(RestartMove());
+            if (controller.GetGrounded())
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
+        }
+
+
+    }
+
+    private IEnumerator RestartMove() {
+        yield return new WaitForSeconds(0.83f);
+        controller.canMove = true;
+        controller.animator.Play("Idle");
+    }
+
+    public void StopAttack() {
+        controller.canMove = true;
     }
 
     void FixedUpdate() {
@@ -59,14 +79,14 @@ public class PlayerMovement2D : MonoBehaviour {
             transform.localPosition = new Vector3(10f, transform.localPosition.y, transform.localPosition.z);
         }
 
-            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Enemy") && !isDying) {
             isDying = true;
-           // StartCoroutine(Die());
+            // StartCoroutine(Die());
         }
 
     }

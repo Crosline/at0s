@@ -14,7 +14,7 @@ public class FolderController : MonoBehaviour {
 
     private bool isOnTop = true;
 
-    private bool canRender = true;
+    public bool canRender = true;
 
     private bool inTrigger = false;
 
@@ -60,8 +60,6 @@ public class FolderController : MonoBehaviour {
                     collider2D.enabled = false;
                     player.GetComponent<Rigidbody2D>().isKinematic = true;
                     player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    anim.SetBool("EnterFolder", true);
-                    anim.Play("EnterFolder");
                     canRender = false;
                     StartCoroutine(EnterFolder());
                 }
@@ -95,9 +93,43 @@ public class FolderController : MonoBehaviour {
 
     }
 
+    IEnumerator EnterTrash() {
+        player.position = transform.position + posOffset;
+        player.GetComponent<Animator>().Play("Slide");
+
+        while (player.position.x < transform.position.x + 0.5f) {
+
+            player.position += new Vector3(0.15f, 0, 0);
+
+            if (player.position.x > transform.position.x + 0.5f) {
+                player.position = transform.position + new Vector3(0.5f, posOffset.y, 0);
+            }
+
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        //play trash
+
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("2DPlayer") && !inTrigger) {
-            inTrigger = true;
+            if (this.name.Contains("Trash")) {
+                if (player.TryGetComponent<Animator>(out Animator anim)) {
+                    player.GetComponent<CharacterController2D>().canMove = false;
+                    player.GetComponent<BoxCollider2D>().enabled = false;
+                    collider2D.enabled = false;
+                    player.GetComponent<Rigidbody2D>().isKinematic = true;
+                    player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    canRender = false;
+                    player.rotation = transform.rotation;
+                    player.parent = this.transform;
+                    StartCoroutine(EnterTrash());
+                }
+            }
+                inTrigger = true;
         }
     }
 

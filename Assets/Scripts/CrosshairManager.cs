@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +11,10 @@ public class CrosshairManager : MonoBehaviour {
     public GameObject player;
     private GameObject holder;
     private bool sitting;
+
+    public GameObject interactText;
+    public GameObject monitorLight;
+    public GameObject pcSandalyeInteract;
 
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
@@ -57,12 +61,13 @@ public class CrosshairManager : MonoBehaviour {
     private bool isPcOn = false;
     private bool isCursor = false;
     private bool isStandable = false;
+    private bool isFirstTimeBoot = true;
 
     void Start() {
         camTransform = playerCam.transform;
         chairPos = chair.position;
-
         pxCam = playerCam.transform.GetChild(2).GetComponent<Camera>();
+        DialogueTrigger.Instance.TriggerDialogue("BeginGame");
     }
 
     GameObject old = null;
@@ -72,6 +77,7 @@ public class CrosshairManager : MonoBehaviour {
         GameObject newer = null;
 
         RaycastHit hit;
+        
 
         //int mask = 1 << layerMaskExclude | layerMaskInteract.value;
 
@@ -81,11 +87,14 @@ public class CrosshairManager : MonoBehaviour {
                 crosshairImage.sprite = crosshairs[1];
                 outline = newer.GetComponent<Outline>();
                 outline.OutlineColor = outlineColor;
+                if(!isPcOn)
+                    interactText.SetActive(true);
             }
-
         }
+            
 
-        if(Input.GetKeyDown(KeyCode.F))
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
             TestGlitch();
         }
@@ -116,6 +125,7 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("door")) DoorToggle(newer);
             if (newer.name.Contains("yemek")) YemekToggle(newer);
             if (newer.name.Contains("cay")) CayToggle(newer);
+            if (newer.name.Contains("fan")) FanToggle(newer);
             Debug.Log(newer.name);
         }
 
@@ -127,6 +137,7 @@ public class CrosshairManager : MonoBehaviour {
 
         if (old != null && old != newer && outline != null) {
             old.GetComponent<Outline>().OutlineColor = new Color(0, 0, 0, 0);
+            interactText.SetActive(false);
             //outline = null;
             crosshairImage.sprite = crosshairs[0];
         }
@@ -208,12 +219,23 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     void SitChair() {
+
+        //Open UI
+        pcSandalyeInteract.SetActive(true);
+        pcSandalyeInteract.transform.GetChild(1).gameObject.SetActive(true);
+        pcSandalyeInteract.transform.GetChild(0).gameObject.SetActive(false);
+
+
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
         StartCoroutine(Sit());
     }
 
     void Stand() {
+
+        //Close UI
+        pcSandalyeInteract.SetActive(false);
+
         playerChar.GetComponent<PlayerMovement2D>().enabled = false;
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
@@ -263,10 +285,24 @@ public class CrosshairManager : MonoBehaviour {
         camTransform.localEulerAngles = new Vector3(0, 0, 0);
         player.transform.localEulerAngles = new Vector3(0, 90, 0);
         playerCam.GetComponent<MouseLook>().enabled = false;
+
+        //Open UI
+        pcSandalyeInteract.transform.GetChild(1).gameObject.SetActive(false);
+        pcSandalyeInteract.transform.GetChild(0).gameObject.SetActive(true);
+
+        Color greenColor = new Color(36f / 255.0f, 191f / 255.0f, 0f / 255.0f);
+        monitorLight.GetComponent<Renderer>().material.SetColor("_EmissionColor", greenColor);
+        monitorLight.GetComponent<Renderer>().material.SetFloat("_EmissionScaleUI", 1.5f);
+        monitorLight.GetComponent<Renderer>().UpdateGIMaterials();
+
+        interactText.SetActive(false);
+
         outline.enabled = false;
         while (true) {
+            
             playerCam.fieldOfView = Mathf.MoveTowards(playerCam.fieldOfView, 23.5f, 40f * Time.deltaTime);
             pxCam.fieldOfView = Mathf.MoveTowards(playerCam.fieldOfView, 23.5f, 40f * Time.deltaTime);
+            
             if (camTransform.GetComponent<Camera>().fieldOfView == 23.5f) {
                 break;
             }
@@ -276,11 +312,20 @@ public class CrosshairManager : MonoBehaviour {
         OSScreen.SetActive(true);
         playerChar.GetComponent<PlayerMovement2D>().enabled = true;
         isOnTransition = false;
+        if (isFirstTimeBoot) {
+            DialogueTrigger.Instance.TriggerDialogue("Glitch_Error");
+            isFirstTimeBoot = false;
+        }
     }
 
     //public RenderTexture outTexture;
 
     IEnumerator ExitingPCCamera() {
+
+        //open UI
+        pcSandalyeInteract.transform.GetChild(1).gameObject.SetActive(true);
+        pcSandalyeInteract.transform.GetChild(0).gameObject.SetActive(false);
+
         playerChar.GetComponent<PlayerMovement2D>().enabled = false;
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
@@ -337,11 +382,6 @@ public class CrosshairManager : MonoBehaviour {
         drawer.GetComponent<Drawer>().isOpen = true;
     }
 
-    void CloserDrawer() {
-        drawer.Play("close", -1, 0f);
-        drawerOpen = false;
-    }
-
     void TestGlitch()
     {
         GlitchController.Instance.ToggleGlitch();
@@ -349,7 +389,7 @@ public class CrosshairManager : MonoBehaviour {
 
     void ArcadeFunc(GameObject arcade)
     {
-        Debug.Log("i think i need to fix this machine");
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Arcade");
         arcade.layer = 0;
     }
 
@@ -379,13 +419,30 @@ public class CrosshairManager : MonoBehaviour {
     void YemekToggle(GameObject yemek)
     {
         yemek.layer = 0;
-        Debug.Log("kendimi ac hissetmiyorum");
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Yemek");
     }
 
     void CayToggle(GameObject caydanlik)
     {
         caydanlik.layer = 0;
-        Debug.Log("cay icecek vakit yok");
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Cay");
     }
 
+    void FanToggle(GameObject fan)
+    {
+        Animator anim;
+        fan.GetComponent<Animator>().enabled = true;
+        anim = fan.GetComponent<Animator>();
+        bool toggler = fan.GetComponent<Fan>().isOpen;
+        if (!toggler)
+        {
+            anim.Play("FanStart");
+            fan.GetComponent<Fan>().isOpen = !toggler;
+        }
+        else
+        {
+            anim.Play("FanStop");
+            fan.GetComponent<Fan>().isOpen = !toggler;
+        }
+    }
 }

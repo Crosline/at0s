@@ -154,9 +154,11 @@ public class CrosshairManager : MonoBehaviour {
             inserting.transform.SetParent(null);
             inserting.layer = 6; //6 is interactable
 
-            inserting.transform.SetParent(receiving.transform);
-            inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
-            inserting.transform.localEulerAngles = Vector3.zero;
+            // BU KISIMLARI DA ÞÝMDÝLÝK ARÇÝN KAPATTI : insert animasyonu çalýþýyor düzgün
+            //inserting.transform.SetParent(receiving.transform);
+            //inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
+            //inserting.transform.localEulerAngles = Vector3.zero;
+
             inserting.GetComponent<Animator>().enabled = true;
             inserting.GetComponent<Animator>().Play("insert", -1, 0f);
 
@@ -167,6 +169,13 @@ public class CrosshairManager : MonoBehaviour {
             DeInteract(inserting);
         }
 
+    }
+
+    // ARÇÝN EKLÝYORDU BURAYI - Floppy Diski Çýkart
+    public void TakeoutFloppy()
+    {
+        // DiskButton'a týklandýðýnda takeout animasyonunu oynat
+        // Disk'i eline al
     }
 
     public void InteractWithUSB(Transform usb) {

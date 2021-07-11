@@ -11387,7 +11387,7 @@ GameObject:
   - component: {fileID: 1484751325}
   - component: {fileID: 1484751332}
   m_Layer: 6
-  m_Name: USBTestObject
+  m_Name: USBTestObjec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

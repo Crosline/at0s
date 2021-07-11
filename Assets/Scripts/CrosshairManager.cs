@@ -256,8 +256,9 @@ public class CrosshairManager : MonoBehaviour {
         playerCam.GetComponent<MouseLook>().enabled = false;
         outline.enabled = false;
         while (true) {
-            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 25f, 40f * Time.deltaTime);
-            if (camTransform.GetComponent<Camera>().fieldOfView == 25f) {
+            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 23.5f, 40f * Time.deltaTime);
+            camTransform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 23.5f, 40f * Time.deltaTime);
+            if (camTransform.GetComponent<Camera>().fieldOfView == 23.5f) {
                 break;
             }
             yield return null;
@@ -280,6 +281,7 @@ public class CrosshairManager : MonoBehaviour {
         playerCam.GetComponent<MouseLook>().enabled = true;
         while (true) {
             camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
+            camTransform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
             if (camTransform.GetComponent<Camera>().fieldOfView == 60f) {
                 break;
             }

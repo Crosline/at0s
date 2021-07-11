@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -61,8 +61,8 @@ public class CrosshairManager : MonoBehaviour {
     void Start() {
         camTransform = playerCam.transform;
         chairPos = chair.position;
-
         pxCam = playerCam.transform.GetChild(2).GetComponent<Camera>();
+        DialogueTrigger.Instance.TriggerDialogue("BeginGame");
     }
 
     GameObject old = null;
@@ -276,6 +276,7 @@ public class CrosshairManager : MonoBehaviour {
         OSScreen.SetActive(true);
         playerChar.GetComponent<PlayerMovement2D>().enabled = true;
         isOnTransition = false;
+        DialogueTrigger.Instance.TriggerDialogue("Glitch_Error");
     }
 
     //public RenderTexture outTexture;
@@ -337,11 +338,6 @@ public class CrosshairManager : MonoBehaviour {
         drawer.GetComponent<Drawer>().isOpen = true;
     }
 
-    void CloserDrawer() {
-        drawer.Play("close", -1, 0f);
-        drawerOpen = false;
-    }
-
     void TestGlitch()
     {
         GlitchController.Instance.ToggleGlitch();
@@ -349,7 +345,7 @@ public class CrosshairManager : MonoBehaviour {
 
     void ArcadeFunc(GameObject arcade)
     {
-        Debug.Log("i think i need to fix this machine");
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Arcade");
         arcade.layer = 0;
     }
 
@@ -379,13 +375,13 @@ public class CrosshairManager : MonoBehaviour {
     void YemekToggle(GameObject yemek)
     {
         yemek.layer = 0;
-        Debug.Log("kendimi ac hissetmiyorum");
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Yemek");
     }
 
     void CayToggle(GameObject caydanlik)
     {
         caydanlik.layer = 0;
-        Debug.Log("cay icecek vakit yok");
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Cay");
     }
 
 }

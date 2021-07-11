@@ -112,11 +112,11 @@ public class PlayerMovement2D : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.CompareTag("Application")) {
-            if (collision.collider.transform.position.y < transform.position.y) {
+            //if (collision.collider.transform.position.y < transform.position.y) {
                 if (collision.collider.gameObject.TryGetComponent<CameraShake>(out CameraShake shake)) {
                     StartCoroutine(shake.Shake());
                 }
-            }
+            //}
         }
     }
 

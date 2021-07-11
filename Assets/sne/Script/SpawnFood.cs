@@ -50,11 +50,15 @@ public class SpawnFood : MonoBehaviour {
         Spawn();
     }
 
-    public void Reset() {
+    public void ResetFood() {
         foreach (GameObject g in spawnedFoods)
             Destroy(g);
 
         spawnedFoods.Clear();
+
+        score = 0;
+
+        scoreText.text = score.ToString();
 
         Spawn();
 
@@ -69,12 +73,17 @@ public class SpawnFood : MonoBehaviour {
         float x = Random.Range(borderLeft.position.x,
                                   borderRight.position.x);
 
+        Debug.Log("---");
+        Debug.Log(x);
         // y position between top & bottom border
         float y = Random.Range(borderBottom.position.y,
                                   borderTop.position.y);
 
-        GameObject temp = Instantiate(foodPrefab,
-                    new Vector2(x, y),
+        Debug.Log(y);
+
+        Debug.Log("---");
+
+        GameObject temp = Instantiate(foodPrefab, new Vector3(x, y, 0f),
                     Quaternion.identity, transform.parent);
 
         if (spawnedFoods.Contains(temp)) {

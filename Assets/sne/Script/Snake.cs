@@ -51,27 +51,35 @@ public class Snake : MonoBehaviour {
 					dir = Vector2.up;
 					break;
 			}
-		}
 
-		if (tutorial > 0) {
-			GlitchController.Instance.Glitcher(0.3f);
-			tutorial--;
-		} else {
-			int i = Random.RandomRange(1, 100);
-			if (i < 5) {
+
+			StartSnake();
+
+
+			if (tutorial > 0) {
 				GlitchController.Instance.Glitcher(0.3f);
+				tutorial--;
+			} else {
+				int i = Random.RandomRange(1, 100);
+				if (i < 5) {
+					GlitchController.Instance.Glitcher(0.3f);
+				}
 			}
 		}
 
 
-		StartSnake();
+
 
 	}
 
-	void ResetSnake() {
-		GlitchController.Instance.Glitcher(0.3f);
+	public void FinishSnake() {
+		isDead = true;
+	}
 
+	void ResetSnake() {
 		StopAllCoroutines();
+
+		GlitchController.Instance.Glitcher(0.5f);
 
 		transform.localPosition = Vector3.zero;
 
@@ -80,9 +88,9 @@ public class Snake : MonoBehaviour {
 
 		tail.Clear();
 
-		canStart = true;
+		speed = 1f;
 
-		isDead = false;
+		canStart = true;
 	}
 
 	private IEnumerator Move() {
@@ -171,7 +179,7 @@ public class Snake : MonoBehaviour {
 
 			ate = true;
 
-			speed = speed - 0.03f;
+			speed = speed - 0.075f;
 
 			GetComponent<SpawnFood>().Eat(coll.gameObject);
 
@@ -179,9 +187,8 @@ public class Snake : MonoBehaviour {
 		} else {
 			ResetSnake();
 
-			GetComponent<SpawnFood>().Reset();
+			GetComponent<SpawnFood>().ResetFood();
 
-			isDead = true;
 		}
 	}
 }

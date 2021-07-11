@@ -23,6 +23,12 @@ public class ActivateAttack : MonoBehaviour {
             } else if (name.Contains("top")) {
                 snake.UpdateDirection(4);
             }
+        } else if (name.Contains("read")) {
+            PopOS.Instance.PopUp(0, 25);
+        } else if (name.Contains("mypc")) {
+            GlitchController.Instance.Glitcher(0.2f);
+        } else if (name.Contains("trash")) {
+            StartCoroutine(GetComponent<CameraShake>().Shake());
         }
     }
     /*

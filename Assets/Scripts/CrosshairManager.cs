@@ -105,10 +105,13 @@ public class CrosshairManager : MonoBehaviour {
         if (Input.GetButtonDown("Interact") && newer != null && holder == null) {
             if (newer.name.Contains("USB")) InteractWithUSB(newer.transform);
             if (newer.name.Contains("Chair")) SitChair();
-            if (newer.name.Contains("Drawer") || newer.name.Contains("Handler")) OpenDrawer();
+            if (newer.name.Contains("Drawer") || newer.name.Contains("Handler")) ToggleDrawer(newer);
             if (newer.name.Contains("PC") && sitting) EnterPC();
             if (newer.name.Contains("Arcade")) ArcadeFunc(newer);
             if (newer.name.Contains("Couch")) CouchFunc(newer);
+            if (newer.name.Contains("door")) DoorToggle(newer);
+            if (newer.name.Contains("yemek")) YemekToggle(newer);
+            if (newer.name.Contains("cay")) CayToggle(newer);
             Debug.Log(newer.name);
         }
 
@@ -253,8 +256,9 @@ public class CrosshairManager : MonoBehaviour {
         playerCam.GetComponent<MouseLook>().enabled = false;
         outline.enabled = false;
         while (true) {
-            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 25f, 40f * Time.deltaTime);
-            if (camTransform.GetComponent<Camera>().fieldOfView == 25f) {
+            camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 23.5f, 40f * Time.deltaTime);
+            camTransform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 23.5f, 40f * Time.deltaTime);
+            if (camTransform.GetComponent<Camera>().fieldOfView == 23.5f) {
                 break;
             }
             yield return null;
@@ -277,6 +281,7 @@ public class CrosshairManager : MonoBehaviour {
         playerCam.GetComponent<MouseLook>().enabled = true;
         while (true) {
             camTransform.GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
+            camTransform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.MoveTowards(camTransform.GetComponent<Camera>().fieldOfView, 60f, 80f * Time.deltaTime);
             if (camTransform.GetComponent<Camera>().fieldOfView == 60f) {
                 break;
             }
@@ -298,14 +303,21 @@ public class CrosshairManager : MonoBehaviour {
         sitting = false;
     }
 
-    void OpenDrawer() {
-        if (drawerOpen) {
-            CloserDrawer();
+    void ToggleDrawer(GameObject drawer) {
+        if (drawer.name.Contains("Handler")) 
+        {
+            drawer = drawer.transform.parent.gameObject;
+        }
+        drawer.GetComponent<Animator>().enabled = true;
+        Animator anim = drawer.GetComponent<Animator>();
+        if(drawer.GetComponent<Drawer>().isOpen)
+        {
+            anim.Play("close", -1, 0f);
+            drawer.GetComponent<Drawer>().isOpen = false;
             return;
         }
-        drawerOpen = true;
-        drawer.enabled = true;
-        drawer.Play("open", -1, 0f);
+        anim.Play("open", -1, 0f);
+        drawer.GetComponent<Drawer>().isOpen = true;
     }
 
     void CloserDrawer() {
@@ -328,6 +340,35 @@ public class CrosshairManager : MonoBehaviour {
     {
         Debug.Log("there is no time to rest");
         couch.layer = 0;
+    }
+
+
+    void DoorToggle(GameObject door) 
+    {
+        Animator anim;
+        door.GetComponent<Animator>().enabled = true;
+        anim = door.GetComponent<Animator>();
+        bool toggler = door.GetComponent<Door>().isOpen;
+        if (!toggler)
+        {
+            anim.Play("open", -1, 0f);
+            door.GetComponent<Door>().isOpen = !toggler;
+        } else {
+            anim.Play("close", -1, 0f);
+            door.GetComponent<Door>().isOpen = !toggler;
+        }
+    }
+
+    void YemekToggle(GameObject yemek)
+    {
+        yemek.layer = 0;
+        Debug.Log("kendimi ac hissetmiyorum");
+    }
+
+    void CayToggle(GameObject caydanlik)
+    {
+        caydanlik.layer = 0;
+        Debug.Log("cay icecek vakit yok");
     }
 
 }

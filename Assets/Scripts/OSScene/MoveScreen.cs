@@ -20,8 +20,8 @@ public class MoveScreen : MonoBehaviour {
 	        PlayerMovement2D pm = FindObjectOfType<PlayerMovement2D>();
 	        
 	        pm.canAttack = false;	
-	        pm.controller.canMove = false;
-	        pm.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+	        pm.canCrouch = false;
+	        
 	        
 		at1.gameObject.SetActive(false);
 		at2.gameObject.SetActive(false);
@@ -44,7 +44,7 @@ public class MoveScreen : MonoBehaviour {
 
 
 	        pm.canAttack = true;	
-	        pm.controller.canMove = true;
+	        pm.canCrouch = true;
 		at2.gameObject.SetActive(true);
 
 	}

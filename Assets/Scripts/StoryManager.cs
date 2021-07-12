@@ -8,7 +8,6 @@ public class StoryManager : MonoBehaviour
     public Text subtitle;
     public AudioSource subtitleAs;
 
-    public GameObject finalObject;
 
     public static StoryManager Instance;
     private Queue<Sentence> sentences;

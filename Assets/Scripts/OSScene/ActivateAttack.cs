@@ -49,23 +49,11 @@ public class ActivateAttack : MonoBehaviour {
             FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(1f, .7f, 0f));
         } else if (name.Contains("gizli1")) {
             PopOS.Instance.PopUp(3, 20);
-            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1)
-            {
-                StoryManager.Instance.finalObject.SetActive(true);
-            }
         } else if (name.Contains("gizli2")) {
             FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-8f, -7f, 0f));
             PopOS.Instance.PopUp(4, 15);
-            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1)
-            {
-                StoryManager.Instance.finalObject.SetActive(true);
-            }
         } else if (name.Contains("gizli3")) {
             PopOS.Instance.PopUp(6, 25);
-            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1)
-            {
-                StoryManager.Instance.finalObject.SetActive(true);
-            }
             } else if (name.Contains("gizli4")) {
             if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1) {
                 //telefon çalması burayaaaaaa
@@ -73,7 +61,9 @@ public class ActivateAttack : MonoBehaviour {
                 Debug.Log("Oyunu bitir. // dosyayı okurken telefon çalar");
                 PopOS.Instance.PopUp(5, 25);
             } else {
-                PopOS.Instance.PopUp(5, 25);
+                GlitchController.Instance.Glitcher(0.1f);
+                PopOS.Instance.PopUp(8, 2);
+                FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-8f, -7f, 0f));
             }
         } else if (name.Contains("no")) {
             GlitchController.Instance.Glitcher(0.1f);

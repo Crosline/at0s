@@ -45,6 +45,14 @@ public class ActivateAttack : MonoBehaviour {
         } else if (name.Contains("gizli3")) {
             PopOS.Instance.PopUp(5, 25);
         } else if (name.Contains("gizli4")) {
+            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1) {
+                //telefon çalmasý burayaaaaaa
+                PopOS.Instance.PopUp(5, 25);
+            } else {
+                PopOS.Instance.PopUp(2, 2);
+            }
+
+
             PopOS.Instance.PopUp(6, 25);
         } else if (name.Contains("no")) {
             GlitchController.Instance.Glitcher(0.1f);

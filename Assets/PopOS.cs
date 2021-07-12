@@ -85,7 +85,7 @@ public class PopOS : MonoBehaviour {
         for (int i = 0; i < controller.Length; i++) {
             controller[i].controller.canMove = true;
             controller[i].controller.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            controller[i].GetComponent<Animator>().Play("Slide");
+            controller[i].GetComponent<Animator>().Play("Idle");
         }
     }
 

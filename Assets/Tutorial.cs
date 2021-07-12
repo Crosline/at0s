@@ -34,12 +34,12 @@ public class Tutorial : MonoBehaviour
         loading.enabled = true;
         loading.GetComponent<Animator>().Play("buggy");
 
+        baslik.text = basliklar[2];
+        info.text = infolar[2];
 
         yield return new WaitUntil(Jumping);
         DialogueTrigger.Instance.TriggerDialogue("Tutorial_Bug");
 
-        baslik.text = basliklar[2];
-        info.text = infolar[2];
 
         bool Walking() => Input.GetButton("Horizontal");
         bool Attacking() => Input.GetButton("Interact");

@@ -161,7 +161,7 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("Gramaphone")) GramaphoneToggle(newer);
             if (newer.name.Contains("PF_Plak")) PinkFloydToggle(newer);
             if (newer.name.Contains("SayborgPlak")) PlakToggle(newer);
-            if (newer.name.Contains("phone")) EndGame();
+            if (newer.name.Contains("phoneT")) EndGame();
             Debug.Log(newer.name);
         }
 

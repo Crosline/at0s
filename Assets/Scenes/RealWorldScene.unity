@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
+  m_IndirectSpecularColor: {r: 0.028677404, g: 0.02043458, b: 0.025266415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2606,6 +2606,17 @@ MonoBehaviour:
     sentences:
     - sentence: "Beni oku dosyas\u0131 m\u0131? Bu Jonathan olmal\u0131. Cunnigham,
         gidip o dosyaya vurursan belki de dosyay\u0131 a\xE7abiliriz."
+      duration: 6
+      clip: {fileID: 0}
+  - name: Tutorial_Bug
+    sentences:
+    - sentence: "Kontrollerde hata var gibi, z\u0131playam\u0131yorum!"
+      duration: 5
+      clip: {fileID: 0}
+    - sentence: "Y\xFCkleniyor simgesine ne oldu \xF6yle..."
+      duration: 4
+      clip: {fileID: 0}
+    - sentence: "Belki simgeye ula\u015Fabilirsem hatay\u0131 giderebilirim."
       duration: 6
       clip: {fileID: 0}
   - name: Open_Readme

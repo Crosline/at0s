@@ -20890,6 +20890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a919ead179dce15419813c80ac5b8639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerControllers: []
 --- !u!1 &5813297938089753850
 GameObject:
   m_ObjectHideFlags: 0
@@ -25352,7 +25353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8701799678810140048
 Transform:
   m_ObjectHideFlags: 0

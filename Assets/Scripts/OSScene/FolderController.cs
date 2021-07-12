@@ -103,7 +103,9 @@ public class FolderController : MonoBehaviour {
             yield return new WaitForSeconds(0.1f);
             canRender = true;
 
-            yield return new WaitForSeconds(11f);
+            yield return new WaitForSeconds(10f);
+            folderExe.GetComponent<SecretFileController>().EnableAll();
+            yield return new WaitForSeconds(1f);
             folderExe.SetActive(false);
             this.enabled = false;
         }

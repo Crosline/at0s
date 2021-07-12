@@ -4428,6 +4428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3141399183966284542}
     m_Modifications:
+    - target: {fileID: 3379098918597556867, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4903397206578815513, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4438,7 +4442,7 @@ PrefabInstance:
       objectReference: {fileID: 1886723627}
     - target: {fileID: 6266790686275597322, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7434254425810999207, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: triggerController
@@ -4468,6 +4472,10 @@ PrefabInstance:
       propertyPath: triggerControllers.Array.data[1]
       value: 
       objectReference: {fileID: 698483108}
+    - target: {fileID: 8701799678288979484, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_RootOrder
       value: 0

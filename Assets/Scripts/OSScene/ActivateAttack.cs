@@ -75,8 +75,7 @@ public class ActivateAttack : MonoBehaviour {
         } else if (name.Contains("mayin")) {
             GetComponent<Animator>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = false;
-            GlitchController.Instance.Invoke(
-            "Glitcher", 0.5f);
+            GlitchController.Instance.GlitcherAfter(0.5f);
             Destroy(this.gameObject, 0.7f);
         }
     }

@@ -2738,7 +2738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitle: {fileID: 1494651807}
   subtitleAs: {fileID: 254269170}
-  finalObject: {fileID: 886131396}
 --- !u!82 &254269170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4472,6 +4471,14 @@ PrefabInstance:
       propertyPath: triggerControllers.Array.data[1]
       value: 
       objectReference: {fileID: 698483108}
+    - target: {fileID: 7590646473207090346, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590646473207090346, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: screenSize
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8701799678288979484, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -4842,11 +4849,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.72274244, y: 0.460675, z: 0.77948827}
   m_Center: {x: 4.6207504, y: 0.2696625, z: 2.046256}
---- !u!1 &886131396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6266790686275597322, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-  m_PrefabInstance: {fileID: 696214502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &932016409
 PrefabInstance:
   m_ObjectHideFlags: 0

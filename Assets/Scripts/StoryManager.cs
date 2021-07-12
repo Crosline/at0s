@@ -8,6 +8,8 @@ public class StoryManager : MonoBehaviour
     public Text subtitle;
     public AudioSource subtitleAs;
 
+    public GameObject phone;
+
 
     public static StoryManager Instance;
     private Queue<Sentence> sentences;
@@ -64,6 +66,11 @@ public class StoryManager : MonoBehaviour
     {
         subtitle.text = "";
         Debug.Log("end of conversation");
+    }
+
+    public void EnablePhone()
+    {
+        phone.layer = 6;
     }
 
 

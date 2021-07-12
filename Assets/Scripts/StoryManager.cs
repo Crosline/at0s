@@ -85,7 +85,7 @@ public class StoryManager : MonoBehaviour
     IEnumerator EndingWait()
     {
         yield return new WaitForSeconds(10);
-        phone.GetComponent<AudioSource>().Play();
+        //phone.GetComponent<AudioSource>().Play();
         DialogueTrigger.Instance.TriggerDialogue("Phone_Ring");
     }
 }

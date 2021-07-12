@@ -167,6 +167,19 @@ public class CrosshairManager : MonoBehaviour {
 
     }
 
+    public IEnumerator RestartOs() {
+        yield return new WaitForSeconds(3f);
+
+        playerChar.SetActive(false);
+
+        yield return new WaitForSeconds(12f);
+
+        OSScreen.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        OSScreen.gameObject.SetActive(true);
+        playerChar.SetActive(true);
+    }
+
     void MergeObjects(GameObject inserting, GameObject receiving) {
 
         if (inserting.name.Contains("USB") && receiving.name.Contains("PC")) {
@@ -182,7 +195,7 @@ public class CrosshairManager : MonoBehaviour {
             inserting.GetComponent<Animator>().Play("insert", -1, 0f);
 
             playerChar.SetActive(true);
-            playerChar.transform.localPosition = playerInitialPos;
+            //playerChar.transform.localPosition = playerInitialPos;
             holder = null;
         } else {
             DeInteract(inserting);

@@ -16,11 +16,16 @@ public class SpawnFood : MonoBehaviour {
 
     public TextMesh scoreText;
 
+
+    public GameObject gizliDosya;
+    public GameObject snek;
+
     private List<GameObject> spawnedFoods = new List<GameObject>();
 
     // Use this for initialization
     void Start () {
         Spawn();
+        snek.SetActive(false);
     }
 
     public void Eat(GameObject g) {
@@ -31,22 +36,24 @@ public class SpawnFood : MonoBehaviour {
         Destroy(g);
 
 
-        scoreText.text = score.ToString();
 
         score++;
 
-        if (score == 11) {
+        if (score == 5) {
 
+            GlitchController.Instance.Glitcher(0.1f);
 
+            PlayerPrefs.SetInt("gizli1", 1);
 
-            // WİN
-
-
+            transform.parent.gameObject.GetComponent<SecretFileController>().EnableAll();
+            gizliDosya.SetActive(true);
+            transform.parent.gameObject.SetActive(false);
 
             return;
         }
 
 
+        scoreText.text = score.ToString();
         Spawn();
     }
 
@@ -73,15 +80,10 @@ public class SpawnFood : MonoBehaviour {
         float x = Random.Range(borderLeft.position.x,
                                   borderRight.position.x);
 
-        Debug.Log("---");
-        Debug.Log(x);
         // y position between top & bottom border
         float y = Random.Range(borderBottom.position.y,
                                   borderTop.position.y);
 
-        Debug.Log(y);
-
-        Debug.Log("---");
 
         GameObject temp = Instantiate(foodPrefab, new Vector3(x, y, 0f),
                     Quaternion.identity, transform.parent);

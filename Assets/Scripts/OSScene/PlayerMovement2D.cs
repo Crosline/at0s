@@ -16,8 +16,7 @@ public class PlayerMovement2D : MonoBehaviour {
     bool crouch = false;
 
 
-    // Start is called before the first frame update
-    void Start() {
+    void Init() {
 
         isDying = false;
         jump = false;
@@ -29,6 +28,12 @@ public class PlayerMovement2D : MonoBehaviour {
 
         controller.Move(0, true, false);
         controller.Move(0, false, false);
+    }
+
+
+    // Start is called before the first frame update
+    void Start() {
+        Init();
     }
 
     // Update is called once per frame
@@ -68,14 +73,14 @@ public class PlayerMovement2D : MonoBehaviour {
 
     public void ResetAll() {
 
-        Start();
-
+        Init();
+        transform.rotation = Quaternion.identity;
         controller.ResetAll(transform.position);
     }
     public void ResetAll(Vector3 newPos) {
 
-        Start();
-
+        Init();
+        transform.rotation = Quaternion.identity;
         controller.ResetAll(newPos);
     }
 

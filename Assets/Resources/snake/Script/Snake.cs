@@ -22,6 +22,7 @@ public class Snake : MonoBehaviour {
 	private List<Transform> tail = new List<Transform>();
 
 
+
 	private int tutorial = 2;
 
 
@@ -144,23 +145,10 @@ public class Snake : MonoBehaviour {
 					tail.Insert(tail.Count - 1, g.transform);
 				}*/
 
-
 				// Reset the flag
 				ate = false;
 			} else if (tail.Count > 0) {    // Do we have a Tail?
-											// Move last Tail Element to where the Head was
-				tail.Last().position = v;
-				tail.Last().rotation = a;
-
-				// Add to front of list, remove from the back
-
-				tail.Last().GetComponent<SpriteRenderer>().sprite = bodySprite;
-
-				tail.Insert(0, tail.Last());
-
-				tail.RemoveAt(tail.Count - 1);
-
-				tail.Last().GetComponent<SpriteRenderer>().sprite = tailSprite;
+				MoveTail(v, a);
 
 			}
 
@@ -174,12 +162,31 @@ public class Snake : MonoBehaviour {
 		StartCoroutine(Move());
 	}
 
+	void MoveTail(Vector2 v, Quaternion a) {
+
+		// Move last Tail Element to where the Head was
+		tail.Last().position = v;
+		tail.Last().rotation = a;
+
+
+		// Add to front of list, remove from the back
+
+		tail.Last().GetComponent<SpriteRenderer>().sprite = bodySprite;
+
+		tail.Insert(0, tail.Last());
+
+		tail.RemoveAt(tail.Count - 1);
+
+
+		tail.Last().GetComponent<SpriteRenderer>().sprite = tailSprite;
+	}
+
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.name.Contains("Food")) {
 
 			ate = true;
 
-			speed = speed - 0.075f;
+			speed = speed - 0.06f;
 
 			GetComponent<SpawnFood>().Eat(coll.gameObject);
 

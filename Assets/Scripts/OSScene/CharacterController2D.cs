@@ -105,7 +105,10 @@ public class CharacterController2D : MonoBehaviour {
 			OnCrouchEvent = new BoolEvent();
 		}
 	}
+
+	public GameObject tutorial;
 	private void Start() {
+		tutorial.SetActive(true);
 
 		if (transform.parent.TryGetComponent<CameraShake>(out CameraShake cs)) {
 			cameraShake = cs;
@@ -116,6 +119,10 @@ public class CharacterController2D : MonoBehaviour {
 		if (animator == null) {
 			animator = GetComponent<Animator>();
 		}
+	}
+
+	void Update() {
+		Debug.Log(transform.localPosition);
 	}
 
 	private void FixedUpdate() {

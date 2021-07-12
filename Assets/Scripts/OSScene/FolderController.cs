@@ -19,6 +19,7 @@ public class FolderController : MonoBehaviour {
     private bool inTrigger = false;
 
     public GameObject folderExe;
+    public GameObject pipeExe;
 
     // Start is called before the first frame update
     void Awake() {
@@ -101,11 +102,25 @@ public class FolderController : MonoBehaviour {
             folderExe.SetActive(true);
             yield return new WaitForSeconds(0.1f);
             canRender = true;
+
+            yield return new WaitForSeconds(11f);
+            folderExe.SetActive(false);
+            this.enabled = false;
+        }
+        else if (this.name.Contains("Pipe")) {
+
+
+            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.45f, -7.6f, 0f));
+
+            pipeExe.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            canRender = true;
         }
 
     }
 
     IEnumerator EnterTrash() {
+        Vector3 temp = player.position;
         player.position = transform.position + posOffset;
         player.GetComponent<Animator>().Play("Slide");
         player.GetComponent<PlayerMovement2D>().StopAllCoroutines();
@@ -121,7 +136,12 @@ public class FolderController : MonoBehaviour {
             yield return new WaitForSeconds(0.3f);
         }
 
-        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        GlitchController.Instance.Glitcher(0.3f);
+
+        player.SetParent(transform.parent.parent);
+        player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-1f, 1f, 0));
+        //player.position = temp + new Vector3(-1f,0,0);
 
         //play trash
 

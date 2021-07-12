@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
+  m_IndirectSpecularColor: {r: 0.028771684, g: 0.0205225, b: 0.025373064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2621,6 +2621,8 @@ MonoBehaviour:
         olmad\u0131. Bakal\u0131m bu sefer ne ile u\u011Fra\u015F\u0131yoruz."
       duration: 12
       clip: {fileID: 0}
+  - name: BeginGame
+    sentences:
     - sentence: Hey Cunningham, naber?
       duration: 2
       clip: {fileID: 0}

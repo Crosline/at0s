@@ -21,6 +21,8 @@ public class FolderController : MonoBehaviour {
     public GameObject folderExe;
     public GameObject pipeExe;
 
+    private bool firstPipe = true;
+
     // Start is called before the first frame update
     void Awake() {
         if (collider2D == null) {
@@ -112,14 +114,16 @@ public class FolderController : MonoBehaviour {
             this.enabled = false;
         }
         else if (this.name.Contains("Pipe")) {
+            if(firstPipe)
+            {
+                player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.55f, -7.6f, 0f));
 
-
-            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.55f, -7.6f, 0f));
-
-            pipeExe.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            DialogueTrigger.Instance.TriggerDialogue("Pipe_Enter");
-            canRender = true;
+                pipeExe.SetActive(true);
+                yield return new WaitForSeconds(0.1f);
+                DialogueTrigger.Instance.TriggerDialogue("Pipe_Enter");
+                canRender = true;
+                firstPipe = false;
+            }
         }
 
     }

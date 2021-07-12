@@ -75,5 +75,15 @@ public class StoryManager : MonoBehaviour
         phone.layer = 6;
     }
 
+    public void EndGame()
+    {
+        StartCoroutine(EndingWait());
+    }
 
+    IEnumerator EndingWait()
+    {
+        yield return new WaitForSeconds(10);
+        phone.GetComponent<AudioSource>().Play();
+        DialogueTrigger.Instance.TriggerDialogue("Phone_Ring");
+    }
 }

@@ -21,6 +21,7 @@ public class MoveScreen : MonoBehaviour {
 	        
 	        pm.canAttack = false;	
 	        pm.controller.canMove = false;
+	        pm.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 	        
 		at1.gameObject.SetActive(false);
 		at2.gameObject.SetActive(false);

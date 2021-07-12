@@ -2509,7 +2509,7 @@ MonoBehaviour:
         ama san\u0131r\u0131m bu cihazdaki dosyalar\u0131 yaln\u0131zca benim g\xF6rmemi
         istiyor."
       duration: 14
-      clip: {fileID: 8300000, guid: 247f4a39d930e784eaa5aadd52411601, type: 3}
+      clip: {fileID: 8300000, guid: e6d73cdd5ccd1e44daea7dd3f969b219, type: 3}
     - sentence: "Jonathan'\u0131n h\xFCk\xFCmet i\xE7in \xE7al\u0131\u015Ft\u0131\u011F\u0131n\u0131
         bilsem de hala orada ne yapt\u0131\u011F\u0131n\u0131 bilmiyorum. G\xFCn\xFCm\xFCzde
         her \u015Feyi yapay zekalar halletti\u011Fi i\xE7in art\u0131k analog teknolojileri
@@ -2517,12 +2517,12 @@ MonoBehaviour:
         bilgi al\u0131nmas\u0131 gerekti\u011Finde ise Jonathan onlar\u0131 bana
         yollar, ben de bilgileri geri ona yollar\u0131m."
       duration: 22
-      clip: {fileID: 8300000, guid: 39a74076d1011d647b03a07c515ca1e2, type: 3}
+      clip: {fileID: 8300000, guid: a79fb701ff1360148bfb613952dd85cb, type: 3}
     - sentence: "Fakat bu cihaz biraz garip, ilk kez b\xF6yle bir cihaz g\xF6r\xFCyorum.
         Zor da olsa kurulumunu tamamlad\u0131m fakat hen\xFCz a\xE7maya f\u0131rsat\u0131m
         olmad\u0131. Bakal\u0131m bu sefer ne ile u\u011Fra\u015F\u0131yoruz."
       duration: 14.5
-      clip: {fileID: 8300000, guid: a1bf05f7b3c74734b83475ae4d2b31c2, type: 3}
+      clip: {fileID: 8300000, guid: 03892cd679c7fbc47a426bf0c997aefa, type: 3}
   - name: AfterIntro
     sentences:
     - sentence: ' '
@@ -2697,6 +2697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitle: {fileID: 1494651807}
   subtitleAs: {fileID: 254269170}
+  phone: {fileID: 0}
+  clips: []
 --- !u!82 &254269170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6220,6 +6222,7 @@ MonoBehaviour:
   monitorLight: {fileID: 3686718679265951567}
   pcSandalyeInteract: {fileID: 191990563}
   fanObject: {fileID: 0}
+  pc: {fileID: 0}
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 64

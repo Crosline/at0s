@@ -2520,6 +2520,8 @@ MonoBehaviour:
         olmad\u0131. Bakal\u0131m bu sefer ne ile u\u011Fra\u015F\u0131yoruz."
       duration: 12
       clip: {fileID: 0}
+  - name: BeginGame
+    sentences:
     - sentence: Hey Cunningham, naber?
       duration: 2
       clip: {fileID: 0}

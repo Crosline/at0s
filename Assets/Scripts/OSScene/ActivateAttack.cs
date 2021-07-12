@@ -66,6 +66,7 @@ public class ActivateAttack : MonoBehaviour {
                 //OYUNU BİTİR.
                 DialogueTrigger.Instance.TriggerDialogue("EndGame");
                 StoryManager.Instance.EnablePhone();
+                StoryManager.Instance.EndGame();
                 Debug.Log("Oyunu bitir. // dosyayı okurken telefon çalar");
                 PopOS.Instance.PopUp(5, 25);
             } else {

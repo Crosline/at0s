@@ -2523,6 +2523,11 @@ MonoBehaviour:
         olmad\u0131. Bakal\u0131m bu sefer ne ile u\u011Fra\u015F\u0131yoruz."
       duration: 14.5
       clip: {fileID: 8300000, guid: a1bf05f7b3c74734b83475ae4d2b31c2, type: 3}
+  - name: AfterIntro
+    sentences:
+    - sentence: ' '
+      duration: 1
+      clip: {fileID: 0}
     - sentence: Hey Cunningham, naber?
       duration: 3
       clip: {fileID: 8300000, guid: 9fb4e9bc369a6b941be6a5b1aef59b8e, type: 3}
@@ -3839,7 +3844,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh618792
+  m_Name: pb_Mesh710004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5353,7 +5358,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh618368
+  m_Name: pb_Mesh709576
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5603,6 +5608,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195312991}
   m_CullTransparentMesh: 1
+--- !u!1 &1202726386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1202726387}
+  - component: {fileID: 1202726388}
+  m_Layer: 0
+  m_Name: IntroManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1202726387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202726386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1614283167}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1202726388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202726386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aefc546d2552bd479bd11b1bde1f4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1217310409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6426,6 +6474,7 @@ Transform:
   m_Children:
   - {fileID: 1416650602}
   - {fileID: 254269167}
+  - {fileID: 1202726387}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

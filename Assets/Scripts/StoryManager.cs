@@ -9,18 +9,14 @@ public class StoryManager : MonoBehaviour
     public AudioSource subtitleAs;
 
     public static StoryManager Instance;
+    private Queue<Sentence> sentences;
 
     void Awake()
     {
         Instance = this;
-    }
-
-    private Queue<Sentence> sentences;
-
-    void Start()
-    {
         sentences = new Queue<Sentence>();
     }
+
 
     public void StartDialogue(Dialogue dialogue)
     {

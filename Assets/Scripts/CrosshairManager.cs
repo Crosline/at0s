@@ -69,7 +69,6 @@ public class CrosshairManager : MonoBehaviour {
         camTransform = playerCam.transform;
         chairPos = chair.position;
         pxCam = playerCam.transform.GetChild(2).GetComponent<Camera>();
-        DialogueTrigger.Instance.TriggerDialogue("BeginGame");
     }
 
     GameObject old = null;

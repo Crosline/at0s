@@ -2520,8 +2520,11 @@ MonoBehaviour:
         olmad\u0131. Bakal\u0131m bu sefer ne ile u\u011Fra\u015F\u0131yoruz."
       duration: 12
       clip: {fileID: 0}
-  - name: BeginGame
+  - name: AfterIntro
     sentences:
+    - sentence: ' '
+      duration: 2
+      clip: {fileID: 0}
     - sentence: Hey Cunningham, naber?
       duration: 2
       clip: {fileID: 0}
@@ -2730,6 +2733,28 @@ MonoBehaviour:
     - sentence: "Umar\u0131m Jonathan'\u0131n buna bir \xE7\xF6z\xFCm\xFC vard\u0131r.
         Cunningham, dosyalar\u0131 hemen yolla."
       duration: 7
+      clip: {fileID: 0}
+  - name: Phone_Ring
+    sentences:
+    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
+      duration: 6
+      clip: {fileID: 0}
+  - name: Finish
+    sentences:
+    - sentence: Doktor!
+      duration: 1
+      clip: {fileID: 0}
+    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
+      duration: 6
       clip: {fileID: 0}
 --- !u!114 &254269169
 MonoBehaviour:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 #pragma warning disable 0649
@@ -155,6 +156,7 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("Gramaphone")) GramaphoneToggle(newer);
             if (newer.name.Contains("PF_Plak")) PinkFloydToggle(newer);
             if (newer.name.Contains("SayborgPlak")) PlakToggle(newer);
+            if (newer.name.Contains("phone")) EndGame();
             Debug.Log(newer.name);
         }
 
@@ -567,5 +569,19 @@ public class CrosshairManager : MonoBehaviour {
         {
             gram.GetComponent<Gramaphone>().stopGramaphone();
         }
+    }
+
+    void EndGame()
+    {
+        DialogueTrigger.Instance.TriggerDialogue("Finish");
+        GetComponent<PlayerMovement>().enabled = false;
+        StartCoroutine(EndingPlay());
+    }
+
+    IEnumerator EndingPlay()
+    {
+        //20 değişecek
+        yield return new WaitForSeconds(20);
+        SceneManager.LoadScene(3);
     }
 }

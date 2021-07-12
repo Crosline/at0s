@@ -16,6 +16,8 @@ public class PlayerMovement2D : MonoBehaviour {
     bool crouch = false;
 
     public bool canJump = false;
+    
+    public bool canAttack = true;
 
     void Init() {
 

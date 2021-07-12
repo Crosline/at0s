@@ -2463,6 +2463,7 @@ GameObject:
   - component: {fileID: 254269167}
   - component: {fileID: 254269169}
   - component: {fileID: 254269168}
+  - component: {fileID: 254269170}
   m_Layer: 0
   m_Name: StoryManager
   m_TagString: Untagged
@@ -2499,50 +2500,53 @@ MonoBehaviour:
   dialogues:
   - name: BeginGame
     sentences:
+    - sentence: ' '
+      duration: 1
+      clip: {fileID: 0}
     - sentence: "Yo\u011Fun ge\xE7en bir hafta sonras\u0131 Jonathan'\u0131n g\xF6nderdi\u011Fi
         bu cihaz\u0131 incelemek i\xE7in elime sonunda bir f\u0131rsat ge\xE7ti.
         Neden bu cihaz i\xE7in inatla bana ihtiya\xE7lar\u0131 oldu\u011Funu anlamam\u0131\u015Ft\u0131m
         ama san\u0131r\u0131m bu cihazdaki dosyalar\u0131 yaln\u0131zca benim g\xF6rmemi
         istiyor."
-      duration: 13
-      clip: {fileID: 0}
+      duration: 14
+      clip: {fileID: 8300000, guid: 247f4a39d930e784eaa5aadd52411601, type: 3}
     - sentence: "Jonathan'\u0131n h\xFCk\xFCmet i\xE7in \xE7al\u0131\u015Ft\u0131\u011F\u0131n\u0131
         bilsem de hala orada ne yapt\u0131\u011F\u0131n\u0131 bilmiyorum. G\xFCn\xFCm\xFCzde
         her \u015Feyi yapay zekalar halletti\u011Fi i\xE7in art\u0131k analog teknolojileri
         bilen \xE7ok fazla insan kalmad\u0131. Eski teknolojiye sahip baz\u0131 cihazlardan
         bilgi al\u0131nmas\u0131 gerekti\u011Finde ise Jonathan onlar\u0131 bana
         yollar, ben de bilgileri geri ona yollar\u0131m."
-      duration: 14
-      clip: {fileID: 0}
+      duration: 22
+      clip: {fileID: 8300000, guid: 39a74076d1011d647b03a07c515ca1e2, type: 3}
     - sentence: "Fakat bu cihaz biraz garip, ilk kez b\xF6yle bir cihaz g\xF6r\xFCyorum.
         Zor da olsa kurulumunu tamamlad\u0131m fakat hen\xFCz a\xE7maya f\u0131rsat\u0131m
         olmad\u0131. Bakal\u0131m bu sefer ne ile u\u011Fra\u015F\u0131yoruz."
-      duration: 12
-      clip: {fileID: 0}
+      duration: 14.5
+      clip: {fileID: 8300000, guid: a1bf05f7b3c74734b83475ae4d2b31c2, type: 3}
     - sentence: Hey Cunningham, naber?
-      duration: 2
-      clip: {fileID: 0}
+      duration: 3
+      clip: {fileID: 8300000, guid: 9fb4e9bc369a6b941be6a5b1aef59b8e, type: 3}
     - sentence: "\u015Eu lanet bilgisayar sinirimi bozuyor, i\xE7erisindekiler umar\u0131m
         ba\u015F\u0131m\u0131za bela olmaz doktor. Senin lanet 'antika teknoloji'
         sevdan y\xFCz\xFCnden art\u0131k yoruldum."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 10
+      clip: {fileID: 8300000, guid: 8d593897586691f46a6ceb3156be715d, type: 3}
     - sentence: "Rahat ol, bizim i\u015Fimiz yaln\u0131zca dosyalar\u0131 elde etmek.
         Sonras\u0131nda sen onlar\u0131 Jonathan'a yollars\u0131n. Bir sorun olmayacak,
         merak etme."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 9
+      clip: {fileID: 8300000, guid: 7a059c42a8e16634fa106a7df873c36e, type: 3}
     - sentence: "Ge\xE7en sefer ba\u015F\u0131m\u0131za gelenleri unuttun mu? Zihin
         okuma, beden kontrol\xFC... Ge\xE7mi\u015Fte yap\u0131lan lanet deneyleri
         \xF6\u011Frendi\u011Fimiz i\xE7in \u015Fu anda bu lanet g\xF6kdelende yaln\u0131z
         ya\u015F\u0131yoruz."
-      duration: 9
-      clip: {fileID: 0}
-    - sentence: "Ne olursa olsun seni yapay zek\xE2 cehennemine atmalar\u0131na izin
-        vermeyece\u011Fim, sen bunu d\xFC\u015F\xFCnme. \u015Eu cihaz\u0131 a\xE7al\u0131m
-        ve bakal\u0131m ne ile u\u011Fra\u015F\u0131yoruz."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 12
+      clip: {fileID: 8300000, guid: 63e5410a1c0386845874afda23e4b04a, type: 3}
+    - sentence: "Bak ne olursa olsun seni yapay zek\xE2 cehennemine atmalar\u0131na
+        izin vermeyece\u011Fim, sen l\xFCtfen bunu d\xFC\u015F\xFCnme. Ahh.. Neyse.
+        Gel de \u015Fu cihaz\u0131 bi a\xE7\u0131p bakal\u0131m ne oluyormu\u015F."
+      duration: 12
+      clip: {fileID: 8300000, guid: aac1778af0fbf544cbfdd84127951c64, type: 3}
   - name: Interact_Cay
     sentences:
     - sentence: "\xC7ay i\xE7ecek vaktim oldu\u011Funu sanm\u0131yorum."
@@ -2687,6 +2691,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitle: {fileID: 1494651807}
+  subtitleAs: {fileID: 254269170}
+--- !u!82 &254269170
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254269166}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -717045688161362000, guid: a98af8424e93d8c47b7442c0b8a849fe, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &278053419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3725,7 +3826,7 @@ Animation:
   m_GameObject: {fileID: 509653806}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: a71cd5ee5fbdcbe49be63a3b55bd21dd, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: a71cd5ee5fbdcbe49be63a3b55bd21dd, type: 2}
   m_WrapMode: 0
@@ -3738,7 +3839,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh594358
+  m_Name: pb_Mesh618792
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5220,7 +5321,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh593942
+  m_Name: pb_Mesh618368
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

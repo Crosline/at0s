@@ -18,7 +18,7 @@ public class SecretFileController : MonoBehaviour {
 
     public void EnableAll() {
         for (int i = 0; i < colliders.Length; i++) {
-            if (i > 0) {
+            if (i == 1) {
                 if (PlayerPrefs.GetInt("gizli1", 0) == 0) {
                     continue;
                 }

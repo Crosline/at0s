@@ -6,10 +6,13 @@ public class InternetExplorer : MonoBehaviour {
 
     public GameObject gizliDosya;
 
+    private bool done = false;
+
 
     private int errorCount = 0;
 
     public void IncreaseError() {
+        if (done) return;
         if (errorCount >= errors.Length) {
             if (gizliDosya != null) {
                 gizliDosya.SetActive(true);
@@ -27,6 +30,7 @@ public class InternetExplorer : MonoBehaviour {
 
             StartCoroutine(
             FindObjectOfType<CrosshairManager>().RestartOs());
+            done = true;
             return;
         }
 

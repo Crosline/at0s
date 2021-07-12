@@ -54,7 +54,7 @@ public class FolderController : MonoBehaviour {
         if (Input.GetButtonDown("Crouch")) {
 
             if (inTrigger) {
-
+                if (name.Contains("Trash")) return;
                 Debug.Log("PLAYERPOS");
 
                 if (player.TryGetComponent<Animator>(out Animator anim)) {

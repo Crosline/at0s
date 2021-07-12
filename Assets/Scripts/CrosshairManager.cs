@@ -191,7 +191,6 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     public IEnumerator RestartOs() {
-        playerChar.transform.position = new Vector3(-1.25f, playerChar.transform.position.y, playerChar.transform.position.z);
         yield return new WaitForSeconds(3f);
         playerChar.SetActive(false);
         Debug.Log("test 1");

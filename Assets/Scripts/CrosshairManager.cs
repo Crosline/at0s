@@ -582,6 +582,6 @@ public class CrosshairManager : MonoBehaviour {
     {
         //20 değişecek
         yield return new WaitForSeconds(20);
-        //oyunu bitir.
+        SceneManager.LoadScene(3);
     }
 }

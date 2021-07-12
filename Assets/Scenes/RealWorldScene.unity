@@ -4432,6 +4432,10 @@ PrefabInstance:
       propertyPath: fan
       value: 
       objectReference: {fileID: 1886723627}
+    - target: {fileID: 6266790686275597322, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7111521706087939416, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.64
@@ -4490,7 +4494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}

@@ -33,8 +33,9 @@ public class Tutorial : MonoBehaviour
 
         loading.enabled = true;
         loading.GetComponent<Animator>().Play("buggy");
-        
-        
+
+
+        yield return new WaitUntil(Jumping);
         DialogueTrigger.Instance.TriggerDialogue("Tutorial_Bug");
 
         baslik.text = basliklar[2];
@@ -42,6 +43,7 @@ public class Tutorial : MonoBehaviour
 
         bool Walking() => Input.GetButton("Horizontal");
         bool Attacking() => Input.GetButton("Interact");
+        bool Jumping() => Input.GetButton("Jump");
     }
 
 

@@ -64,6 +64,8 @@ public class PlayerMovement2D : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Interact") && controller.canMove && canAttack) {
+            AudioSource a = GetComponent<AudioSource>();
+            a.PlayOneShot(StoryManager.Instance.clips[12]);
             controller.canMove = false;
             controller.animator.Play("Attack");
             StartCoroutine(RestartMove());

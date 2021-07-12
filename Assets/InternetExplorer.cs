@@ -33,7 +33,8 @@ public class InternetExplorer : MonoBehaviour {
             done = true;
             return;
         }
-
+        AudioSource a = GetComponent<AudioSource>();
+        a.PlayOneShot(StoryManager.Instance.clips[13]);
         errors[errorCount].SetActive(true);
         errorCount++;
 

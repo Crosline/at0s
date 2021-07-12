@@ -71,6 +71,8 @@ public class FolderController : MonoBehaviour {
     }
 
     IEnumerator EnterFolder() {
+        AudioSource a = player.GetComponent<AudioSource>();
+        a.PlayOneShot(StoryManager.Instance.clips[11]);
         player.position = transform.position + posOffset;
         player.GetComponent<Animator>().Play("Slide");
         player.GetComponent<PlayerMovement2D>().StopAllCoroutines();

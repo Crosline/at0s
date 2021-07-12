@@ -17,21 +17,25 @@ public class PipeController : MonoBehaviour {
             }    
          */
         }
+
+        InvokeRepeating("CheckPipes", 3f, 5f);
     }
 
 
     public void RotatePipes() {
 
-        bool temp = true;
 
         foreach (Pipe pipe in pipes) {
             pipe.RotatePipe();
-
-
-            if (!pipe.isCorrect && temp) {
-                temp = false;
-            }
         }
+
+
+        CheckPipes();
+    }
+    
+    private void CheckPipes() {
+
+        bool temp = true;
 
         foreach (Pipe pipe in pipes) {
             if (!pipe.isCorrect) {
@@ -44,7 +48,6 @@ public class PipeController : MonoBehaviour {
             isComplete = true;
             transform.parent.parent.GetComponent<PipeExe>().CheckComplete();
         }
-
     }
 
 

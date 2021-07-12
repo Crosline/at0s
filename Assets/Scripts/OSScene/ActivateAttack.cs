@@ -46,25 +46,35 @@ public class ActivateAttack : MonoBehaviour {
             GlitchController.Instance.Glitcher(0.3f);
             DialogueTrigger.Instance.TriggerDialogue("Snake_Intro");
             snekExe.SetActive(true);
-            FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-1.8f, 0.4f, 0f));
+            FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(1f, .7f, 0f));
         } else if (name.Contains("gizli1")) {
             PopOS.Instance.PopUp(3, 20);
+            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1)
+            {
+                StoryManager.Instance.finalObject.SetActive(true);
+            }
         } else if (name.Contains("gizli2")) {
-            PopOS.Instance.PopUp(4, 15);
             FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-8f, -7f, 0f));
+            PopOS.Instance.PopUp(4, 15);
+            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1)
+            {
+                StoryManager.Instance.finalObject.SetActive(true);
+            }
         } else if (name.Contains("gizli3")) {
-            PopOS.Instance.PopUp(5, 25);
-        } else if (name.Contains("gizli4")) {
+            PopOS.Instance.PopUp(6, 25);
+            if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1)
+            {
+                StoryManager.Instance.finalObject.SetActive(true);
+            }
+            } else if (name.Contains("gizli4")) {
             if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1) {
                 //telefon çalması burayaaaaaa
                 //OYUNU BİTİR.
+                Debug.Log("Oyunu bitir. // dosyayı okurken telefon çalar");
                 PopOS.Instance.PopUp(5, 25);
             } else {
-                PopOS.Instance.PopUp(8, 2);
+                PopOS.Instance.PopUp(5, 25);
             }
-
-
-            PopOS.Instance.PopUp(6, 25);
         } else if (name.Contains("no")) {
             GlitchController.Instance.Glitcher(0.1f);
             PopOS.Instance.PopUp(2, 1);

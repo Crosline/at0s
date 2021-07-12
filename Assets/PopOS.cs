@@ -5,6 +5,8 @@ public class PopOS : MonoBehaviour {
 
     public static PopOS Instance;
 
+    public GameObject[] triggerControllers;
+
     int lastUsed = 0;
 
     bool isOn = false;
@@ -31,6 +33,9 @@ public class PopOS : MonoBehaviour {
     public void PopUp(int popUpChild = 0, float screenDuration = 5f) {
 
         lastUsed = popUpChild;
+
+        triggerControllers[0].GetComponent<ActivateTrigger>().isUp = false;
+        triggerControllers[1].GetComponent<ActivateTrigger>().isUp = true;
 
         StartCoroutine(OpenPopUp(popUpChild, screenDuration));
 

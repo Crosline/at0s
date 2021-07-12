@@ -10,6 +10,9 @@ public class ActivateAttack : MonoBehaviour {
 
     private bool firstHitOnReadme = true;
 
+    private bool firstPipe = true;
+    private bool firstSnake = true;
+
 
 
     // Update is called once per frame
@@ -49,10 +52,14 @@ public class ActivateAttack : MonoBehaviour {
         } else if (name.Contains("loading")) {
             GetComponent<GlitchyLoad>().FixGlitch();
         } else if (name.Contains("snake")) {
-            GlitchController.Instance.Glitcher(0.3f);
-            DialogueTrigger.Instance.TriggerDialogue("Snake_Intro");
-            snekExe.SetActive(true);
-            FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(1f, .7f, 0f));
+            if(firstSnake)
+            {
+                GlitchController.Instance.Glitcher(0.3f);
+                DialogueTrigger.Instance.TriggerDialogue("Snake_Intro");
+                snekExe.SetActive(true);
+                FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(1f, .7f, 0f));
+                firstSnake = false;
+            }
         } else if (name.Contains("gizli1")) {
             PopOS.Instance.PopUp(3, 20);
         } else if (name.Contains("gizli2")) {

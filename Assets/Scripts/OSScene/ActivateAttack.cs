@@ -51,6 +51,7 @@ public class ActivateAttack : MonoBehaviour {
             PopOS.Instance.PopUp(3, 20);
         } else if (name.Contains("gizli2")) {
             PopOS.Instance.PopUp(4, 15);
+            FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-8f, -7f, 0f));
         } else if (name.Contains("gizli3")) {
             PopOS.Instance.PopUp(5, 25);
         } else if (name.Contains("gizli4")) {

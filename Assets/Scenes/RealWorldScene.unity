@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
+  m_IndirectSpecularColor: {r: 0.028677404, g: 0.02043458, b: 0.025266415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2608,6 +2608,17 @@ MonoBehaviour:
         gidip o dosyaya vurursan belki de dosyay\u0131 a\xE7abiliriz."
       duration: 6
       clip: {fileID: 0}
+  - name: Tutorial_Bug
+    sentences:
+    - sentence: "Kontrollerde hata var gibi, z\u0131playam\u0131yorum!"
+      duration: 5
+      clip: {fileID: 0}
+    - sentence: "Y\xFCkleniyor simgesine ne oldu \xF6yle..."
+      duration: 4
+      clip: {fileID: 0}
+    - sentence: "Belki simgeye ula\u015Fabilirsem hatay\u0131 giderebilirim."
+      duration: 6
+      clip: {fileID: 0}
   - name: Open_Readme
     sentences:
     - sentence: Bu da ne?
@@ -4416,34 +4427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3141399183966284542}
     m_Modifications:
-    - target: {fileID: 31006834863243729, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2542454869259945500, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_text
-      value: "A\u015EIRI ISINMA"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3788848935945052975, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5246597436734484090, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: fan
       value: 
       objectReference: {fileID: 1886723627}
-    - target: {fileID: 6266790686275597322, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111521706087939416, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7111521706087939416, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.6
-      objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4491,10 +4478,6 @@ PrefabInstance:
     - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_Name
       value: OS Screen
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}

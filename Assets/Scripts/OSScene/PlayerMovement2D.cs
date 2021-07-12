@@ -15,6 +15,7 @@ public class PlayerMovement2D : MonoBehaviour {
     bool jump = false;
     bool crouch = false;
 
+    public bool canJump = false;
 
     void Init() {
 
@@ -47,7 +48,7 @@ public class PlayerMovement2D : MonoBehaviour {
              frictionCollider.sharedMaterial = frictionOn;
          }*/
 
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && canJump) {
             jump = true;
         }
 

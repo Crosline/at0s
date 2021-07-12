@@ -12,6 +12,8 @@ public class GlitchyLoad : MonoBehaviour
         readme.SetActive(true);
 
         transform.parent.parent.gameObject.SetActive(false);
+        
+        FindObjectOfType<PlayerMovement2D>().canJump = true;
 
         DialogueTrigger.Instance.TriggerDialogue("Free_Roam");
     }

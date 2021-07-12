@@ -33,6 +33,9 @@ public class Tutorial : MonoBehaviour
 
         loading.enabled = true;
         loading.GetComponent<Animator>().Play("buggy");
+        
+        
+        DialogueTrigger.Instance.TriggerDialogue("Tutorial_Bug");
 
         baslik.text = basliklar[2];
         info.text = infolar[2];

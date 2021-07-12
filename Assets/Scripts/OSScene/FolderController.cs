@@ -54,7 +54,7 @@ public class FolderController : MonoBehaviour {
         if (Input.GetButtonDown("Crouch")) {
 
             if (inTrigger) {
-
+                if (transform.parent.name.Contains("Trash")) return;
                 Debug.Log("PLAYERPOS");
 
                 if (player.TryGetComponent<Animator>(out Animator anim)) {
@@ -103,14 +103,16 @@ public class FolderController : MonoBehaviour {
             yield return new WaitForSeconds(0.1f);
             canRender = true;
 
-            yield return new WaitForSeconds(11f);
+            yield return new WaitForSeconds(10f);
+            folderExe.GetComponent<SecretFileController>().EnableAll();
+            yield return new WaitForSeconds(1f);
             folderExe.SetActive(false);
             this.enabled = false;
         }
         else if (this.name.Contains("Pipe")) {
 
 
-            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.45f, -7.6f, 0f));
+            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.55f, -7.6f, 0f));
 
             pipeExe.SetActive(true);
             yield return new WaitForSeconds(0.1f);
@@ -163,13 +165,15 @@ public class FolderController : MonoBehaviour {
                     player.parent = this.transform;
                     StartCoroutine(EnterTrash());
                 }
-            }
+            } else {
                 inTrigger = true;
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D other) {
         if (other.CompareTag("2DPlayer") && !inTrigger) {
+        if (!this.name.Contains("Trash")
             inTrigger = true;
         }
     }

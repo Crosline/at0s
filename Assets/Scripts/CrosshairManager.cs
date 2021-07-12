@@ -192,7 +192,6 @@ public class CrosshairManager : MonoBehaviour {
 
     public IEnumerator RestartOs() {
         yield return new WaitForSeconds(3f);
-
         playerChar.SetActive(false);
         Debug.Log("test 1");
         yield return new WaitForSeconds(12f);

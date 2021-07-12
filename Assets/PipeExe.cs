@@ -14,7 +14,7 @@ public class PipeExe : MonoBehaviour {
         foreach (PipeController pipe in pipes)
         {
 
-            if (!pipe.isComplete && temp)
+            if (!pipe.isComplete)
             {
                 temp = false;
                 break;

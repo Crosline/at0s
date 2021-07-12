@@ -173,7 +173,7 @@ public class FolderController : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D other) {
         if (other.CompareTag("2DPlayer") && !inTrigger) {
-        if (!this.name.Contains("Trash")
+        if (!this.name.Contains("Trash"))
             inTrigger = true;
         }
     }

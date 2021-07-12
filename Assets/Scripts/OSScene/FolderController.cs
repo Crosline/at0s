@@ -54,7 +54,7 @@ public class FolderController : MonoBehaviour {
         if (Input.GetButtonDown("Crouch")) {
 
             if (inTrigger) {
-                if (name.Contains("Trash")) return;
+                if (transform.parent.name.Contains("Trash")) return;
                 Debug.Log("PLAYERPOS");
 
                 if (player.TryGetComponent<Animator>(out Animator anim)) {
@@ -165,13 +165,15 @@ public class FolderController : MonoBehaviour {
                     player.parent = this.transform;
                     StartCoroutine(EnterTrash());
                 }
-            }
+            } else {
                 inTrigger = true;
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D other) {
         if (other.CompareTag("2DPlayer") && !inTrigger) {
+        if (!this.name.Contains("Trash")
             inTrigger = true;
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028771684, g: 0.0205225, b: 0.025373064, a: 1}
+  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2526,104 +2526,104 @@ MonoBehaviour:
       duration: 2
       clip: {fileID: 0}
     - sentence: Hey Cunningham, naber?
-      duration: 2
-      clip: {fileID: 0}
+      duration: 3
+      clip: {fileID: 8300000, guid: f35a416ef8282714e84b560e869f520e, type: 3}
     - sentence: "\u015Eu lanet bilgisayar sinirimi bozuyor, i\xE7erisindekiler umar\u0131m
         ba\u015F\u0131m\u0131za bela olmaz doktor. Senin lanet 'antika teknoloji'
         sevdan y\xFCz\xFCnden art\u0131k yoruldum."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 9.5
+      clip: {fileID: 8300000, guid: 4d217c10acf6eb449b3c970aa7de5ce7, type: 3}
     - sentence: "Rahat ol, bizim i\u015Fimiz yaln\u0131zca dosyalar\u0131 elde etmek.
         Sonras\u0131nda sen onlar\u0131 Jonathan'a yollars\u0131n. Bir sorun olmayacak,
         merak etme."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 9.5
+      clip: {fileID: 8300000, guid: d56a4a78d9a129249b53263832ce531d, type: 3}
     - sentence: "Ge\xE7en sefer ba\u015F\u0131m\u0131za gelenleri unuttun mu? Zihin
         okuma, beden kontrol\xFC... Ge\xE7mi\u015Fte yap\u0131lan lanet deneyleri
         \xF6\u011Frendi\u011Fimiz i\xE7in \u015Fu anda bu lanet g\xF6kdelende yaln\u0131z
         ya\u015F\u0131yoruz."
-      duration: 9
-      clip: {fileID: 0}
-    - sentence: "Ne olursa olsun seni yapay zek\xE2 cehennemine atmalar\u0131na izin
-        vermeyece\u011Fim, sen bunu d\xFC\u015F\xFCnme. \u015Eu cihaz\u0131 a\xE7al\u0131m
-        ve bakal\u0131m ne ile u\u011Fra\u015F\u0131yoruz."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 11.5
+      clip: {fileID: 8300000, guid: a14520dabe782f040b1a06c161dba266, type: 3}
+    - sentence: "Bak, ne olursa olsun seni yapay zek\xE2 cehennemine atmalar\u0131na
+        izin vermeyece\u011Fim, sen bunu d\xFC\u015F\xFCnme. \u015Eu cihaz\u0131
+        a\xE7al\u0131m ve bakal\u0131m ne ile u\u011Fra\u015F\u0131yoruz."
+      duration: 12
+      clip: {fileID: 8300000, guid: d670ede4dfd5cc24baff5e12dc2582f2, type: 3}
   - name: Interact_Cay
     sentences:
     - sentence: "\xC7ay i\xE7ecek vaktim oldu\u011Funu sanm\u0131yorum."
-      duration: 3
-      clip: {fileID: 0}
+      duration: 2
+      clip: {fileID: 8300000, guid: a44622679443cb3418df43720f42cfcf, type: 3}
   - name: Interact_Yemek
     sentences:
     - sentence: "A\xE7 hissetmiyorum."
-      duration: 3
-      clip: {fileID: 0}
+      duration: 1.5
+      clip: {fileID: 8300000, guid: 3336b5bdeb4a783408abcc1087f6692d, type: 3}
   - name: Interact_Arcade
     sentences:
-    - sentence: "\u015Eu makineyi bir ara tamir etsem iyi olacak. S\u0131k\u0131ld\u0131m
-        burada."
+    - sentence: "\u015Eu makineyi bir ara tamir etsem iyi olacak. Valla s\u0131k\u0131ld\u0131m
+        burada.\r"
       duration: 5
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 13c577017b3e7344cba70912f24b8d3b, type: 3}
   - name: Interact_PF
     sentences:
     - sentence: "Vay, Pink Floyd... Rock tanr\u0131lar\u0131... Bizim d\xF6nemler..."
       duration: 5
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 896b8798d63ee444a9b6f324d50f32fd, type: 3}
   - name: Interact_Plak2
     sentences:
     - sentence: "Bu alb\xFCm beni her zaman rahatlat\u0131yor."
-      duration: 3
-      clip: {fileID: 0}
+      duration: 2.5
+      clip: {fileID: 8300000, guid: fd18d08a61cf5034fb0a182bfe32f6e5, type: 3}
   - name: Glitch_Error
     sentences:
     - sentence: "Bu ekran neden b\xF6yle? Hi\xE7bir \u015Fey okunmuyor."
-      duration: 4
-      clip: {fileID: 0}
-    - sentence: "Bu 'Glitch' hatas\u0131. \u0130\xE7 mekanizmadaki temass\u0131zl\u0131klar
-        y\xFCz\xFCnden g\xF6r\xFCnt\xFC bozuk geliyor."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 3
+      clip: {fileID: 8300000, guid: 713e4d52c7f0bb44a9d40a84601788b8, type: 3}
+    - sentence: "Haa\u2026 'Glitch' hatas\u0131 ya bu. \u0130\xE7 mekanizmadaki temass\u0131zl\u0131klar
+        y\xFCz\xFCnden g\xF6r\xFCnt\xFC b\xF6yle bozuk geliyor.\r"
+      duration: 6.25
+      clip: {fileID: 8300000, guid: fce78965b78dd06419152df0bac4ac74, type: 3}
     - sentence: "Ne yap\u0131caz?"
-      duration: 2
-      clip: {fileID: 0}
-    - sentence: "Bazen atarimde de g\xF6r\xFCnt\xFC gidip geliyor, birka\xE7 darbe
-        al\u0131nca d\xFCzeliyor. (F tu\u015Funa basarak ekrana vur)"
-      duration: 4
-      clip: {fileID: 0}
+      duration: 1
+      clip: {fileID: 8300000, guid: f28dde335c2c59744bc32b465bfee3cf, type: 3}
+    - sentence: "Bazen benim atarimde de g\xF6r\xFCnt\xFC gidip geliyor, birka\xE7
+        darbe al\u0131nca d\xFCzeliyor. (F tu\u015Funa basarak ekrana vur)\r\n"
+      duration: 5
+      clip: {fileID: 8300000, guid: 11a83bd39f70c5146a52d58b9499e63f, type: 3}
   - name: Glitch_Fix
     sentences:
     - sentence: "Tamam, ama hi\xE7bir \u015Feyi kontrol edemiyorum. [Klavye sesleri]
         Tu\u015Flar \xE7al\u0131\u015Fm\u0131yor. "
-      duration: 5
-      clip: {fileID: 0}
+      duration: 6.5
+      clip: {fileID: 8300000, guid: 7525b4b24800b3c4ab224a8ab0cc414c, type: 3}
     - sentence: "Bir fikrim var, \xE7ekmecedeki diski bilgisayara tak. Beni bilgisayar\u0131n
         i\xE7ine yerle\u015Ftirirsen i\u015Fimizi bir an \xF6nce bitirebiliriz. Ve
         merak etme, beynindeki \xE7ipe zarar gelmeyecek."
-      duration: 10
-      clip: {fileID: 0}
+      duration: 11.5
+      clip: {fileID: 8300000, guid: 24a57d8361dc3cd4082043ab5c32d8ee, type: 3}
   - name: Insert_Disk
     sentences:
     - sentence: "Tamam... Evet, dediklerini yap \xE7abuk."
-      duration: 3
-      clip: {fileID: 0}
+      duration: 5
+      clip: {fileID: 8300000, guid: 00b0ce7683008504da48e3c3e63c1a72, type: 3}
   - name: Free_Roam
     sentences:
     - sentence: "Beni oku dosyas\u0131 m\u0131? Bu Jonathan olmal\u0131. Cunnigham,
         gidip o dosyaya vurursan belki de dosyay\u0131 a\xE7abiliriz."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 7
+      clip: {fileID: 8300000, guid: 90f325101609a704b82e9c9cfabf6a1c, type: 3}
   - name: Tutorial_Bug
     sentences:
     - sentence: "Kontrollerde hata var gibi, z\u0131playam\u0131yorum!"
-      duration: 5
-      clip: {fileID: 0}
-    - sentence: "Y\xFCkleniyor simgesine ne oldu \xF6yle..."
       duration: 4
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 045492580eedeca4fa1ffb64f4fa3783, type: 3}
+    - sentence: "Y\xFCkleniyor simgesine ne oldu \xF6yle..."
+      duration: 2
+      clip: {fileID: 8300000, guid: 18c063b6e29971f4582274688dc12a7e, type: 3}
     - sentence: "Belki simgeye ula\u015Fabilirsem hatay\u0131 giderebilirim."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 4
+      clip: {fileID: 8300000, guid: b87fff2aaed665c4ebd84235e3554d5a, type: 3}
   - name: Open_Readme
     sentences:
     - sentence: Bu da ne?
@@ -2635,43 +2635,43 @@ MonoBehaviour:
     - sentence: "Eski kafa oyunlar m\u0131? Buradan kurtulmak m\u0131? Bu her \u015Feyi
         de\u011Fi\u015Ftirebilir."
       duration: 6
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 1efd64926fe7fa348afe62aa8242a594, type: 3}
     - sentence: "O zaman h\u0131zl\u0131ca \u015Fu i\u015Fi halledip buradan kurtulal\u0131m
         doktor."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 4
+      clip: {fileID: 8300000, guid: 167f642d7fb9e1242a5c23ba73afd682, type: 3}
     - sentence: "Dosyalara vurdu\u011Fumda dosya a\xE7\u0131l\u0131yor, \u015Fu y\u0131lan
         oyunu ile ba\u015Flayabiliriz. Sonras\u0131nda baz\u0131 dosyalar\u0131n
         i\xE7ine girmeyi de deneyelim."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 9
+      clip: {fileID: 8300000, guid: 1e11204c89c2f014e8183fea9cf34b50, type: 3}
   - name: Snake_Intro
     sentences:
     - sentence: "Bu neymi\u015F...  Haha, 5 skor mu? \xC7ok basit. Ekrandaki y\xF6n
         tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol edebiliyorum san\u0131r\u0131m."
-      duration: 10
-      clip: {fileID: 0}
+      duration: 9.25
+      clip: {fileID: 8300000, guid: 14ef5e819aa65a34a8b076c504b1926c, type: 3}
   - name: Snake_Error
     sentences:
     - sentence: "Bi dakika... Y\xF6n tu\u015Flar\u0131 y\u0131lan\u0131 do\u011Fru
         y\xF6ne y\xF6nlendirmiyor! "
-      duration: 6
-      clip: {fileID: 0}
+      duration: 4
+      clip: {fileID: 8300000, guid: 545b991f5294ddc4c9dbefaf1d7ffe9a, type: 3}
   - name: Heat_Error
     sentences:
     - sentence: "Hey doktor, sence de buras\u0131 \xE7ok s\u0131cak olmad\u0131 m\u0131?"
-      duration: 4
-      clip: {fileID: 0}
+      duration: 4.5
+      clip: {fileID: 8300000, guid: 6ba20a8b8465209499f4239f3674ad02, type: 3}
     - sentence: "Ah, bu eski bilgisayarlarda s\u0131k g\xF6r\xFClen bir hata, \u0131s\u0131n\u0131p
         duruyorlar. Yandaki vantilat\xF6r\xFC a\xE7sam iyi olur."
-      duration: 8
-      clip: {fileID: 0}
+      duration: 7.5
+      clip: {fileID: 8300000, guid: a0a40189234d3f14da3fb78515e95a4a, type: 3}
   - name: Heat_Fix
     sentences:
-    - sentence: "Ger\xE7ekten s\u0131cakm\u0131\u015F. Ohh \u015F\xF6yle p\xFCf\xFCr
+    - sentence: "Ger\xE7ekten s\u0131cakm\u0131\u015F be. Ohh \u015F\xF6yle p\xFCf\xFCr
         p\xFCf\xFCr..."
       duration: 4
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: dcf3e1adf36c16641a9059d296311c6a, type: 3}
     - sentence: "Peki... Bu \xE7ok gizli dosya san\u0131r\u0131m bulmam gereken dosyayd\u0131.
         San\u0131r\u0131m \xFC\xE7 tane daha laz\u0131m. Bakal\u0131m bu bilgisayar
         ba\u015Fka ne gibi s\u0131rlar sakl\u0131yor. "
@@ -2680,82 +2680,84 @@ MonoBehaviour:
   - name: Internet_Explorer
     sentences:
     - sentence: "Bu hatalardan acaba ka\xE7 tane daha \xE7\u0131kacak?"
-      duration: 6
-      clip: {fileID: 0}
+      duration: 3
+      clip: {fileID: 8300000, guid: f54cd0678f2a79045972af5ec4ea9dd7, type: 3}
   - name: Internet_End
     sentences:
     - sentence: "Cunningham?? Beni duyabiliyor musun? Lanet olsun. Bunun ba\u015F\u0131ndan
         beri bir hata oldu\u011Funu biliyordum zaten."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 8
+      clip: {fileID: 8300000, guid: b1951e3d3e43f4543a3e219e991d980a, type: 3}
     - sentence: ' '
       duration: 2
       clip: {fileID: 0}
     - sentence: Offf of...
-      duration: 3
-      clip: {fileID: 0}
+      duration: 2.25
+      clip: {fileID: 8300000, guid: e4af5e331a71a5641ae800320749cfa5, type: 3}
   - name: Restart_Complete
     sentences:
-    - sentence: "Cunningham? Ah sa\u011Flams\u0131n."
-      duration: 6
-      clip: {fileID: 0}
+    - sentence: "Cunningham? Ah Tanr\u0131ya \u015F\xFCk\xFCr sa\u011Flams\u0131n."
+      duration: 4
+      clip: {fileID: 8300000, guid: dd4945b79185ac34d859b967de969953, type: 3}
     - sentence: "Ba\u015F\u0131m d\xF6n\xFCyor... (\u015Ea\u015F\u0131r\u0131r) Ha?
         Yeni bir gizli dosya m\u0131? Do\u011Fru ilerliyoruz."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 7.5
+      clip: {fileID: 8300000, guid: 3e23c76efeb2aa4479530255783a0ee1, type: 3}
   - name: Pipe_Enter
     sentences:
     - sentence: "Borular\u0131 hizalamak m\u0131? Bunu yapabilirim san\u0131r\u0131m."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 4
+      clip: {fileID: 8300000, guid: 718350debdc56414fbc703e99a3f48e5, type: 3}
   - name: Pipe_End
     sentences:
     - sentence: "Bir gizli dosya daha, ama\u2026 oyun kalmad\u0131. Ne yapsak ki?"
       duration: 6
-      clip: {fileID: 0}
+      clip: {fileID: 8300000, guid: 73c49e1d728bc2d48b4b6842bc0d2676, type: 3}
   - name: Trash_Enter
     sentences:
-    - sentence: "Ait oldu\u011Fun \xE7\xF6pl\xFC\u011Fe geri d\xF6nd\xFCn demek."
-      duration: 6
-      clip: {fileID: 0}
+    - sentence: "Hehehh\u2026 Ait oldu\u011Fun \xE7\xF6pl\xFC\u011Fe geri d\xF6nd\xFCn
+        demek.\r"
+      duration: 3.5
+      clip: {fileID: 8300000, guid: 621d3ffb308f96e40b873663f4299e27, type: 3}
     - sentence: "Kapa \xE7eneni."
-      duration: 6
-      clip: {fileID: 0}
+      duration: 2.5
+      clip: {fileID: 8300000, guid: 6875610c2edc05f4e832c2d790a8a7b8, type: 3}
   - name: EndGame
     sentences:
     - sentence: "Bu... Bu bir n\xFCkleer tehdit? Tarihi de, yar\u0131n m\u0131?"
-      duration: 6
-      clip: {fileID: 0}
+      duration: 4.5
+      clip: {fileID: 8300000, guid: 2f29029a70fa5a14c9031888b8daaea0, type: 3}
     - sentence: "Ger\xE7ekten Mars'a bir atom bombas\u0131 atmay\u0131 m\u0131 planl\u0131yorlar?
         Bu oradaki kolonilerin tamamen da\u011F\u0131lmas\u0131 demek!"
-      duration: 9
-      clip: {fileID: 0}
+      duration: 8
+      clip: {fileID: 8300000, guid: 7b9382b5a660d68458791710800ab72d, type: 3}
     - sentence: "Umar\u0131m Jonathan'\u0131n buna bir \xE7\xF6z\xFCm\xFC vard\u0131r.
         Cunningham, dosyalar\u0131 hemen yolla."
-      duration: 7
-      clip: {fileID: 0}
+      duration: 5.5
+      clip: {fileID: 8300000, guid: c16cc141d26cf1949b9d25c7c403c1c0, type: 3}
   - name: Phone_Ring
     sentences:
     - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
-      duration: 6
-      clip: {fileID: 0}
+      duration: 3
+      clip: {fileID: 8300000, guid: 9ae5ec21acdbe704c87dd8232dec77b6, type: 3}
   - name: Finish
     sentences:
     - sentence: Doktor!
-      duration: 1
-      clip: {fileID: 0}
-    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
-      duration: 6
-      clip: {fileID: 0}
-    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
-      duration: 6
-      clip: {fileID: 0}
-    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
-      duration: 6
-      clip: {fileID: 0}
-    - sentence: "Ha?.. Bu saatte de kim \u015Fimdi?"
-      duration: 6
-      clip: {fileID: 0}
+      duration: 2
+      clip: {fileID: 8300000, guid: 9122c4e84eeeb0e4d87deb74e22b5cc0, type: 3}
+    - sentence: "Ah Jonathan, ben de tam\u2026"
+      duration: 1.85
+      clip: {fileID: 8300000, guid: 2a6ba5381d2bf1f49978d610c2e5dfd9, type: 3}
+    - sentence: "Konu\u015Facak vaktimiz yok, bilgisayar\u0131 a\xE7mad\u0131n de\u011Fil
+        mi?"
+      duration: 2.8
+      clip: {fileID: 8300000, guid: 616c80b7de58343499e580fec6bd87af, type: 3}
+    - sentence: "E a\xE7t\u0131m, hatta istedi\u011Fin dosya\u2026"
+      duration: 3.552
+      clip: {fileID: 8300000, guid: 80d4226e86cf6384cb4e119c5282a896, type: 3}
+    - sentence: "NE!! DOKTOR! HEMEN ORAYI TERK\u2026"
+      duration: 2.35
+      clip: {fileID: 8300000, guid: cc4e49509e7fd5741a4804ff93515c02, type: 3}
 --- !u!114 &254269169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8137,7 +8139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockCursor: 1
-  mouseSensitivity: 1000
+  mouseSensitivity: 100
   playerBody: {fileID: 509653807}
   isPitchClamp: 1
   pitchMinMax: {x: -90, y: 90}

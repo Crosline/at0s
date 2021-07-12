@@ -580,8 +580,7 @@ public class CrosshairManager : MonoBehaviour {
 
     IEnumerator EndingPlay()
     {
-        //20 değişecek
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(12.7f);
         SceneManager.LoadScene(3);
     }
 }

@@ -2857,11 +2857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5654767374189729783, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4181913211792915156, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3598222898679575853, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2933,7 +2933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7292182541478364400, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f164024d81a2248bba2dc1e0493949, type: 3}
@@ -3334,7 +3334,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 679788601}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.96399, y: 90.351, z: -0.815979}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3550,7 +3550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbbfc48693a081b498795737550da199, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbbfc48693a081b498795737550da199, type: 3}
       propertyPath: m_IsActive
@@ -3784,7 +3784,7 @@ Transform:
   - {fileID: 679788601}
   m_Father: {fileID: 0}
   m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.824, y: -90.18, z: 0.028}
 --- !u!143 &509653808
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4472,6 +4472,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3141399183966284542}
     m_Modifications:
+    - target: {fileID: 1992683334, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035119448, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4519,6 +4527,10 @@ PrefabInstance:
     - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_Name
       value: OS Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701799679727430503, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
@@ -4896,6 +4908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: door2
       objectReference: {fileID: 0}
+    - target: {fileID: 2098747198662773536, guid: 957f79e0e150e9840894ece3ba94ab90, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2633508243823775816, guid: 957f79e0e150e9840894ece3ba94ab90, type: 3}
       propertyPath: m_Name
       value: Dolap
@@ -4907,6 +4923,10 @@ PrefabInstance:
     - target: {fileID: 5129303593868846027, guid: 957f79e0e150e9840894ece3ba94ab90, type: 3}
       propertyPath: m_Name
       value: door1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129303593868846027, guid: 957f79e0e150e9840894ece3ba94ab90, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6278094247452209876, guid: 957f79e0e150e9840894ece3ba94ab90, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5025,7 +5045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1ddcca9552edabd4083207fbad1967c1, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1ddcca9552edabd4083207fbad1967c1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5102,7 +5122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1ccb598f4c704fe42a0def3a72efea06, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ccb598f4c704fe42a0def3a72efea06, type: 3}
@@ -6477,7 +6497,7 @@ GameObject:
   - component: {fileID: 1644491791}
   - component: {fileID: 1644491794}
   - component: {fileID: 1644491793}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7367,8 +7387,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964657699}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: 0}
+  m_LocalRotation: {x: -0.0537562, y: -0.7275057, z: 0.056839675, w: -0.68162686}
+  m_LocalPosition: {x: 1.7831626, y: 1.2782803, z: 14.612482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1109996822}
@@ -7376,7 +7396,7 @@ Transform:
   - {fileID: 734284286}
   m_Father: {fileID: 509653807}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 198.73044, y: -129.98, z: -179.924}
 --- !u!114 &1964657703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7649,6 +7669,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 978406038097513408, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932612567744248151, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956555413087145023, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4461616815621614273, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -7664,6 +7696,18 @@ PrefabInstance:
     - target: {fileID: 4644068071142734546, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_Name
       value: refrigerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113369922054453774, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181611538089277229, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412016495957588173, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_RootOrder
@@ -7719,6 +7763,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420323918328258664, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436709800494520545, guid: 2081640401fd2e747858713259a8d3e0, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8374,7 +8422,7 @@ GameObject:
   - component: {fileID: 7628612816255359077}
   - component: {fileID: 1404278620}
   - component: {fileID: 1404278619}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PCKeyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8402,7 +8450,7 @@ GameObject:
   - component: {fileID: 2839931521181727984}
   - component: {fileID: 1665179974575893566}
   - component: {fileID: 1665179974575893567}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8628,7 +8676,7 @@ GameObject:
   - component: {fileID: 1397942717}
   - component: {fileID: 1397942716}
   - component: {fileID: 1397942718}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PC_DiskParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9169,7 +9217,7 @@ GameObject:
   - component: {fileID: 2264314848110133176}
   - component: {fileID: 680067661}
   - component: {fileID: 680067660}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PCMonitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9304,7 +9352,7 @@ GameObject:
   - component: {fileID: 4754805180825989402}
   - component: {fileID: 3241667747848951058}
   - component: {fileID: 6502634288682395081}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MonitorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9850,7 +9898,7 @@ GameObject:
   - component: {fileID: 3757724275263796452}
   - component: {fileID: 284710729}
   - component: {fileID: 284710728}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PCMouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ public class IntroManager : MonoBehaviour
     void Start()
     {
         DialogueTrigger.Instance.TriggerDialogue("BeginGame");
-        StartCoroutine(endCutscene(53f));
+        StartCoroutine(endCutscene(55f));
     }
 
 

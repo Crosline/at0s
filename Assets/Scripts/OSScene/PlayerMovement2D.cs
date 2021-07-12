@@ -122,6 +122,14 @@ public class PlayerMovement2D : MonoBehaviour {
                 if (collision.collider.gameObject.TryGetComponent<CameraShake>(out CameraShake shake)) {
                     StartCoroutine(shake.Shake());
                 }
+                if (collision.collider.name.Contains("mayin")) {
+        Debug.Log("MAYINA BASTIK ADAMIM");
+            //if (collision.collider.transform.position.y < transform.position.y) {
+                if (collision.collider.gameObject.TryGetComponent<ActivateAttack>(out ActivateAttack at)) {
+                at.Activate();
+                }
+            //}
+        }
             //}
         }
     }

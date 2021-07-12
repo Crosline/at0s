@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
+  m_IndirectSpecularColor: {r: 0.028771684, g: 0.0205225, b: 0.025373064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2642,9 +2642,8 @@ MonoBehaviour:
       clip: {fileID: 0}
   - name: Snake_Intro
     sentences:
-    - sentence: "Bu neymi\u015F... Y\u0131lan oyunu mu? Haha, 5 skor mu? \xC7ok basit.
-        Ekrandaki y\xF6n tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol edebiliyorum
-        san\u0131r\u0131m."
+    - sentence: "Bu neymi\u015F...  Haha, 5 skor mu? \xC7ok basit. Ekrandaki y\xF6n
+        tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol edebiliyorum san\u0131r\u0131m."
       duration: 10
       clip: {fileID: 0}
   - name: Snake_Error
@@ -2680,17 +2679,23 @@ MonoBehaviour:
       clip: {fileID: 0}
   - name: Internet_End
     sentences:
-    - sentence: "Cunningham?? Beni duyabiliyor musun? Lanet olsun. Bu bir hatayd\u0131
-        san\u0131r\u0131m."
+    - sentence: "Cunningham?? Beni duyabiliyor musun? Lanet olsun. Bunun ba\u015F\u0131ndan
+        beri bir hata oldu\u011Funu biliyordum zaten."
       duration: 6
+      clip: {fileID: 0}
+    - sentence: ' '
+      duration: 2
+      clip: {fileID: 0}
+    - sentence: Offf of...
+      duration: 3
       clip: {fileID: 0}
   - name: Restart_Complete
     sentences:
     - sentence: "Cunningham? Ah sa\u011Flams\u0131n."
       duration: 6
       clip: {fileID: 0}
-    - sentence: "Ba\u015F\u0131m d\xF6n\xFCyor... Yeni bir gizli dosya m\u0131? Do\u011Fru
-        ilerliyoruz."
+    - sentence: "Ba\u015F\u0131m d\xF6n\xFCyor... (\u015Ea\u015F\u0131r\u0131r) Ha?
+        Yeni bir gizli dosya m\u0131? Do\u011Fru ilerliyoruz."
       duration: 6
       clip: {fileID: 0}
   - name: Pipe_Enter
@@ -2700,7 +2705,7 @@ MonoBehaviour:
       clip: {fileID: 0}
   - name: Pipe_End
     sentences:
-    - sentence: "Bir gizli dosya daha, ama oyun kalmad\u0131? \u015Eimdi ne yapmal\u0131..."
+    - sentence: "Bir gizli dosya daha, ama\u2026 oyun kalmad\u0131. Ne yapsak ki?"
       duration: 6
       clip: {fileID: 0}
   - name: Trash_Enter
@@ -3903,7 +3908,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36288
+  m_Name: pb_Mesh305184
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5529,7 +5534,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35862
+  m_Name: pb_Mesh304754
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

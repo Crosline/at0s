@@ -2738,6 +2738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitle: {fileID: 1494651807}
   subtitleAs: {fileID: 254269170}
+  phone: {fileID: 976958133}
 --- !u!82 &254269170
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4427,6 +4428,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3141399183966284542}
     m_Modifications:
+    - target: {fileID: 1552750019, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552750019, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784236316, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784236316, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784236316, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3379098918597556867, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -4980,6 +5001,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.682864, y: 1.734451, z: 2.7563238}
   m_Center: {x: 8.915763, y: -0.9650109, z: 2.741838}
+--- !u!1 &976958133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2504889888724518800, guid: 1f2db4c1141075944a25b9fcfbb929f2, type: 3}
+  m_PrefabInstance: {fileID: 1235057985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1004030094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,6 +5755,10 @@ PrefabInstance:
     - target: {fileID: 2504889888724518800, guid: 1f2db4c1141075944a25b9fcfbb929f2, type: 3}
       propertyPath: m_Name
       value: phone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504889888724518800, guid: 1f2db4c1141075944a25b9fcfbb929f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2992915428127595818, guid: 1f2db4c1141075944a25b9fcfbb929f2, type: 3}
       propertyPath: m_RootOrder

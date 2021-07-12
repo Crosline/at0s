@@ -58,6 +58,8 @@ public class ActivateAttack : MonoBehaviour {
             if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1) {
                 //telefon çalması burayaaaaaa
                 //OYUNU BİTİR.
+                DialogueTrigger.Instance.TriggerDialogue("EndGame");
+                StoryManager.Instance.EnablePhone();
                 Debug.Log("Oyunu bitir. // dosyayı okurken telefon çalar");
                 PopOS.Instance.PopUp(5, 25);
             } else {

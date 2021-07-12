@@ -11,8 +11,10 @@ public class InternetExplorer : MonoBehaviour {
 
     public void IncreaseError() {
         if (errorCount >= errors.Length) {
-            if (gizliDosya != null)
+            if (gizliDosya != null) {
                 gizliDosya.SetActive(true);
+                PlayerPrefs.SetInt("gizli2", 1);
+            }
             transform.parent.GetComponent<Animator>().Play("OSClose");
 
 

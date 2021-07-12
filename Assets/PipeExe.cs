@@ -24,6 +24,7 @@ public class PipeExe : MonoBehaviour {
             GlitchController.Instance.Glitcher(0.3f);
 
             gizli3.SetActive(true);
+            PlayerPrefs.SetInt("gizli3", 1);
 
             GetComponent<SecretFileController>().EnableAll();
 

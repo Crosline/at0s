@@ -52,7 +52,6 @@ public class SpawnFood : MonoBehaviour {
             return;
         }
 
-
         scoreText.text = score.ToString();
         Spawn();
     }

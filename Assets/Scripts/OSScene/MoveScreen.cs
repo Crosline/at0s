@@ -6,6 +6,12 @@ public class MoveScreen : MonoBehaviour {
 	public float moveSpeed = 13f;
 
 
+
+	void Start() {
+
+		PlayerPrefs.DeleteAll();
+	}
+
 	public void Activate(ActivateTrigger at1, ActivateTrigger at2, bool isUp = true) {
 		StartCoroutine(LerpScreen(at1, at2, isUp));
 	}

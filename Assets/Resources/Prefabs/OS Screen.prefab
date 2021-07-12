@@ -12888,6 +12888,7 @@ MonoBehaviour:
   scoreText: {fileID: 1275302624}
   gizliDosya: {fileID: 3788848935945052975}
   snek: {fileID: 352260616175488230}
+  fan: {fileID: 0}
 --- !u!1 &600352565654223380
 GameObject:
   m_ObjectHideFlags: 0
@@ -18707,7 +18708,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5066381775780999806}
-  m_Text: README
+  m_Text: BENI OKU
   m_OffsetZ: -1
   m_CharacterSize: 0.0058
   m_LineSpacing: 0.1
@@ -25283,6 +25284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8701799679727430497}
+  canJump: 0
 --- !u!95 &652777590
 Animator:
   serializedVersion: 3

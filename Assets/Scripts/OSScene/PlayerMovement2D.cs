@@ -18,6 +18,7 @@ public class PlayerMovement2D : MonoBehaviour {
     public bool canJump = false;
     
     public bool canAttack = true;
+    public bool canCrouch = true;
 
     void Init() {
 
@@ -54,7 +55,7 @@ public class PlayerMovement2D : MonoBehaviour {
             jump = true;
         }
 
-        if (Input.GetButtonDown("Crouch")) {
+        if (Input.GetButtonDown("Crouch") && canCrouch) {
             crouch = true;
         }
 
@@ -62,7 +63,7 @@ public class PlayerMovement2D : MonoBehaviour {
             crouch = false;
         }
 
-        if (Input.GetButtonDown("Interact") && controller.canMove) {
+        if (Input.GetButtonDown("Interact") && controller.canMove && canAttack) {
             controller.canMove = false;
             controller.animator.Play("Attack");
             StartCoroutine(RestartMove());

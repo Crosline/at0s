@@ -22,6 +22,7 @@ public class MainMenuController : MonoBehaviour
     Resolution[] resolutions;
     public TMPro.TMP_Dropdown resolutionDropdown;
     public AudioSource buttonSound;
+    public AudioSource buttonHover;
 
     public GameObject howToPlayPanel;
 
@@ -163,13 +164,13 @@ public class MainMenuController : MonoBehaviour
     public void setSFXVolume(float volume)
     {
         sfxVolume = Mathf.Log10(volume) * 20;
-        audioMixer.SetFloat("SFX", sfxVolume);
+        audioMixer.SetFloat("SFXVolume", sfxVolume);
     }
 
     public void setMusicVolume(float volume)
     {
         musicVolume = Mathf.Log10(volume) * 20;
-        audioMixer.SetFloat("Music", musicVolume);
+        audioMixer.SetFloat("MusicVolume", musicVolume);
     }
 
 

@@ -17,7 +17,11 @@ public class MoveScreen : MonoBehaviour {
 	}
 
 	IEnumerator LerpScreen(ActivateTrigger at1, ActivateTrigger at2, bool isUp) {
-	        FindObjectOfType<PlayerMovement2D>().canAttack = false;	
+	        PlayerMovement2D pm = FindObjectOfType<PlayerMovement2D>();
+	        
+	        pm.canAttack = false;	
+	        pm.controller.canMove = false;
+	        
 		at1.gameObject.SetActive(false);
 		at2.gameObject.SetActive(false);
 		Vector3 finalPos;
@@ -38,7 +42,8 @@ public class MoveScreen : MonoBehaviour {
 		transform.position = finalPos;
 
 
-	        FindObjectOfType<PlayerMovement2D>().canAttack = true;
+	        pm.canAttack = true;	
+	        pm.controller.canMove = true;
 		at2.gameObject.SetActive(true);
 
 	}

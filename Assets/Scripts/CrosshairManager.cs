@@ -17,6 +17,7 @@ public class CrosshairManager : MonoBehaviour {
     public GameObject monitorLight;
     public GameObject pcSandalyeInteract;
     public GameObject fanObject;
+    public GameObject pc;
 
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
@@ -67,7 +68,10 @@ public class CrosshairManager : MonoBehaviour {
     private bool isFirstTimeHitScreen = true;
     private bool isFirstTimeFanToggle = true;
 
+    private AudioClip[] clips;
+
     void Start() {
+        clips = StoryManager.Instance.clips;
         camTransform = playerCam.transform;
         chairPos = chair.position;
         pxCam = playerCam.transform.GetChild(2).GetComponent<Camera>();
@@ -140,7 +144,7 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("USB")) InteractWithUSB(newer.transform);
             if (newer.name.Contains("Chair")) SitChair();
             if (newer.name.Contains("Drawer") || newer.name.Contains("Handler")) ToggleDrawer(newer);
-            if (newer.name.Contains("PC") && sitting) EnterPC();
+            if (newer.name.Contains("PC") && sitting) EnterPC(pc);
             if (newer.name.Contains("Arcade")) ArcadeFunc(newer);
             if (newer.name.Contains("Couch")) CouchFunc(newer);
             if (newer.name.Contains("door")) DoorToggle(newer);
@@ -191,12 +195,18 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     public IEnumerator RestartOs() {
+        AudioSource a = pc.GetComponent<AudioSource>();
+        a.Stop();
+        a.loop = false;
+        a.PlayOneShot(StoryManager.Instance.clips[4]);
         yield return new WaitForSeconds(3f);
         playerChar.SetActive(false);
         Debug.Log("test 1");
         yield return new WaitForSeconds(12f);
         Debug.Log("test 2");
         playerChar.SetActive(true);
+        a.PlayOneShot(StoryManager.Instance.clips[2]);
+        StartCoroutine(PCStartLoop(a, StoryManager.Instance.clips[2], StoryManager.Instance.clips[3]));
         StartCoroutine(RestartProcess());
     }
 
@@ -214,6 +224,8 @@ public class CrosshairManager : MonoBehaviour {
 
         if (inserting.name.Contains("USB") && receiving.name.Contains("PC")) {
             DialogueTrigger.Instance.TriggerDialogue("Insert_Disk");
+            AudioSource a = pc.GetComponent<AudioSource>();
+            a.PlayOneShot(StoryManager.Instance.clips[5]);
             inserting.transform.SetParent(null);
             inserting.layer = 6; //6 is interactable
 
@@ -302,8 +314,8 @@ public class CrosshairManager : MonoBehaviour {
         sitting = true;
     }
 
-    void EnterPC() {
-        StartCoroutine(SettingCamera());
+    void EnterPC(GameObject pc) {
+        StartCoroutine(SettingCamera(pc));
     }
 
     void ExitPC() {
@@ -312,7 +324,7 @@ public class CrosshairManager : MonoBehaviour {
 
     private bool isOnTransition = false;
 
-    IEnumerator SettingCamera() {
+    IEnumerator SettingCamera(GameObject pc) {
         Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -353,14 +365,32 @@ public class CrosshairManager : MonoBehaviour {
             }
             yield return null;
         }
+        if(pc.TryGetComponent<AudioSource>(out AudioSource a))
+        {
+            if(!a.isPlaying)
+            {
+                a.PlayOneShot(StoryManager.Instance.clips[2]);
+                StartCoroutine(PCStartLoop(a, StoryManager.Instance.clips[2], StoryManager.Instance.clips[3]));
+            }
+        }
         monitorButton.EnableKeyword("_EMISSION");
         OSScreen.SetActive(true);
         playerChar.GetComponent<PlayerMovement2D>().enabled = true;
+        
         isOnTransition = false;
         if (isFirstTimeBoot) {
             DialogueTrigger.Instance.TriggerDialogue("Glitch_Error");
             isFirstTimeBoot = false;
         }
+    }
+
+    IEnumerator PCStartLoop(AudioSource a, AudioClip clip1, AudioClip clip2)
+    {
+        yield return new WaitForSeconds(clip1.length);
+        a.clip = clip2;
+        a.loop = true;
+        a.Stop();
+        a.Play();
     }
 
     //public RenderTexture outTexture;
@@ -421,7 +451,15 @@ public class CrosshairManager : MonoBehaviour {
         {
             anim.Play("close", -1, 0f);
             drawer.GetComponent<Drawer>().isOpen = false;
+            if (drawer.GetComponent<AudioSource>())
+            {
+                drawer.GetComponent<AudioSource>().PlayOneShot(StoryManager.Instance.clips[1]);
+            }
             return;
+        }
+        if(drawer.GetComponent<AudioSource>())
+        {
+            drawer.GetComponent<AudioSource>().PlayOneShot(StoryManager.Instance.clips[0]);
         }
         anim.Play("open", -1, 0f);
         drawer.GetComponent<Drawer>().isOpen = true;
@@ -455,9 +493,11 @@ public class CrosshairManager : MonoBehaviour {
         {
             anim.Play("open", -1, 0f);
             door.GetComponent<Door>().isOpen = !toggler;
+            door.GetComponent<AudioSource>().PlayOneShot(StoryManager.Instance.clips[6]);
         } else {
             anim.Play("close", -1, 0f);
             door.GetComponent<Door>().isOpen = !toggler;
+            door.GetComponent<AudioSource>().PlayOneShot(StoryManager.Instance.clips[7]);
         }
     }
 
@@ -511,6 +551,7 @@ public class CrosshairManager : MonoBehaviour {
             anim.Play("FanStop");
             fan.GetComponent<Fan>().isOpen = !toggler;
         }
+        fan.GetComponent<AudioSource>().PlayOneShot(StoryManager.Instance.clips[8]);
     }
 
     void GramaphoneToggle(GameObject gram)

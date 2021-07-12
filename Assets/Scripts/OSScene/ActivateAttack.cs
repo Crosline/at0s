@@ -8,6 +8,8 @@ public class ActivateAttack : MonoBehaviour {
 
     private bool firstHitOnInternetExplorer = true;
 
+    private bool firstHitOnReadme = true;
+
 
 
     // Update is called once per frame
@@ -27,7 +29,11 @@ public class ActivateAttack : MonoBehaviour {
                 snake.UpdateDirection(4);
             }
         } else if (name.Contains("read")) {
-            DialogueTrigger.Instance.TriggerDialogue("Open_Readme");
+            if(firstHitOnReadme)
+            {
+                DialogueTrigger.Instance.TriggerDialogue("Open_Readme");
+                firstHitOnReadme = false;
+            }
             PopOS.Instance.PopUp(0, 25);
         } else if (name.Contains("mypc")) {
             GlitchController.Instance.Glitcher(0.2f);

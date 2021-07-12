@@ -14,6 +14,8 @@ public class StoryManager : MonoBehaviour
     public static StoryManager Instance;
     private Queue<Sentence> sentences;
 
+    public AudioClip[] clips;
+
     void Awake()
     {
         Instance = this;

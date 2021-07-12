@@ -1,10 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActivateAttack : MonoBehaviour {
 
     //private bool inTrigger = false;
 
     public GameObject snekExe;
+
+    private bool firstHitOnInternetExplorer = true;
 
 
 
@@ -25,17 +27,24 @@ public class ActivateAttack : MonoBehaviour {
                 snake.UpdateDirection(4);
             }
         } else if (name.Contains("read")) {
+            DialogueTrigger.Instance.TriggerDialogue("Open_Readme");
             PopOS.Instance.PopUp(0, 25);
         } else if (name.Contains("mypc")) {
             GlitchController.Instance.Glitcher(0.2f);
         } else if (name.Contains("trash")) {
             StartCoroutine(GetComponent<CameraShake>().Shake());
         } else if (name.Contains("internet")) {
+            if(firstHitOnInternetExplorer)
+            {
+                DialogueTrigger.Instance.TriggerDialogue("Internet_Explorer");
+                firstHitOnInternetExplorer = false;
+            }
             GetComponent<InternetExplorer>().IncreaseError();
         } else if (name.Contains("loading")) {
             GetComponent<GlitchyLoad>().FixGlitch();
         } else if (name.Contains("snake")) {
             GlitchController.Instance.Glitcher(0.3f);
+            DialogueTrigger.Instance.TriggerDialogue("Snake_Intro");
             snekExe.SetActive(true);
             FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-1.8f, 0.4f, 0f));
         } else if (name.Contains("gizli1")) {
@@ -46,7 +55,8 @@ public class ActivateAttack : MonoBehaviour {
             PopOS.Instance.PopUp(5, 25);
         } else if (name.Contains("gizli4")) {
             if (PlayerPrefs.GetInt("gizli1", 0) == 1 && PlayerPrefs.GetInt("gizli2", 0) == 1 && PlayerPrefs.GetInt("gizli3", 0) == 1) {
-                //telefon �almas� burayaaaaaa
+                //telefon çalması burayaaaaaa
+                //OYUNU BİTİR.
                 PopOS.Instance.PopUp(5, 25);
             } else {
                 PopOS.Instance.PopUp(2, 2);

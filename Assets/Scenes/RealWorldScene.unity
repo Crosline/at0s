@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028771684, g: 0.0205225, b: 0.025373064, a: 1}
+  m_IndirectSpecularColor: {r: 0.028763596, g: 0.020510973, b: 0.025363151, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2583,7 +2583,7 @@ MonoBehaviour:
       duration: 2
       clip: {fileID: 0}
     - sentence: "Bazen atarimde de g\xF6r\xFCnt\xFC gidip geliyor, birka\xE7 darbe
-        al\u0131nca d\xFCzeliyor."
+        al\u0131nca d\xFCzeliyor. (F tu\u015Funa basarak ekrana vur)"
       duration: 4
       clip: {fileID: 0}
   - name: Glitch_Fix
@@ -2599,17 +2599,17 @@ MonoBehaviour:
       clip: {fileID: 0}
   - name: Insert_Disk
     sentences:
-    - sentence: Tamam... Hey, hareket edemiyorum!
-      duration: 5
+    - sentence: "Tamam... Evet, dediklerini yap \xE7abuk."
+      duration: 3
       clip: {fileID: 0}
-    - sentence: "Ama ben seni kontrol edebiliyorum. Nas\u0131l olduysa klavyedeki
-        y\xF6n tu\u015Flar\u0131 ile hareket edebiliyorsun. Sen mi bir \u015Fey yapt\u0131n?"
-      duration: 8
-      clip: {fileID: 0}
-    - sentence: "Hay\u0131r! Bundan ne kadar rahats\u0131z olsam da bir an \xF6nce
-        \u015Fu dosyalar\u0131 Jonathan'a yollay\u0131p kurtulal\u0131m. "
+  - name: Free_Roam
+    sentences:
+    - sentence: "Beni oku dosyas\u0131 m\u0131? Bu Jonathan olmal\u0131. Cunnigham,
+        gidip o dosyaya vurursan belki de dosyay\u0131 a\xE7abiliriz."
       duration: 6
       clip: {fileID: 0}
+  - name: Open_Readme
+    sentences:
     - sentence: Bu da ne?
       duration: 2
       clip: {fileID: 0}
@@ -2624,21 +2624,16 @@ MonoBehaviour:
         doktor."
       duration: 6
       clip: {fileID: 0}
-    - sentence: "Klavyedeki di\u011Fer tu\u015Flar\u0131 da dene, yapabilece\u011Fim
-        ba\u015Fka \u015Feyleri ke\u015Ffedebiliriz."
+    - sentence: "Dosyalara vurdu\u011Fumda dosya a\xE7\u0131l\u0131yor, \u015Fu y\u0131lan
+        oyunu ile ba\u015Flayabiliriz. Sonras\u0131nda baz\u0131 dosyalar\u0131n
+        i\xE7ine girmeyi de deneyelim."
       duration: 6
-      clip: {fileID: 0}
-  - name: Free_Roam
-    sentences:
-    - sentence: "Beni etrafta gezdir, belki i\xE7ine girebilece\u011Fim bir \u015Feyler
-        bulabilirim."
-      duration: 5
       clip: {fileID: 0}
   - name: Snake_Intro
     sentences:
-    - sentence: "Bu neymi\u015F... Y\u0131lan oyunu mu? Haha, 10 skor mu? \xC7ok
-        basit. Ekrandaki y\xF6n tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol
-        edebiliyorum san\u0131r\u0131m."
+    - sentence: "Bu neymi\u015F... Y\u0131lan oyunu mu? Haha, 5 skor mu? \xC7ok basit.
+        Ekrandaki y\xF6n tu\u015Flar\u0131na vurarak y\u0131lan\u0131 kontrol edebiliyorum
+        san\u0131r\u0131m."
       duration: 10
       clip: {fileID: 0}
   - name: Snake_Error
@@ -2661,6 +2656,49 @@ MonoBehaviour:
     - sentence: "Ger\xE7ekten s\u0131cakm\u0131\u015F. Ohh \u015F\xF6yle p\xFCf\xFCr
         p\xFCf\xFCr..."
       duration: 4
+      clip: {fileID: 0}
+    - sentence: "Peki... Bu \xE7ok gizli dosya san\u0131r\u0131m bulmam gereken dosyayd\u0131.
+        San\u0131r\u0131m \xFC\xE7 tane daha laz\u0131m. Bakal\u0131m bu bilgisayar
+        ba\u015Fka ne gibi s\u0131rlar sakl\u0131yor. "
+      duration: 4
+      clip: {fileID: 0}
+  - name: Internet_Explorer
+    sentences:
+    - sentence: "Bu hatalardan acaba ka\xE7 tane daha \xE7\u0131kacak?"
+      duration: 6
+      clip: {fileID: 0}
+  - name: Internet_End
+    sentences:
+    - sentence: "Cunningham?? Beni duyabiliyor musun? Lanet olsun. Bu bir hatayd\u0131
+        san\u0131r\u0131m."
+      duration: 6
+      clip: {fileID: 0}
+  - name: Restart_Complete
+    sentences:
+    - sentence: "Cunningham? Ah sa\u011Flams\u0131n."
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Ba\u015F\u0131m d\xF6n\xFCyor... Yeni bir gizli dosya m\u0131? Do\u011Fru
+        ilerliyoruz."
+      duration: 6
+      clip: {fileID: 0}
+  - name: Pipe_Enter
+    sentences:
+    - sentence: "Borular\u0131 hizalamak m\u0131? Bunu yapabilirim san\u0131r\u0131m."
+      duration: 6
+      clip: {fileID: 0}
+  - name: Pipe_End
+    sentences:
+    - sentence: "Bir gizli dosya daha, ama oyun kalmad\u0131? \u015Eimdi ne yapmal\u0131..."
+      duration: 6
+      clip: {fileID: 0}
+  - name: Trash_Enter
+    sentences:
+    - sentence: "Ait oldu\u011Fun \xE7\xF6pl\xFC\u011Fe geri d\xF6nd\xFCn demek."
+      duration: 6
+      clip: {fileID: 0}
+    - sentence: "Kapa \xE7eneni."
+      duration: 6
       clip: {fileID: 0}
   - name: EndGame
     sentences:
@@ -4378,6 +4416,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3141399183966284542}
     m_Modifications:
+    - target: {fileID: 31006834863243729, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542454869259945500, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_text
+      value: "A\u015EIRI ISINMA"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788848935945052975, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246597436734484090, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: fan
+      value: 
+      objectReference: {fileID: 1886723627}
+    - target: {fileID: 7111521706087939416, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111521706087939416, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140048, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4428,7 +4490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8701799678810140051, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e932d4809d4a4aa4b8d38217fd5c4a86, type: 3}
@@ -4866,6 +4928,52 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.682864, y: 1.734451, z: 2.7563238}
   m_Center: {x: 8.915763, y: -0.9650109, z: 2.741838}
+--- !u!1 &1004030094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004030095}
+  - component: {fileID: 1004030096}
+  m_Layer: 0
+  m_Name: CameraShake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004030095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004030094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1614283167}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004030096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004030094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2515a1f404113c244b5aad21ff05c22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnetude: 0.05
+  shakeTime: 0.2
+  playerCam: {fileID: 1964657701}
 --- !u!1001 &1062951199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6155,12 +6263,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_Text: ' '
 --- !u!222 &1494651808
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6304,6 +6407,7 @@ Transform:
   m_Children:
   - {fileID: 1416650602}
   - {fileID: 254269167}
+  - {fileID: 1004030095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

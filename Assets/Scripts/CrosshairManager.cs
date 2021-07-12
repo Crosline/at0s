@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -64,6 +64,8 @@ public class CrosshairManager : MonoBehaviour {
     private bool isCursor = false;
     private bool isStandable = false;
     private bool isFirstTimeBoot = true;
+    private bool isFirstTimeHitScreen = true;
+    private bool isFirstTimeFanToggle = true;
 
     void Start() {
         camTransform = playerCam.transform;
@@ -89,11 +91,11 @@ public class CrosshairManager : MonoBehaviour {
                 outline = newer.GetComponent<Outline>();
                 outline.OutlineColor = outlineColor;
                 if (hit.collider.gameObject.name.Contains("USB"))
-                    interactText.GetComponent<TextMeshProUGUI>().text = "Disketi tutmak iÁin 'E'ye bas˝l˝ tut";
+                    interactText.GetComponent<TextMeshProUGUI>().text = "Disketi tutmak i√ßin 'E'ye basƒ±lƒ± tut";
                 else if(holder != null && hit.collider.gameObject.name.Contains("PC"))
-                    interactText.GetComponent<TextMeshProUGUI>().text = "Disketi takmak iÁin 'E' tu˛unu b˝rak";
+                    interactText.GetComponent<TextMeshProUGUI>().text = "Disketi takmak i√ßin 'E' tu≈üunu bƒ±rak";
                 else
-                    interactText.GetComponent<TextMeshProUGUI>().text = "Etkile˛im iÁin 'E'ye bas"; 
+                    interactText.GetComponent<TextMeshProUGUI>().text = "Etkile≈üim i√ßin 'E'ye bas"; 
 
                 
 
@@ -110,9 +112,12 @@ public class CrosshairManager : MonoBehaviour {
             
 
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && isFirstTimeHitScreen && sitting)
         {
             TestGlitch();
+            isFirstTimeHitScreen = false;
+            HitScreen.Instance.ShakeIt();
+            DialogueTrigger.Instance.TriggerDialogue("Glitch_Fix");
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && sitting && !isPcOn) {
@@ -166,10 +171,10 @@ public class CrosshairManager : MonoBehaviour {
 
 
         if (isPcOn) {
-            Debug.Log("pc is on");
+            //Debug.Log("pc is on");
 
             if (Physics.Raycast(playerCam.ScreenPointToRay(Input.mousePosition), out hit, rayLength, layerMaskComputerScreen)) {
-                Debug.Log(hit.collider.name);
+                //Debug.Log(hit.collider.name);
                 if (!isCursor) {
                     Cursor.SetCursor(inPcCrosshairs[1], Vector2.zero, CursorMode.Auto);
                     isCursor = true;
@@ -189,22 +194,31 @@ public class CrosshairManager : MonoBehaviour {
         yield return new WaitForSeconds(3f);
 
         playerChar.SetActive(false);
-
+        Debug.Log("test 1");
         yield return new WaitForSeconds(12f);
-
-        OSScreen.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        OSScreen.gameObject.SetActive(true);
+        Debug.Log("test 2");
         playerChar.SetActive(true);
+        StartCoroutine(RestartProcess());
+    }
+
+    IEnumerator RestartProcess()
+    {
+        OSScreen.gameObject.SetActive(false);
+        Debug.Log("test 3");
+        yield return new WaitForEndOfFrame();
+        OSScreen.gameObject.SetActive(true);
+        DialogueTrigger.Instance.TriggerDialogue("Restart_Complete");
+        //playerChar.SetActive(true);
     }
 
     void MergeObjects(GameObject inserting, GameObject receiving) {
 
         if (inserting.name.Contains("USB") && receiving.name.Contains("PC")) {
+            DialogueTrigger.Instance.TriggerDialogue("Insert_Disk");
             inserting.transform.SetParent(null);
             inserting.layer = 6; //6 is interactable
 
-            // BU KISIMLARI DA ﬁ›MD›L›K AR«›N KAPATTI : insert animasyonu Áal˝˛˝yor d¸zg¸n
+            // BU KISIMLARI DA √û√ùMD√ùL√ùK AR√á√ùN KAPATTI : insert animasyonu √ßal√Ω√æ√Ωyor d√ºzg√ºn
             //inserting.transform.SetParent(receiving.transform);
             //inserting.transform.localPosition = new Vector3(0.5f, 0.5f, -1.5f);
             //inserting.transform.localEulerAngles = Vector3.zero;
@@ -221,10 +235,10 @@ public class CrosshairManager : MonoBehaviour {
 
     }
 
-    // AR«›N EKL›YORDU BURAYI - Floppy Diski «˝kart
+    // AR√á√ùN EKL√ùYORDU BURAYI - Floppy Diski √á√Ωkart
     public void TakeoutFloppy()
     {
-        // DiskButton'a t˝kland˝˝nda takeout animasyonunu oynat
+        // DiskButton'a t√Ωkland√Ω√∞√Ωnda takeout animasyonunu oynat
         // Disk'i eline al
     }
 
@@ -479,6 +493,11 @@ public class CrosshairManager : MonoBehaviour {
 
     void FanToggle(GameObject fan)
     {
+        if(isFirstTimeFanToggle)
+        {
+            DialogueTrigger.Instance.TriggerDialogue("Heat_Fix");
+            isFirstTimeFanToggle = false;
+        }
         Animator anim;
         fan.GetComponent<Animator>().enabled = true;
         anim = fan.GetComponent<Animator>();

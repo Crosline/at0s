@@ -11,9 +11,11 @@ public class PipeExe : MonoBehaviour {
     public void CheckComplete() {
         bool temp = true;
 
-        foreach (PipeController pipe in pipes) {
+        foreach (PipeController pipe in pipes)
+        {
 
-            if (!pipe.isComplete && temp) {
+            if (!pipe.isComplete && temp)
+            {
                 temp = false;
                 break;
             }
@@ -22,7 +24,7 @@ public class PipeExe : MonoBehaviour {
         if (temp) {
 
             GlitchController.Instance.Glitcher(0.3f);
-
+            DialogueTrigger.Instance.TriggerDialogue("Pipe_End");
             gizli3.SetActive(true);
             PlayerPrefs.SetInt("gizli3", 1);
 

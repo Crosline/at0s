@@ -15,6 +15,7 @@ public class InternetExplorer : MonoBehaviour {
                 gizliDosya.SetActive(true);
                 PlayerPrefs.SetInt("gizli2", 1);
             }
+            DialogueTrigger.Instance.TriggerDialogue("Internet_End");
             transform.parent.GetComponent<Animator>().Play("OSClose");
 
 

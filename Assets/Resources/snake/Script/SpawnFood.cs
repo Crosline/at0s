@@ -21,6 +21,7 @@ public class SpawnFood : MonoBehaviour {
     public GameObject snek;
 
     private List<GameObject> spawnedFoods = new List<GameObject>();
+    [SerializeField] private GameObject fan;
 
     // Use this for initialization
     void Start () {
@@ -42,13 +43,14 @@ public class SpawnFood : MonoBehaviour {
         if (score == 5) {
 
             GlitchController.Instance.Glitcher(0.1f);
-
+            DialogueTrigger.Instance.TriggerDialogue("Heat_Error");
             PlayerPrefs.SetInt("gizli1", 1);
-
+            fan.layer = 6;
+            PopOS.Instance.PopUp(1, 5);
             transform.parent.gameObject.GetComponent<SecretFileController>().EnableAll();
             gizliDosya.SetActive(true);
             transform.parent.gameObject.SetActive(false);
-
+            
             return;
         }
 

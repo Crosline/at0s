@@ -13,5 +13,6 @@ public class GlitchyLoad : MonoBehaviour
 
         transform.parent.parent.gameObject.SetActive(false);
 
+        DialogueTrigger.Instance.TriggerDialogue("Free_Roam");
     }
 }

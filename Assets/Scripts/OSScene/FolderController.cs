@@ -114,12 +114,14 @@ public class FolderController : MonoBehaviour {
 
             pipeExe.SetActive(true);
             yield return new WaitForSeconds(0.1f);
+            DialogueTrigger.Instance.TriggerDialogue("Pipe_Enter");
             canRender = true;
         }
 
     }
 
     IEnumerator EnterTrash() {
+        DialogueTrigger.Instance.TriggerDialogue("Trash_Enter");
         Vector3 temp = player.position;
         player.position = transform.position + posOffset;
         player.GetComponent<Animator>().Play("Slide");

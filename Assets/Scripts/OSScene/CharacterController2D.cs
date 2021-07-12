@@ -122,7 +122,7 @@ public class CharacterController2D : MonoBehaviour {
 	}
 
 	void Update() {
-		Debug.Log(transform.localPosition);
+		//Debug.Log(transform.localPosition);
 	}
 
 	private void FixedUpdate() {

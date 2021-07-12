@@ -21,7 +21,7 @@ public class Snake : MonoBehaviour {
 	private Vector2 dir = Vector2.right;
 	private List<Transform> tail = new List<Transform>();
 
-
+	private bool firstHit = true;
 
 	private int tutorial = 2;
 
@@ -52,6 +52,12 @@ public class Snake : MonoBehaviour {
 					dir = Vector2.up;
 					break;
 			}
+
+			if(firstHit)
+            {
+				DialogueTrigger.Instance.TriggerDialogue("Snake_Error");
+				firstHit = false;
+            }
 
 
 			StartSnake();

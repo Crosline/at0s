@@ -22,10 +22,22 @@ public class GlitchController : MonoBehaviour {
         StartCoroutine(GlitchbyTime(time));
 
     }
+    public void GlitcherAfter(float time = 1.0f) {
+
+        StartCoroutine(StartGlitchAfter(time));
+
+    }
+
     private IEnumerator GlitchbyTime(float time) {
         ToggleGlitch();
         yield return new WaitForSeconds(time);
         ToggleGlitch();
     }
+
+    private IEnumerator StartGlitchAfter(float ti = 1.0f) {
+        yield return new WaitForSeconds(ti);
+        Glitcher();
+    }
+
 
 }

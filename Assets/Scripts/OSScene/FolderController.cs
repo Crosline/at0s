@@ -110,7 +110,7 @@ public class FolderController : MonoBehaviour {
         else if (this.name.Contains("Pipe")) {
 
 
-            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.45f, -7.6f, 0f));
+            player.GetComponent<PlayerMovement2D>().ResetAll(transform.position + new Vector3(2.55f, -7.6f, 0f));
 
             pipeExe.SetActive(true);
             yield return new WaitForSeconds(0.1f);

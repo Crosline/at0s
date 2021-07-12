@@ -46,7 +46,7 @@ public class ActivateAttack : MonoBehaviour {
             GlitchController.Instance.Glitcher(0.3f);
             DialogueTrigger.Instance.TriggerDialogue("Snake_Intro");
             snekExe.SetActive(true);
-            FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-1.8f, 0.4f, 0f));
+            FindObjectOfType<PlayerMovement2D>().ResetAll(transform.position + new Vector3(-1f, 0.4f, 0f));
         } else if (name.Contains("gizli1")) {
             PopOS.Instance.PopUp(3, 20);
         } else if (name.Contains("gizli2")) {

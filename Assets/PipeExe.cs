@@ -30,8 +30,8 @@ public class PipeExe : MonoBehaviour {
 
             GetComponent<SecretFileController>().EnableAll();
 
-            gameObject.SetActive(false);
-
+            //gameObject.SetActive(false);
+            Destroy(gameObject, 0.1f);
         }
 
     }

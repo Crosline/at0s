@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 #pragma warning disable 0649
 
@@ -15,6 +16,7 @@ public class CrosshairManager : MonoBehaviour {
     public GameObject interactText;
     public GameObject monitorLight;
     public GameObject pcSandalyeInteract;
+    public GameObject fanObject;
 
     [Header("Raycast Length/Layer")]
     [SerializeField] private LayerMask layerMaskInteract;
@@ -87,8 +89,23 @@ public class CrosshairManager : MonoBehaviour {
                 crosshairImage.sprite = crosshairs[1];
                 outline = newer.GetComponent<Outline>();
                 outline.OutlineColor = outlineColor;
-                if(!isPcOn)
+                if (hit.collider.gameObject.name.Contains("USB"))
+                    interactText.GetComponent<TextMeshProUGUI>().text = "Disketi tutmak için 'E'ye basýlý tut";
+                else if(holder != null && hit.collider.gameObject.name.Contains("PC"))
+                    interactText.GetComponent<TextMeshProUGUI>().text = "Disketi takmak için 'E' tuþunu býrak";
+                else
+                    interactText.GetComponent<TextMeshProUGUI>().text = "Etkileþim için 'E'ye bas"; 
+
+                
+
+                if (!isPcOn)
+                {
+                    
+
                     interactText.SetActive(true);
+                    
+                }
+                    
             }
         }
             
@@ -127,6 +144,8 @@ public class CrosshairManager : MonoBehaviour {
             if (newer.name.Contains("cay")) CayToggle(newer);
             if (newer.name.Contains("fan")) FanToggle(newer);
             if (newer.name.Contains("Gramaphone")) GramaphoneToggle(newer);
+            if (newer.name.Contains("PF_Plak")) PinkFloydToggle(newer);
+            if (newer.name.Contains("SayborgPlak")) PlakToggle(newer);
             Debug.Log(newer.name);
         }
 
@@ -440,6 +459,23 @@ public class CrosshairManager : MonoBehaviour {
     {
         caydanlik.layer = 0;
         DialogueTrigger.Instance.TriggerDialogue("Interact_Cay");
+    }
+
+    void PinkFloydToggle(GameObject pfPlak)
+    {
+        pfPlak.layer = 0;
+        DialogueTrigger.Instance.TriggerDialogue("Interact_PF");
+    }
+
+    void PlakToggle(GameObject plak)
+    {
+        plak.layer = 0;
+        DialogueTrigger.Instance.TriggerDialogue("Interact_Plak2");
+    }
+
+    void enableFanInteract()
+    {
+        fanObject.layer = 6;
     }
 
     void FanToggle(GameObject fan)

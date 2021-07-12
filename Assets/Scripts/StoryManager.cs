@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StoryManager : MonoBehaviour
 {
     public Text subtitle;
-
+    public AudioSource subtitleAs;
 
     public static StoryManager Instance;
 
@@ -52,6 +52,8 @@ public class StoryManager : MonoBehaviour
         }
         Sentence sentence = sentences.Dequeue();
         subtitle.text = sentence.sentence;
+        subtitleAs.clip = sentence.clip;
+        subtitleAs.Play();
         StartCoroutine(WaitForSentence(sentence.duration));
     }
 

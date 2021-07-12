@@ -580,7 +580,7 @@ public class CrosshairManager : MonoBehaviour {
     void EndGame()
     {
         DialogueTrigger.Instance.TriggerDialogue("Finish");
-        GetComponent<PlayerMovement>().enabled = false;
+        //GetComponent<PlayerMovement>().enabled = false;
         StartCoroutine(EndingPlay());
     }
 

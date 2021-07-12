@@ -175,7 +175,7 @@ public class CrosshairManager : MonoBehaviour {
 
 
 
-        if (isPcOn) {
+        /*if (isPcOn) {
             //Debug.Log("pc is on");
 
             if (Physics.Raycast(playerCam.ScreenPointToRay(Input.mousePosition), out hit, rayLength, layerMaskComputerScreen)) {
@@ -191,7 +191,7 @@ public class CrosshairManager : MonoBehaviour {
                 }
             }
 
-        }
+        }*/
 
     }
 
@@ -327,7 +327,7 @@ public class CrosshairManager : MonoBehaviour {
     private bool isOnTransition = false;
 
     IEnumerator SettingCamera(GameObject pc) {
-        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
+        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one * 16, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         isCursor = false;
@@ -404,7 +404,7 @@ public class CrosshairManager : MonoBehaviour {
         pcSandalyeInteract.transform.GetChild(0).gameObject.SetActive(false);
 
         playerChar.GetComponent<PlayerMovement2D>().enabled = false;
-        Cursor.SetCursor(inPcCrosshairs[0], Vector2.one / 2f, CursorMode.Auto);
+        Cursor.SetCursor(inPcCrosshairs[1], Vector2.one, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         isCursor = true;

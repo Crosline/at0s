@@ -33,6 +33,13 @@ public class PipeController : MonoBehaviour {
             }
         }
 
+        foreach (Pipe pipe in pipes) {
+            if (!pipe.isCorrect) {
+                temp = false;
+                break;
+            }
+        }
+
         if (temp) {
             isComplete = true;
             transform.parent.parent.GetComponent<PipeExe>().CheckComplete();

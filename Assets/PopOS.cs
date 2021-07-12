@@ -34,8 +34,8 @@ public class PopOS : MonoBehaviour {
 
         lastUsed = popUpChild;
 
-        triggerControllers[0].GetComponent<ActivateTrigger>().isUp = false;
-        triggerControllers[1].GetComponent<ActivateTrigger>().isUp = true;
+        triggerControllers[0].SetActive(true);
+        triggerControllers[1].SetActive(false);
 
         StartCoroutine(OpenPopUp(popUpChild, screenDuration));
 

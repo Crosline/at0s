@@ -59,7 +59,7 @@ public class ActivateAttack : MonoBehaviour {
                 //OYUNU BİTİR.
                 PopOS.Instance.PopUp(5, 25);
             } else {
-                PopOS.Instance.PopUp(2, 2);
+                PopOS.Instance.PopUp(8, 2);
             }
 
 

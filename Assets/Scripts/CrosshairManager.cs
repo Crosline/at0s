@@ -62,12 +62,16 @@ public class CrosshairManager : MonoBehaviour {
 
     private Outline outline;
 
+    private bool isDrawer;
+
     private bool isPcOn = false;
     private bool isCursor = false;
     private bool isStandable = false;
     private bool isFirstTimeBoot = true;
     private bool isFirstTimeHitScreen = true;
     private bool isFirstTimeFanToggle = true;
+
+    public bool canInteract = false;
 
     private AudioClip[] clips;
 
@@ -81,7 +85,7 @@ public class CrosshairManager : MonoBehaviour {
     GameObject old = null;
 
     void Update() {
-
+        if (!canInteract) return;
         GameObject newer = null;
 
         RaycastHit hit;
@@ -124,6 +128,7 @@ public class CrosshairManager : MonoBehaviour {
             isFirstTimeHitScreen = false;
             HitScreen.Instance.ShakeIt();
             DialogueTrigger.Instance.TriggerDialogue("Glitch_Fix");
+            isDrawer = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && sitting && !isPcOn) {
@@ -445,6 +450,7 @@ public class CrosshairManager : MonoBehaviour {
     }
 
     void ToggleDrawer(GameObject drawer) {
+        if (!isDrawer) return;
         if (drawer.name.Contains("Handler")) 
         {
             drawer = drawer.transform.parent.gameObject;

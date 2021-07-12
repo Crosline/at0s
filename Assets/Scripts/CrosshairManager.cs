@@ -118,6 +118,7 @@ public class CrosshairManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.F) && isFirstTimeHitScreen && sitting)
         {
+            player.GetComponent<AudioSource>().PlayOneShot(StoryManager.Instance.clips[14]);
             TestGlitch();
             isFirstTimeHitScreen = false;
             HitScreen.Instance.ShakeIt();
@@ -285,6 +286,7 @@ public class CrosshairManager : MonoBehaviour {
 
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<AudioSource>().Stop();
         StartCoroutine(Sit());
     }
 

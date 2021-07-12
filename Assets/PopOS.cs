@@ -46,7 +46,8 @@ public class PopOS : MonoBehaviour {
     private IEnumerator OpenPopUp(int popUpChild = 0, float screenDuration = 5f) {
         isOn = true;
         PlayerMovement2D[] controller = FindObjectsOfType<PlayerMovement2D>();
-
+        AudioSource af = GetComponent<AudioSource>();
+        af.PlayOneShot(StoryManager.Instance.clips[13]);
         for (int i = 0; i < controller.Length; i++) {
             controller[i].controller.canMove = false;
             controller[i].controller.GetComponent<Rigidbody2D>().velocity = Vector3.zero;

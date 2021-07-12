@@ -193,10 +193,19 @@ public class CharacterController2D : MonoBehaviour {
 				// ... flip the player.
 				Flip();
 			}
+			if ((move > 0 || move < 0) && m_Grounded)
+			{
+				AudioSource a = GetComponent<AudioSource>();
+				if (!a.isPlaying)
+                {
+					a.PlayOneShot(StoryManager.Instance.clips[10]);
+                }
+			}
 		}
 		// If the player should jump...
 		if (m_Grounded && jump && jumpCD <= 0) {
-			// Add a vertical force to the player.
+			AudioSource a = GetComponent<AudioSource>();
+			a.PlayOneShot(StoryManager.Instance.clips[9]);
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Clamp(m_Rigidbody2D.velocity.y, -50f, 3f));

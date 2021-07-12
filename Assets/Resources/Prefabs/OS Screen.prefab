@@ -13616,7 +13616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRight: 1
   isCorrect: 0
-  correctAngles: 00000000b40000004cffffff
+  correctAngles: 00000000b40000004cffffff6801000098feffff
 --- !u!1 &1057935163001242500
 GameObject:
   m_ObjectHideFlags: 0
@@ -26311,7 +26311,7 @@ MonoBehaviour:
   - {fileID: 6304233740261169240}
   - {fileID: 6661992826154646621}
   - {fileID: 6445294463553625219}
-  rotateTime: 2
+  rotateTime: 1
 --- !u!1 &9046558062767994427
 GameObject:
   m_ObjectHideFlags: 0
